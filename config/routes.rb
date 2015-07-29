@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   root to: 'sessions#new'
   resource :sessions
   resource :users
+  resource :clubs 
 
   get '/causes' => 'sessions#causes'
 
