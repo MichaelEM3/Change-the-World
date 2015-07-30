@@ -36,6 +36,8 @@ gem 'bcrypt', '~> 3.1.7'
 
 gem 'paperclip'
 
+gem 'better_errors'
+
 # Use Unicorn as the app server
 # gem 'unicorn'
 
