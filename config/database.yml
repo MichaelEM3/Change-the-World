@@ -6,7 +6,7 @@
 #
 default: &default
   adapter: postgresql
-  username: andeski
+  # username: andeski
   pool: 5
   timeout: 5000
 
@@ -19,7 +19,7 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: ChangetheWorld-test 
+  database: ChangetheWorld-test
 
 production:
   <<: *default
