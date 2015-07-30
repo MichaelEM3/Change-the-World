@@ -2,3 +2,9 @@
 <p><%= @club.description %></p>
 <p><%= @club.location %></p>
 <%= image_tag @club.image(:large) %>
+<p> Show page for clubs </p>
+
+<% @club.tags.each do |tag| %>
+Tags:
+<%= tag.name %>
+<% end %>

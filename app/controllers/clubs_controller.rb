@@ -22,7 +22,7 @@ class ClubsController < ApplicationController
 
   private
   def club_params
-    params.require(:club).permit(:title, :description, :image, :location)
+    params.require(:club).permit(:title, :description, :image, :location, :tag_list)
   end
 
 end
