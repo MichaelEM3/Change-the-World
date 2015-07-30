@@ -1,5 +1,5 @@
 <h1>Create your club:</h1>
-<%= form_for @club do |f| %>
+<%= form_for @club, html: {multipart: true} do |f| %>
   <p>
     <%= f.text_field :title, placeholder: "Enter your club's title" %>
   </p>

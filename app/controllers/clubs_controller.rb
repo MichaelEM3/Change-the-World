@@ -3,13 +3,26 @@ class ClubsController < ApplicationController
     @club = Club.new
   end
 
+  def index
+    @club = Club.all
+  end
+
   def create
     @club = Club.new(club_params)
+    if @club.save
+      redirect_to club_path(@club)
+    else
+      flash[:error] = 'An error occured!'
+    end
+  end
+
+  def show
+    @club = Club.find(params[:id])
   end
 
   private
   def club_params
-    params.require(:title, :description).permit(:image, :location)
+    params.require(:club).permit(:title, :description, :image, :location)
   end
 
 end
