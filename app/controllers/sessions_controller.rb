@@ -19,8 +19,6 @@ class SessionsController < ApplicationController
     end
   end
 
-  
-
   def causes
   end
 end
