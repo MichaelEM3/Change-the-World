@@ -11,7 +11,7 @@ class ClubsController < ApplicationController
 
   def create
     @club = Club.new(club_params)
-
+    
     if @club.save
       UserClub.create(club:@club, user: current_user)
       redirect_to club_path(@club)
@@ -29,7 +29,7 @@ class ClubsController < ApplicationController
   def set_club
     @club = Club.find(params[:id])
   end
-  
+
   def club_params
     params.require(:club).permit(:title, :description, :image, :location, :tag_list)
   end
