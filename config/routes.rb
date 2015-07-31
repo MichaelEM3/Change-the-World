@@ -2,13 +2,15 @@ Rails.application.routes.draw do
   get 'tags/show'
 
   root to: 'sessions#new'
-  resource :sessions
-  resource :users
+  resources :sessions
+  resources :users
   resources :clubs
 
   resources :tags
 
-  get '/session' => 'sessions#show'
+  get '/first_tag_page' => 'tags#tagone'
+    get '/second_tag_page' => 'tags#tagtwo'
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

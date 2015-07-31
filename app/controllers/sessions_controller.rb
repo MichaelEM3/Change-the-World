@@ -13,9 +13,8 @@ class SessionsController < ApplicationController
     if @user
       #logged in, hooray
       session[:user_id] = @user.id #put the current user in the session hash
-      redirect_to session_path
-    else
-      render action: 'new'
+      redirect_to first_tag_page_path(@tag, @club)
+    
     end
   end
 
