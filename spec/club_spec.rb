@@ -19,4 +19,4 @@ describe Club do
     club = Club.new
     club.should respond_to(:location)
   end
-end 
+end
