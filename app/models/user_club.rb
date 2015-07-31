@@ -1,4 +1,4 @@
 class UserClub < ActiveRecord::Base
-  has_many :users
-  has_many :clubs
+  belongs_to :user
+  belongs_to :club
 end
