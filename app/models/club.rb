@@ -4,7 +4,7 @@ class Club < ActiveRecord::Base
   has_many :users, through: :user_clubs
   has_many :tag_clubs
   has_many :tags, through: :tag_clubs
-  
+
   validates :title, :description, :location, presence: true
   validates :description, length: { minimum: 30}
   has_attached_file :image, styles: { large: "600x600>", medium: "300x300>", thumb: "150x150#"}
