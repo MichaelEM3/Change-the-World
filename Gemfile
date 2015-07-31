@@ -7,6 +7,7 @@ gem 'rails', '4.2.3'
 # gem 'sqlite3'
 
 gem 'rspec-rails', '~> 3.3.3'
+gem 'shoulda-matchers', '~> 2.8.0'
 
 gem 'pg'
 
