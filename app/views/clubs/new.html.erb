@@ -1,3 +1,4 @@
+<!-- <di>
 <h1>Create your club:</h1>
 <%= form_for @club, html: {multipart: true} do |f| %>
   <p>
@@ -21,3 +22,14 @@
     <%= f.submit %>
   </p>
   <% end %>
+</di> -->
+
+<!-- <div id="heading"></div> -->
+
+<div class= "newclub">
+<h1>New Club</h1>
+
+<%= render 'form' %>
+
+<%= link_to 'Back', clubs_path %>
+</div>

@@ -3,11 +3,17 @@ Rails.application.routes.draw do
 
   root to: 'sessions#new'
   resource :sessions
-  resource :users
+  resources :users
   resources :clubs
 
   resources :tags
+  get '/login' => 'sessions#new'
+  post '/login' => 'sessions#create'
+  get '/logout' => 'sessions#destroy'
 
+  get '/signup' => 'users#new'
+  post '/users' => 'users#create'
+  get '/profile' => 'users#show'
   get '/session' => 'sessions#show'
 
   # The priority is based upon order of creation: first created -> highest priority.

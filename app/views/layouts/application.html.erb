@@ -8,6 +8,17 @@
 </head>
 <body>
 
+  <div class="account">
+    <div id="heading">
+      <% if current_user %>
+        <p id="login"><%= current_user.email %>  |  <%= link_to "Log out", logout_path, method: "delete" %></p>
+    <% else %>
+      <ul>
+        <p id="login"><%= link_to "Login", 'login' %>  |  <%= link_to "Signup", 'signup' %></p>
+      </ul>
+    <% end %>
+    </div>
+
 <%= yield %>
 
 </body>

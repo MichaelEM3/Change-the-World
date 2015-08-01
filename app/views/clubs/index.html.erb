@@ -1,10 +1,21 @@
-<p> Index page for clubs</p>
+<!-- <p> Index page for clubs</p>
 
-<% @club.each do |c| %>
-<p><%= c.title %></p>
-<p><%= c.description %></p>
-<p><%= c.location %></p>
-<p><%= c.image %></p>
-<% end %>
+<%# @club.each do |c| %>
+<p><%# c.title %></p>
+<p><%#c.description %></p>
+<p><%# c.location %></p>
+<p><%# c.image %></p>
+<%# end %> -->
 
-
+<% @clubs.each do |club| %>
+    <div class="club">
+      <%= image_tag club.title %>
+      <p><%= club.description %></p>
+      <p>$<%= club.location %></p>
+      <p>$<%= club.image %></p>
+      <p><%= link_to 'Show Me More', club %></p>
+      <p><%= link_to 'Edit', edit_club_path(club)  %>
+      <%= link_to 'Destroy', club, method: :delete, data: { confirm: 'Are you sure?' }  %></p>
+    </div>
+  <% end %>
+</div>
