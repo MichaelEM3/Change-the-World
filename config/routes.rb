@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resource :sessions
   resources :users
   resources :clubs
+  resources :user_clubs
 
   resources :tags
   get '/login' => 'sessions#new'
@@ -15,6 +16,14 @@ Rails.application.routes.draw do
   post '/users' => 'users#create'
   get '/profile' => 'users#show'
   get '/session' => 'sessions#show'
+  get '/login' => 'sessions#new'
+  post '/login' => 'sessions#create'
+  get '/logout' => 'sessions#destroy'
+
+  get '/signup' => 'users#new'
+  post '/users' => 'users#create'
+  get '/profile' => 'users#show'
+  post '/clubs/:id/join', to: 'clubs#join', as: 'join_club'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

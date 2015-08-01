@@ -2,9 +2,17 @@
 <p><%= @club.description %></p>
 <p><%= @club.location %></p>
 <%= image_tag @club.image(:large) %>
-<p> Show page for clubs </p>
 
 <% @club.tags.each do |tag| %>
 Tags:
 <%= tag.name %>
 <% end %>
+
+<h2>Current Members:</h2>
+<ul>
+  <% @club.user_clubs.each do |userclub| %>
+    <li><%= userclub.user.username %></li>
+  <% end %>
+</ul>
+
+<%= button_to "Join Club", join_club_path(@club) %>

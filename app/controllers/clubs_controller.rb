@@ -1,12 +1,17 @@
 class ClubsController < ApplicationController
-  before_action :set_club, only: [:show, :edit, :update, :destroy]
-  before_action :require_user , only: [:new]
+  before_action :set_club, only: [:show, :edit, :update, :destroy, :join]
+  before_action :require_user, only: [:new]
+
+  def index
+    @club = Club.all
+  end
+
   def new
     @club = Club.new
   end
 
-  def index
-    @clubs = Club.all
+  def show
+    @club = Club.find(params[:id])
   end
 
   def create
@@ -21,24 +26,20 @@ class ClubsController < ApplicationController
     end
   end
 
-  def show
-
-  end
-
-  def edit
-  end
-
-
   def destroy
     @club.destroy
     respond_to do |format|
       format.html { redirect_to clubs_url, notice: 'Club was successfully destroyed.' }
     end
+
+  def join
+    UserClub.create(club:@club, user:current_user)
+    redirect_to @club
   end
 
   private
   def set_club
-      @club = Club.find(params[:id])
+    @club = Club.find(params[:id])
   end
 
   def club_params
