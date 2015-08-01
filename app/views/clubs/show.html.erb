@@ -14,7 +14,7 @@ Tags:
     <li><%= userclub.user.username %></li>
   <% end %>
 </ul>
-
+<br> 
 <% if current_user && @club.users.exists?(current_user) %>
   <%= button_to "Leave Club", unjoin_club_path(@club) %>
 <% else %>
