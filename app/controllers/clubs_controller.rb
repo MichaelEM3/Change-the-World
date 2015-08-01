@@ -3,7 +3,7 @@ class ClubsController < ApplicationController
   before_action :require_user, only: [:new]
 
   def index
-    @club = Club.all
+    @clubs = Club.all
   end
 
   def new
@@ -31,6 +31,7 @@ class ClubsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to clubs_url, notice: 'Club was successfully destroyed.' }
     end
+  end
 
   def join
     UserClub.create(club:@club, user:current_user)
