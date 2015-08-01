@@ -1,4 +1,5 @@
 class SessionsController < ApplicationController
+  skip_before_action :require_user
   def new
   end
 
@@ -13,7 +14,7 @@ class SessionsController < ApplicationController
     if @user
       #logged in, hooray
       session[:user_id] = @user.id #put the current user in the session hash
-      redirect_to session_path
+      redirect_to clubs_path
     else
       render action: 'new'
     end
@@ -22,7 +23,7 @@ class SessionsController < ApplicationController
   def destroy
     session[:user_id] = nil
     redirect_to '/'
-  end 
+  end
 
   def causes
   end

@@ -1,23 +1,7 @@
-<h1>Create your club:</h1>
-<%= form_for @club, html: {multipart: true} do |f| %>
-  <p>
-    <%= f.text_field :title, placeholder: "Enter your club's title" %>
-  </p>
-  <p>
-    <%= f.text_area :description, placeholder: "Enter your club's mission"%>
-  </p>
-  <p>
-    <%= f.text_field :location, placeholder: "Where is your club based out of?" %>
-  </p>
-  <p>
-    <%= f.label :image, "Attach an Image" %><br>
-    <%= f.file_field :image %>
-  </p>
-  <p>
-  <%= f.label :tag_list %><br />
-  <%= f.text_field :tag_list %>
-  </p>
-  <p>
-    <%= f.submit %>
-  </p>
-  <% end %>
+<div class= "newclub">
+<h1>New Club</h1>
+
+<%= render 'form' %>
+
+<%= link_to 'Back', clubs_path %>
+</div>

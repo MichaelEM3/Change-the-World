@@ -1,17 +1,22 @@
 class ClubsController < ApplicationController
-  before_action :set_club, only: [:show, :edit, :update, :destroy]
+  before_action :set_club, only: [:show, :edit, :update, :destroy, :join]
   before_action :require_user, only: [:new]
-  def new
-    @club = Club.new
-  end
 
   def index
     @club = Club.all
   end
 
+  def new
+    @club = Club.new
+  end
+
+  def show
+    @club = Club.find(params[:id])
+  end
+
   def create
     @club = Club.new(club_params)
-    
+
     if @club.save
       UserClub.create(club:@club, user: current_user)
       redirect_to club_path(@club)
@@ -21,8 +26,9 @@ class ClubsController < ApplicationController
     end
   end
 
-  def show
-    @club = Club.find(params[:id])
+  def join
+    UserClub.create(club:@club, user:current_user)
+    redirect_to @club
   end
 
   private
