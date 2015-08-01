@@ -1,6 +1,10 @@
 <div class= "newclub">
 <h1>New Club</h1>
 
+<p style="color:red">
+    <%= flash[:error] unless flash[:error].blank? %>
+</p>
+
 <%= render 'form' %>
 
 <%= link_to 'Back', clubs_path %>

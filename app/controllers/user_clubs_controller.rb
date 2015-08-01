@@ -1,4 +1,5 @@
 class UserClubsController < ApplicationController
+  
   def new
     @user_club = UserClub.new
   end

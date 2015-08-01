@@ -14,10 +14,10 @@ Tags:
     <li><%= userclub.user.username %></li>
   <% end %>
 </ul>
-
-<%= button_to "Join Club", join_club_path(@club) %>
+<br> 
+<% if current_user && @club.users.exists?(current_user) %>
+  <%= button_to "Leave Club", unjoin_club_path(@club) %>
+<% else %>
+  <%= button_to "Join Club", join_club_path(@club) %>
+<% end %>
 <%= link_to 'Back', clubs_path %>
-
-
-
-
