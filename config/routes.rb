@@ -18,11 +18,8 @@ Rails.application.routes.draw do
   get '/session' => 'sessions#show'
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'
-  get '/logout' => 'sessions#destroy'
+  delete '/logout' => 'sessions#destroy'
 
-  get '/signup' => 'users#new'
-  post '/users' => 'users#create'
-  get '/profile' => 'users#show'
   post '/clubs/:id/join', to: 'clubs#join', as: 'join_club'
 
   # The priority is based upon order of creation: first created -> highest priority.

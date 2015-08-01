@@ -14,6 +14,9 @@ class ClubsController < ApplicationController
     @club = Club.find(params[:id])
   end
 
+  def edit
+  end
+
   def create
     @club = Club.new(club_params)
 
@@ -22,7 +25,15 @@ class ClubsController < ApplicationController
       redirect_to club_path(@club)
     else
       flash[:error] = 'An error occured!'
-      redirect_to new_club_path
+      redirect_to "/clubs/new"
+    end
+  end
+
+  def update
+    if @club.update(club_params)
+      redirect_to @club, notice: 'Club was successfully created.'
+    else
+      render :edit
     end
   end
 
