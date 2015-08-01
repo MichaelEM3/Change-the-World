@@ -10,5 +10,5 @@
       <%= link_to 'Destroy', club, method: :delete, data: { confirm: 'Are you sure?' } if current_user && current_user == club.users  %></p>
     </div>
   <% end %>
-  <%= link_to 'Create a New Club', new_club_path %>
+  <div id="New"><%= link_to 'Create a New Club', new_club_path %></div>
 </div>
