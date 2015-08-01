@@ -21,6 +21,7 @@ Rails.application.routes.draw do
   delete '/logout' => 'sessions#destroy'
 
   post '/clubs/:id/join', to: 'clubs#join', as: 'join_club'
+  post '/clubs/:id/unjoin', to: 'clubs#unjoin', as: 'unjoin_club'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
