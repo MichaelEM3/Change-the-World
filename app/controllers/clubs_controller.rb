@@ -24,8 +24,8 @@ class ClubsController < ApplicationController
       UserClub.create(club:@club, user: current_user)
       redirect_to club_path(@club)
     else
-      flash[:error] = 'An error occured!'
-      redirect_to "/clubs/new"
+      flash[:error] = 'An error occured! Please re-enter information.'
+      redirect_to new_club_path
     end
   end
 

@@ -16,13 +16,13 @@
 
 <%= form_for @club, html: {multipart: true} do |f| %>
     <p>
-      <%= f.text_field :title, placeholder: "Enter your club's title" %>
+      <%= f.text_field :title, placeholder: "Club's title" %>
     </p>
     <p>
-      <%= f.text_area :description, placeholder: "Enter your club's mission"%>
+      <%= f.text_area :description, placeholder: "Club's mission (30 chars)"%>
     </p>
     <p>
-      <%= f.text_field :location, placeholder: "Where is your club based out of?" %>
+      <%= f.text_field :location, placeholder: "Club's location" %>
     </p>
     <p>
       <%= f.label :image, "Attach an Image" %><br>
