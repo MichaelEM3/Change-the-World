@@ -14,7 +14,7 @@
         <p id="login"><%= current_user.username %>  |  <%= link_to "Log out", logout_path, method: "delete" %></p>
       <% else %>
       <ul>
-        <p id="login"><%= link_to "Login", login_path %>  |  <%= link_to "Signup", signup_path %></p>
+        <p id="login"><%= link_to "Log In", login_path %>  |  <%= link_to "Sign Up", signup_path %></p>
       </ul>
       <% end %>
     </div>
