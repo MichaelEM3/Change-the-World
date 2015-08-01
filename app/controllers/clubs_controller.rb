@@ -1,5 +1,5 @@
 class ClubsController < ApplicationController
-  before_action :set_club, only: [:show, :edit, :update, :destroy, :join]
+  before_action :set_club, only: [:show, :edit, :update, :destroy, :join, :unjoin]
   before_action :require_user, only: [:new]
 
   def index
@@ -46,6 +46,11 @@ class ClubsController < ApplicationController
 
   def join
     UserClub.create(club:@club, user:current_user)
+    redirect_to @club
+  end
+
+  def unjoin
+    UserClub.find_by(club:@club, user:current_user).destroy
     redirect_to @club
   end
 
