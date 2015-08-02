@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   resources :sessions
   resources :users
   resources :clubs
-
+  resources :user_clubs
   resources :tags
 
   get '/first_tag_page' => 'tags#tagone'
