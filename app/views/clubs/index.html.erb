@@ -6,8 +6,6 @@
       <p>$<%= club.location %></p>
       <p>$<%= club.image %></p>
       <p><%= link_to 'Show Me More', club %></p>
-      <p><%= link_to 'Edit', edit_club_path(club)  if current_user && current_user == club.users%>
-      <%= link_to 'Destroy', club, method: :delete, data: { confirm: 'Are you sure?' } if current_user && current_user == club.users  %></p>
     </div>
   <% end %>
   <div id="New"><%= link_to 'Create a New Club', new_club_path %></div>
