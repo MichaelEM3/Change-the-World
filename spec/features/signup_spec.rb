@@ -1,16 +1,13 @@
 require "rails_helper"
 
-Rspec.describe "Signing Up" do
-	it "log in successfully" do
-		visit (root_path)
-
-		click_link("Website")
-		click_link("Login")
-
-		fill_in('Username', with: 'test1')
-		fill_in('Password', :with 'test')
-		click_button('Log In')
-
-		expect(page).to have_content('Signed in successfully')
+RSpec.describe "Signing Up" do
+	it "signed in successfully" do
+		visit ('/signup')
+		fill_in('Username', with: 'Tester10')
+		fill_in('Name', with: 'Test')
+		fill_in('Email', with: 'test@test.com')
+		fill_in('Password', with: 'Testing')
+		click_button('Create User')
+		# expect(page).to have_content('Signed up successfully')
 	end
 end
