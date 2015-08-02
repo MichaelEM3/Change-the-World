@@ -1,16 +1,18 @@
 # require "rails_helper"
 
-# RSpec.describe "Joining a club" do 
-# 	it "joined club successfully" do 
-# 		visit (root_path)
-# 		fill_in('Username', with: 'test3')
-# 		fill_in('Password', with: 'test3')
-# 		click_button('Log in')
-# 		click_link('Show Me More')
-# 		click_button('Join Club')
+# RSpec.describe "Joining a club" do
 
-# 		# expect(page).to have_content('Joined Club successfully')
+# before(:each) do
+# 	visit ('/signup')
+# 		fill_in('Username', with: 'Tester10')
+# 		fill_in('Name', with: 'Test')
+# 		fill_in('Email', with: 'test@test.com')
+# 		fill_in('Password', with: 'Testing')
+# 	click_button('Create User')
 # end
+# it 'should be at clubs/new' do 
+# 	visit '/clubs/new'
+# 		current_path.should == '/login'
+# 	end
 # end
-
 
