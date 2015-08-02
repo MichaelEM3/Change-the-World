@@ -1,4 +1,6 @@
 class SessionsController < ApplicationController
+  skip_before_action :require_user
+  
   def new
   end
 
@@ -9,19 +11,19 @@ class SessionsController < ApplicationController
 
   def create
     @user = User.find_by(username: params[:username]).try(:authenticate, params[:password])
-
     if @user
       #logged in, hooray
       session[:user_id] = @user.id #put the current user in the session hash
-      redirect_to first_tag_page_path(@tag, @club)
-    
+      redirect_to clubs_path
+    else
+      render action: 'new'
     end
   end
 
   def destroy
     session[:user_id] = nil
     redirect_to '/'
-  end 
+  end
 
   def causes
   end

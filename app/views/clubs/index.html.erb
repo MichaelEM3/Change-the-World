@@ -1,11 +1,13 @@
-<p> Index page for clubs</p>
 
-<% @club.each do |c| %>
-<p><%= c.title %></p>
-<p><%= c.description %></p>
-<p><%= c.location %></p>
-<p><%= c.image %></p>
-<% end %>
-
-
-<%= link_to 'home', root_path %>
+<div class= 'club body'>
+<% @clubs.each do |club| %>
+    <div class="club">
+      <%= image_tag club.title %>
+      <p><%= club.description %></p>
+      <p>$<%= club.location %></p>
+      <p>$<%= club.image %></p>
+      <p><%= link_to 'Show Me More', club %></p>
+    </div>
+  <% end %>
+  <div id="New"><%= link_to 'Create a New Club', new_club_path %></div>
+</div>

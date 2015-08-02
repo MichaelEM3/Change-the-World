@@ -2,15 +2,26 @@ Rails.application.routes.draw do
   get 'tags/show'
 
   root to: 'sessions#new'
-  resources :sessions
+
+  resource :sessions
   resources :users
   resources :clubs
   resources :user_clubs
+
   resources :tags
+  get '/login' => 'sessions#new'
+  post '/login' => 'sessions#create'
+  get '/logout' => 'sessions#destroy'
+  get '/signup' => 'users#new'
+  post '/users' => 'users#create'
+  get '/profile' => 'users#show'
+  get '/session' => 'sessions#show'
+  get '/login' => 'sessions#new'
+  post '/login' => 'sessions#create'
+  delete '/logout' => 'sessions#destroy'
 
-  get '/first_tag_page' => 'tags#tagone'
-    get '/second_tag_page' => 'tags#tagtwo'
-
+  post '/clubs/:id/join', to: 'clubs#join', as: 'join_club'
+  post '/clubs/:id/unjoin', to: 'clubs#unjoin', as: 'unjoin_club'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
