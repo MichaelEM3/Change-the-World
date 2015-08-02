@@ -4,6 +4,11 @@ class ClubsController < ApplicationController
 
   def index
     @clubs = Club.all
+    # if params[:search]
+    #   @club = Club.search(params[:search]).order("created_at DESC")
+    # else
+    #   @club = Club.all.order('created_at DESC')
+    # end
   end
 
   def new
@@ -21,7 +26,7 @@ class ClubsController < ApplicationController
     @club = Club.new(club_params)
 
     if @club.save
-      UserClub.create(club:@club, user: current_user)
+      UserClub.create(club:@club, user: current_user, role: "admin")
       redirect_to club_path(@club)
     else
       flash[:error] = 'An error occured! Please re-enter information.'
@@ -45,7 +50,12 @@ class ClubsController < ApplicationController
   end
 
   def join
-    UserClub.create(club:@club, user:current_user)
+    UserClub.create(club:@club, user:current_user, role: 'user')
+    redirect_to @club
+  end
+
+  def unjoin
+    UserClub.find_by(club:@club, user:current_user).destroy
     redirect_to @club
   end
 
