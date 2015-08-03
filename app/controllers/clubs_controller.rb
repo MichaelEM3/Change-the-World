@@ -3,12 +3,12 @@ class ClubsController < ApplicationController
   before_action :require_user, only: [:new]
 
   def index
-    @clubs = Club.all
-    # if params[:search]
-    #   @club = Club.search(params[:search]).order("created_at DESC")
-    # else
-    #   @club = Club.all.order('created_at DESC')
-    # end
+    @club = Club.all
+    if params[:search]
+      @club = Club.search(params[:search]).order("created_at DESC")
+    else
+      @club = Club.all.order('created_at DESC')
+    end
   end
 
   def new
@@ -17,10 +17,17 @@ class ClubsController < ApplicationController
 
   def show
     @club = Club.find(params[:id])
+    @story= Story.new
   end
 
   def edit
   end
+
+# def search
+#   @q  = "%#{params[:query]}%"
+#   @tag = Tag.where("name LIKE ? or description LIKE ? or short_description LIKE ?", @q, @q, @q)
+
+# end
 
   def create
     @club = Club.new(club_params)
@@ -55,7 +62,7 @@ class ClubsController < ApplicationController
   end
 
   def unjoin
-    UserClub.find_by(club:@club, user:current_user).destroy
+    UserClub.find_by(club:@club, user:current_user).destroy unless current_user.user_admin_in_club?(@club.id)
     redirect_to @club
   end
 
@@ -70,7 +77,7 @@ class ClubsController < ApplicationController
   end
 
   def club_params
-    params.require(:club).permit(:title, :description, :image, :location, :tag_list)
+    params.require(:club).permit(:title, :description, :image, :location, :tag_list, :tag_id, :thumbtag)
   end
 
 end

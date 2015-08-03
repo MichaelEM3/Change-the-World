@@ -1,4 +1,4 @@
 class TagClub < ActiveRecord::Base
-  belongs_to :club
-  belongs_to :tag
+  # belongs_to :club
+  # belongs_to :tag
 end

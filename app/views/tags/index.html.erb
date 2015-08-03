@@ -1,0 +1,13 @@
+
+<%= form_tag(tags_path, :method => "get", id: "search-form") do %>
+	<%= text_field_tag :search, params[:search], placeholder: "Search Tags" %>
+	<%= submit_tag "Search" %>
+		<% if @tag.present? %>
+		<br>
+			<%= @tag.name %> 
+		<% else %>
+			<p>There are no tag containing the term(s) <%= params[:search] %>.</p>
+		<% end %>
+<% end %>
+
+<%= link_to 'Next', 'sessions/destroy' %>
