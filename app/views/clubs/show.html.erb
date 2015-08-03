@@ -1,3 +1,8 @@
+<div>
+<p><%= link_to 'Edit', edit_club_path(@club)  if  current_user.user_in_club(@club.id) && current_user.user_admin_in_club?(@club.id) %></p>
+ <p><%= link_to 'Destroy', @club, method: :delete, data: { confirm: 'Are you sure?' } if current_user.user_in_club(@club.id) && current_user.user_admin_in_club?(@club.id) %></p>
+</div>
+
 <p><%= @club.title %></p>
 <p><%= @club.description %></p>
 <p><%= @club.location %></p>
@@ -8,13 +13,27 @@ Tags:
 <%= tag.name %>
 <% end %>
 
+<% @club.stories.each do |stor| %>
+  <h4><%= stor.title %></h4>
+  <p><%= stor.story%></p>
+<%end%>
+
+
+<% if current_user.user_in_club(@club.id) && current_user.user_admin_in_club?(@club.id) %>
+  <h3>New Story</h3>
+  <div id= 'creatorfeed'>
+    <%= flash[:error] unless flash[:error].blank? %>
+    <%= render 'stories/form'%>
+  </div>
+  <%end%>
+
 <h2>Current Members:</h2>
 <ul>
   <% @club.user_clubs.each do |userclub| %>
     <li><%= userclub.user.username %></li>
   <% end %>
 </ul>
-<br> 
+
 <% if current_user && @club.users.exists?(current_user) %>
   <%= button_to "Leave Club", unjoin_club_path(@club) %>
 <% else %>
@@ -22,3 +41,4 @@ Tags:
 <% end %>
 
 <%= link_to 'Back', clubs_path %>
+

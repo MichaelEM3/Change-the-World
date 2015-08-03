@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150730010833) do
+ActiveRecord::Schema.define(version: 20150802192117) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,6 +27,16 @@ ActiveRecord::Schema.define(version: 20150730010833) do
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false
   end
+
+  create_table "stories", force: :cascade do |t|
+    t.integer  "club_id"
+    t.string   "title"
+    t.text     "story"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "stories", ["club_id"], name: "index_stories_on_club_id", using: :btree
 
   create_table "tag_clubs", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -49,6 +59,7 @@ ActiveRecord::Schema.define(version: 20150730010833) do
     t.integer  "club_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string   "role"
   end
 
   add_index "user_clubs", ["club_id"], name: "index_user_clubs_on_club_id", using: :btree
@@ -66,6 +77,7 @@ ActiveRecord::Schema.define(version: 20150730010833) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["username"], name: "index_users_on_username", unique: true, using: :btree
 
+  add_foreign_key "stories", "clubs"
   add_foreign_key "tag_clubs", "clubs"
   add_foreign_key "tag_clubs", "tags"
   add_foreign_key "user_clubs", "clubs"
