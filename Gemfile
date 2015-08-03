@@ -14,7 +14,7 @@ end
 gem 'faker'
 
 gem 'simple_form', '~> 3.1.0'
-gem 'devise', '~> 3.5.1'
+
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
