@@ -11,6 +11,8 @@ class User < ActiveRecord::Base
   validates :email, uniqueness: true
   has_secure_password
 
+  has_many :posts
+
   def user_in_club(club_id)
     UserClub.find_by(club: club_id, user: self.id) ? true : false
   end
