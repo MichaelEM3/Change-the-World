@@ -1,20 +1,21 @@
 <%= form_for(@club) do |f| %>
-  <% if @club.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@club.errors.count, "error") %> prohibited this club from being saved:</h2>
+  <% if @club.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@club.errors.count, "error") %> prohibited this club from being saved:</h2>
 
-      <ul>
-      <% @club.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+      <ul>
+      <% @club.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
 <%end%>
 
 
 
 <%= form_for @club, html: {multipart: true} do |f| %>
+
     <p>
       <%= f.label :title%>
       <%= f.text_field :title %>
@@ -42,4 +43,5 @@
     <p>
       <%= f.submit %>
     </p>
+
 <% end %>
