@@ -4,6 +4,7 @@ class Club < ActiveRecord::Base
   has_many :users, through: :user_clubs
   has_many :tag_clubs, dependent: :destroy
   has_many :tags, through: :tag_clubs
+  has_many :stories, dependent: :destroy
 
   validates :title, :description, :location, presence: true
   validates :description, length: { minimum: 30}

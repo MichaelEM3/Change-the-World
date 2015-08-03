@@ -17,6 +17,7 @@ class ClubsController < ApplicationController
 
   def show
     @club = Club.find(params[:id])
+    @story= Story.new
   end
 
   def edit
