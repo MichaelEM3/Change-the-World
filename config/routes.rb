@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   resources :user_clubs
 
   resources :tags
+  get '/user_update' => 'users#update'
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'
   get '/logout' => 'sessions#destroy'
