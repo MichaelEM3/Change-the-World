@@ -23,13 +23,14 @@ class StoriesController < ApplicationController
 
   # POST /stories
   # POST /stories.json
+
   def create
     @story = Story.new(story_params)
-      if @story.save
-        redirect_to :back, notice: 'Story was successfully created.'
-      else
-        redirect_to club_path(@club), notice: 'Please enter title and story'
-      end
+    if @story.save
+      redirect_to :back, notice: 'Story was successfully created.'
+    else
+      redirect_to club_path(@club), notice: 'Please enter title and story.'
+    end
   end
 
   # PATCH/PUT /stories/1
