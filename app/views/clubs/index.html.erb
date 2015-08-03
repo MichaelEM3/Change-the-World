@@ -1,13 +1,47 @@
 
-<div class= 'club body'>
-<% @clubs.each do |club| %>
-    <div class="club">
-      <%= image_tag club.title %>
-      <p><%= club.description %></p>
-      <p>$<%= club.location %></p>
-      <p>$<%= club.image %></p>
-      <p><%= link_to 'Show Me More', club %></p>
-    </div>
-  <% end %>
-  <div id="New"><%= link_to 'Create a New Club', new_club_path %></div>
+<!-- form_tag search_tags_path  -->
+<!-- <input class "xyz" name="query" placeholder="search tags" type="text" autocomplete="off"> -->
+<!-- end  -->
+<%= link_to 'Profile', profile_path %>
+
+<%= form_tag(clubs_path, :method => "get", id: "search-form") do %>
+	<%= text_field_tag :search, params[:search], placeholder: "Search Clubs" %>
+	<%= submit_tag "Search" %>
+		<% if @club.present? %>
+		<br>
+			<p> The following are your related articles</p>
+		<% else %>
+			<p>There are no club containing the term(s) <%= params[:search] %>.</p>
+		<% end %>
+<% end %>
+
+<div> 
+<p>Your tags:
+<% @club.each do |club| %>
+<%= club.thumbtag %></p>
+<% end %>
+<hr>
 </div>
+
+<div class= 'club body'>
+	<% @club.each do |club| %>
+	<div class="club">
+		<p><%= club.title %></p> 
+		<p><%= club.location %></p>
+		<p><%= club.description %></p>
+		<p><%= club.thumbtag %></p>
+		<p><%= link_to 'Show Me More', club %></p>
+	</div>
+	<% end %>
+
+
+<!-- <p>
+	Tags:
+	 @club.tag_club.tag.each do |tag| 
+	link_to tag.name, tag_path(tag) 
+	 end 
+</p>
+ -->
+	<div id="New"><%= link_to 'Create a New Club', new_club_path %></div>
+</div>
+<%= link_to 'back', '/' %>

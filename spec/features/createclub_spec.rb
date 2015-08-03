@@ -1,5 +1,6 @@
 require "rails_helper"
 
+
 RSpec.describe "Creating a club" do
 
 before(:each) do
@@ -16,3 +17,4 @@ it 'should be at clubs/new' do
     current_path.should == '/login'
   end
 end
+
