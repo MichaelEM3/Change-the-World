@@ -23,16 +23,13 @@ class StoriesController < ApplicationController
 
   # POST /stories
   # POST /stories.json
+
   def create
     @story = Story.new(story_params)
-    respond_to do |format|
-      if @story.save
-        format.html { redirect_to @story, notice: 'Story was successfully created.' }
-        format.json { render :show, status: :created, location: @story }
-      else
-        format.html { redirect_to club_path(@club), notice: 'Please enter title and story'}
-        format.json { render json: @story.errors, status: :unprocessable_entity }
-      end
+    if @story.save
+      redirect_to :back, notice: 'Story was successfully created.'
+    else
+      redirect_to club_path(@club), notice: 'Please enter title and story.'
     end
   end
 
