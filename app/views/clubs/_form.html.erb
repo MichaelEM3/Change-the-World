@@ -29,12 +29,16 @@
     </p>
     <p>
       <%= f.label :image, "Attach an Image" %><br>
-      <%= f.file_field :image %>
+      <%= f.file_field :image, placeholder: "Click to attach a club image" %>
     </p>
     <p>
-    <%= f.label :tag_list %><br />
-    <%= f.text_field :tag_list %>
+      <%= f.label :thumbtag %>
+      <%= f.text_field :thumbtag, placeholder: "Space tags by commas"%>
     </p>
+  <!--   <p>
+     f.label :tag_list <br />
+     f.text_field :tag_list 
+    </p> -->
     <p>
       <%= f.submit %>
     </p>
