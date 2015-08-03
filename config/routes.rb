@@ -1,10 +1,13 @@
 Rails.application.routes.draw do
+  resources :stories
   get 'tags/show'
 
   root to: 'sessions#new'
   resource :sessions
   resources :users
-  resources :clubs
+  resources :clubs do
+    resources :stories
+  end
   resources :user_clubs
 
   resources :tags
