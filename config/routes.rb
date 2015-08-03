@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   get 'tags/show'
 
   root to: 'sessions#new'
+
   resource :sessions
   resources :users
   resources :clubs

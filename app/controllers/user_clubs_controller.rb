@@ -4,18 +4,20 @@ class UserClubsController < ApplicationController
     @user_club = UserClub.new
   end
 
+  def destroy
+    @user_club.destroy
+  end
+
   def create
-    @user_club = UserClub.new(user_clubs_params)
+    user = current_user
+    club = @club
+    @user_club = UserClub.new(user_id:user.id, club_id:@club.id)
     # @user_club.save
     if @user_club.save
-      redirect_to new_clubs_path, notice: "Created user"
+      redirect_to :back, notice: "Created user"
     else
       render action: 'new'
     end
-  end
-
-  def destroy
-    @user_club.destroy
   end
 
   private

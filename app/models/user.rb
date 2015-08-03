@@ -1,9 +1,18 @@
 class User < ActiveRecord::Base
+<<<<<<< HEAD
+	
+  has_many :user_clubs 
+  has_many :clubs, through: :user_clubs
+
+  has_many :tags, through: :clubs
+
+=======
   has_many :user_clubs
   has_many :tags, through: :clubs
 
   has_many :clubs, through: :user_clubs
 
+>>>>>>> 8b728e817edd7eb70398821c982ddf711f8941d0
   validates :name, :username, :email, :password, :password_confirmation, presence: true, length: { minimum: 2}
   validates :password, confirmation: true
   validates :email, uniqueness: true

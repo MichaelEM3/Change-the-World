@@ -23,6 +23,7 @@ class ClubsController < ApplicationController
   end
 
   def create
+
     @club = Club.new(club_params)
 
     if @club.save
