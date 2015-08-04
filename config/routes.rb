@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  resources :activities
+  get 'activities/index'
+
   resources :stories
   get 'tags/show'
 
@@ -8,6 +11,9 @@ Rails.application.routes.draw do
   resources :users
   resources :clubs do
     resources :stories
+  end
+  resources :stories do
+    resources :commentaries
   end
   resources :user_clubs
 

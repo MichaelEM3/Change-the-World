@@ -34,6 +34,21 @@
 	</div>
 	<% end %>
 
+<div class="activities">
+	<h1>Activity Feed</h1>
+	<% @activities.each do |activity| %>
+		<div class="activity">
+			<p><b>
+				<%= activity.trackable.title %>
+			</b></p>
+			<p>
+				<%=h truncate(activity.trackable.story, :length => 10) %>
+			</p>
+			<%= link_to activity.owner.name, activity.owner if activity.owner %>
+		</div>
+	<% end %>
+</div>
+
 
 <!-- <p>
 	Tags:

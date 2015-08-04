@@ -11,10 +11,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150803173024) do
+ActiveRecord::Schema.define(version: 20150803223129) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "activities", force: :cascade do |t|
+    t.integer  "trackable_id"
+    t.string   "trackable_type"
+    t.integer  "owner_id"
+    t.string   "owner_type"
+    t.string   "key"
+    t.text     "parameters"
+    t.integer  "recipient_id"
+    t.string   "recipient_type"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "activities", ["owner_id", "owner_type"], name: "index_activities_on_owner_id_and_owner_type", using: :btree
+  add_index "activities", ["recipient_id", "recipient_type"], name: "index_activities_on_recipient_id_and_recipient_type", using: :btree
+  add_index "activities", ["trackable_id", "trackable_type"], name: "index_activities_on_trackable_id_and_trackable_type", using: :btree
 
   create_table "clubs", force: :cascade do |t|
     t.string   "title"
@@ -28,6 +45,25 @@ ActiveRecord::Schema.define(version: 20150803173024) do
     t.datetime "updated_at",         null: false
     t.string   "thumbtag"
   end
+
+  create_table "commentaries", force: :cascade do |t|
+    t.text     "comment"
+    t.integer  "story_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "commentaries", ["story_id"], name: "index_commentaries_on_story_id", using: :btree
+
+  create_table "posts", force: :cascade do |t|
+    t.string   "title"
+    t.text     "body"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "posts", ["user_id"], name: "index_posts_on_user_id", using: :btree
 
   create_table "stories", force: :cascade do |t|
     t.integer  "club_id"
@@ -77,11 +113,15 @@ ActiveRecord::Schema.define(version: 20150803173024) do
     t.string   "avatar_content_type"
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
+    t.string   "uid"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
+  add_index "users", ["uid"], name: "index_users_on_uid", using: :btree
   add_index "users", ["username"], name: "index_users_on_username", unique: true, using: :btree
 
+  add_foreign_key "commentaries", "stories"
+  add_foreign_key "posts", "users"
   add_foreign_key "stories", "clubs"
   add_foreign_key "tag_clubs", "clubs"
   add_foreign_key "tag_clubs", "tags"
