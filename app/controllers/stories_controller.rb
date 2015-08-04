@@ -66,6 +66,7 @@ class StoriesController < ApplicationController
     def set_club
       @club = current_user.user_clubs.find(params[:club_id])
     end
+    
     # Never trust parameters from the scary internet, only allow the white list through.
     def story_params
       params.require(:story).permit(:club_id, :title, :story)
