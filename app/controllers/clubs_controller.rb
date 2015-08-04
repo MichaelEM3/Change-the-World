@@ -4,6 +4,7 @@ class ClubsController < ApplicationController
 
   def index
     @club = Club.all
+    @activities = PublicActivity::Activity.order("created_at desc")
     if params[:search]
       @club = Club.search(params[:search]).order("created_at DESC")
     else
@@ -18,6 +19,8 @@ class ClubsController < ApplicationController
   def show
     @club = Club.find(params[:id])
     @story= Story.new
+    @stories = Story.find(params[:id])
+    @commentary = Commentary.new
   end
 
   def edit
