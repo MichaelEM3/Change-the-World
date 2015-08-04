@@ -12,21 +12,23 @@
 Tags:
  tag.name
  end  -->
-
-<% @club.stories.each do |stor| %>
-  <h4><%= stor.title %></h4>
-  <p><%= stor.story%></p>
+ ************************
+<%@stories.each_with_index do |story, index| %>
+  <h4><%= story.title %></h4>
+  <p><%= story.story%></p>
   <% if current_user.user_in_club(@club.id) %>
     <h3>Leave a comment:</h3>
       <%= flash[:error] unless flash[:error].blank? %>
-      <p><% stor.commentaries.each do |com| %>
+      <p><% story.commentaries.each do |com| %>
           <%= com.comment %><br>
           <% end %></p>
-      <%= render 'commentaries/form', locals: {story: stor} %>
+      <%= render 'commentaries/form', locals: {story: story} %>
 
   <% end %>
 
 <%end%>
+<%= paginate @stories%>
+************************
 
 <% if current_user.user_in_club(@club.id) && current_user.user_admin_in_club?(@club.id) %>
   <h3>New Story</h3>
