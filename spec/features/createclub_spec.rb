@@ -14,7 +14,6 @@ end
 
 it 'should be at clubs/new' do
   visit '/clubs/new'
-    current_path.should == '/login'
+    expect(current_path).to be == '/login'
   end
 end
-

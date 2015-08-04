@@ -19,6 +19,7 @@ class ClubsController < ApplicationController
   def show
     @club = Club.find(params[:id])
     @story= Story.new
+    # @stories = @club.stories.find(@story)
     @stories = @club.stories.page(params[:page]).per(3)
     @commentary = Commentary.new
   end

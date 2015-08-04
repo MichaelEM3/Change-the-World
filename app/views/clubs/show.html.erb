@@ -14,16 +14,16 @@ Tags:
  end  -->
  ************************
 <%@stories.each_with_index do |story, index| %>
-  <h4><%= story.title %></h4>
+  <h3><%= story.title %></h3>
   <p><%= story.story%></p>
   <% if current_user.user_in_club(@club.id) %>
-    <h3>Leave a comment:</h3>
+    <h4>Leave a comment:</h4>
       <%= flash[:error] unless flash[:error].blank? %>
       <p><% story.commentaries.each do |com| %>
           <%= com.comment %><br>
           <% end %></p>
       <%= render 'commentaries/form', locals: {story: story} %>
-
+      <hr>
   <% end %>
 
 <%end%>
