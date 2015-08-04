@@ -12,6 +12,9 @@ Rails.application.routes.draw do
   resources :clubs do
     resources :stories
   end
+  resources :stories do
+    resources :commentaries
+  end
   resources :user_clubs
 
   resources :tags
