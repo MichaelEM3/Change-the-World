@@ -1,28 +1,3 @@
+<h1> Info update </h1>
 
-<%= form_for @current_user, html: {multipart: true} do |f| %>
-  <p>
-    <%= f.label :username %>
-    <%= f.text_field :username %>
-  </p>
-  <p>
-    <%= f.label :name %>
-    <%= f.text_field :name %>
-  </p>
-  <p>
-    <%= f.label :email %>
-    <%= f.email_field :email %>
-  </p>
-  <p>
-    <%= f.label :password %>
-    <%= f.password_field :password %>
-  </p>
-  <p>
-    <%= f.label :password_confirmation %>
-    <%= f.password_field :password_confirmation %>
-  </p>
-      <%= f.label :image, "Attach an Image" %><br>
-      <%= f.file_field :image %>
-  <p>
-    <%= f.submit %>
-  </p>
-  <% end %>
+<%= render partial: 'form' %>
