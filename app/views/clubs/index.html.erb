@@ -2,7 +2,7 @@
 <!-- form_tag search_tags_path  -->
 <!-- <input class "xyz" name="query" placeholder="search tags" type="text" autocomplete="off"> -->
 <!-- end  -->
-<%= link_to 'Profile', profile_path %>
+<%= link_to 'Profile', user_path(:id) %>
 
 <%= form_tag(clubs_path, :method => "get", id: "search-form") do %>
 	<%= text_field_tag :search, params[:search], placeholder: "Search Clubs" %>
@@ -65,4 +65,8 @@
  -->
 	<div id="New"><%= link_to 'Create a New Club', new_club_path %></div>
 </div>
+
+
 <%= link_to 'back', '/' %>
+
+

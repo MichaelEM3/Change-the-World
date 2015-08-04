@@ -65,7 +65,7 @@ class ClubsController < ApplicationController
   end
 
   def unjoin
-    UserClub.find_by(club:@club, user:current_user).destroy unless current_user.user_admin_in_club?(@club.id)
+    UserClub.find_by(club:@club, user:current_user).destroy 
     redirect_to @club
   end
 
