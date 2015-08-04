@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  resources :activities
+  get 'activities/index'
+
   resources :stories
   get 'tags/show'
 

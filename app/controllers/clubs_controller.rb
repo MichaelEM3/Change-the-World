@@ -4,6 +4,7 @@ class ClubsController < ApplicationController
 
   def index
     @club = Club.all
+    @activities = PublicActivity::Activity.order("created_at desc")
     if params[:search]
       @club = Club.search(params[:search]).order("created_at DESC")
     else
