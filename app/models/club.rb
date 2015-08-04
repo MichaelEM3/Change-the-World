@@ -17,6 +17,7 @@ class Club < ActiveRecord::Base
 	# 		tag.name
 	# 	end.join(", ")
 	# end
+	
 
 	# def tag_list=(tags_string)
 	# 	tag_names = tags_string.split(",").collect{|s| s.strip.downcase}.uniq
