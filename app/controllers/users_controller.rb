@@ -5,6 +5,11 @@ class UsersController < ApplicationController
     @user = User.new
   end
 
+  def edit
+    @user = current_user
+    # redirect_to profile_path
+  end
+
   def create
     @user = User.new(user_params)
 
