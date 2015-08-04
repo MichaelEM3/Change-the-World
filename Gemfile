@@ -43,6 +43,8 @@ gem 'paperclip'
 
 gem 'better_errors'
 
+gem 'kaminari'
+
 # Use Unicorn as the app server
 # gem 'unicorn'
 

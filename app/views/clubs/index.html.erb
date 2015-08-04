@@ -38,6 +38,7 @@
 	<h1>Activity Feed</h1>
 	<% @activities.each do |activity| %>
 		<div class="activity">
+
 	  <% if activity.trackable %>
 	    <p>
 	      <b>
@@ -63,6 +64,7 @@
 	 end
 </p>
  -->
+
 	<div id="New"><%= link_to 'Create a New Club', new_club_path %></div>
 </div>
 
