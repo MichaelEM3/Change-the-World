@@ -1,4 +1,14 @@
 Rails.application.configure do
+
+  # Amazon Web Services S3
+  config.paperclip_defaults = {
+    :storage => :s3,
+    :s3_credentials => {
+      :bucket => 'consignnyc', 
+      :access_key_id => ENV['AKIAJAVIT2WUDYCASMAA'],
+      :secret_access_key => ENV['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']
+    }
+  }
   # Settings specified here will take precedence over those in config/application.rb.
 
   # Code is not reloaded between requests.

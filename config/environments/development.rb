@@ -1,4 +1,13 @@
 Rails.application.configure do
+
+   # Amazon Web Services - S3
+  config.paperclip_defaults = {
+    :storage => :s3,
+    :s3_credentials => {
+      :bucket => 'consignnyc',
+      :s3_credentials => "#{Rails.root}/config/aws.yml",
+    }
+  }
   # Settings specified here will take precedence over those in config/application.rb.
 
   # In the development environment your application's code is reloaded on

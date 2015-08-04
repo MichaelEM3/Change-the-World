@@ -1,3 +1,4 @@
+<h1> Profile Page </h1>
 
 <p><%= current_user.name %></p>
 <p><%= current_user.username %></p>
@@ -5,4 +6,4 @@
 <%= image_tag current_user.avatar(:large) %>
 <p> Show page for user </p>
 
-<%= link_to 'Update Profile', user_update_path %>
+<%= link_to 'Update Profile', edit_user_path(:id) %>
