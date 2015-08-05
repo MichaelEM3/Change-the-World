@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150803223129) do
+ActiveRecord::Schema.define(version: 20150805013824) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -54,6 +54,18 @@ ActiveRecord::Schema.define(version: 20150803223129) do
   end
 
   add_index "commentaries", ["story_id"], name: "index_commentaries_on_story_id", using: :btree
+
+  create_table "projects", force: :cascade do |t|
+    t.integer  "club_id"
+    t.string   "name"
+    t.text     "description"
+    t.string   "location"
+    t.date     "due_date"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "projects", ["club_id"], name: "index_projects_on_club_id", using: :btree
 
   create_table "stories", force: :cascade do |t|
     t.integer  "club_id"
@@ -109,6 +121,7 @@ ActiveRecord::Schema.define(version: 20150803223129) do
   add_index "users", ["username"], name: "index_users_on_username", unique: true, using: :btree
 
   add_foreign_key "commentaries", "stories"
+  add_foreign_key "projects", "clubs"
   add_foreign_key "stories", "clubs"
   add_foreign_key "tag_clubs", "clubs"
   add_foreign_key "tag_clubs", "tags"

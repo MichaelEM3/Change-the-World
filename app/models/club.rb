@@ -5,6 +5,7 @@ class Club < ActiveRecord::Base
   # has_many :tag_clubs, dependent: :destroy
   # has_many :tags, through: :tag_clubs
   has_many :stories, dependent: :destroy
+  has_many :projects, dependent: :destroy
 
   validates :title, :description, :location, presence: true
   validates :description, length: { minimum: 20}
@@ -17,7 +18,7 @@ class Club < ActiveRecord::Base
 	# 		tag.name
 	# 	end.join(", ")
 	# end
-	
+
 
 	# def tag_list=(tags_string)
 	# 	tag_names = tags_string.split(",").collect{|s| s.strip.downcase}.uniq
