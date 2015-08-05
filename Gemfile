@@ -15,9 +15,6 @@ gem 'aws-sdk', '~> 1.61.0'
 
 gem 'faker'
 
-gem 'simple_form', '~> 3.1.0'
-
-
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
