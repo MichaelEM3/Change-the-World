@@ -1,6 +1,6 @@
 <div>
-  <p><%= link_to 'Edit', edit_club_path(@club)  if  current_user.user_in_club(@club.id) && current_user.user_admin_in_club?(@club.id) %></p>
-  <p><%= link_to 'Destroy', @club, method: :delete, data: { confirm: 'Are you sure?' } if current_user.user_in_club(@club.id) && current_user.user_admin_in_club?(@club.id) %></p>
+    <p><%= link_to 'Edit', edit_club_path(@club) if current_user && current_user.user_in_club(@club.id) && current_user.user_admin_in_club?(@club.id) %></p>
+    <p><%= link_to 'Destroy', @club, method: :delete, data: { confirm: 'Are you sure?' } if current_user && current_user.user_in_club(@club.id) && current_user.user_admin_in_club?(@club.id) %></p>
 </div>
 
 <p><%= @club.title %></p>
@@ -16,7 +16,8 @@ Tags:
 <%@stories.each_with_index do |story, index| %>
   <h3><%= story.title %></h3>
   <p><%= story.story%></p>
-  <% if current_user.user_in_club(@club.id) %>
+
+  <% if current_user && current_user.user_in_club(@club.id) %>
     <h4>Leave a comment:</h4>
       <%= flash[:error] unless flash[:error].blank? %>
       <p><% story.commentaries.each do |com| %>
@@ -30,7 +31,8 @@ Tags:
 <%= paginate @stories%>
 ************************
 
-<% if current_user.user_in_club(@club.id) && current_user.user_admin_in_club?(@club.id) %>
+
+<% if current_user && current_user.user_in_club(@club.id) && current_user.user_admin_in_club?(@club.id) %>
   <h3>New Story</h3>
   <div id='creatorfeed'>
     <%= flash[:error] unless flash[:error].blank? %>
