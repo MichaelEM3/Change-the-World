@@ -12,6 +12,9 @@ Rails.application.routes.draw do
   resources :clubs do
     resources :stories
   end
+  resources :clubs do
+    resources :projects
+  end
   resources :stories do
     resources :commentaries
   end
