@@ -1,5 +1,7 @@
 class User < ActiveRecord::Base
 
+  has_many :posts
+
   has_many :clubs, through: :user_clubs
   has_many :user_clubs
   has_many :tags, through: :clubs
@@ -8,6 +10,9 @@ class User < ActiveRecord::Base
   validates :password, confirmation: true
   validates :email, uniqueness: true
   has_secure_password
+
+  has_attached_file :avatar, styles: { large: "600x600>", medium: "300x300>", thumb: "150x150#"}
+  validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
 
   def user_in_club(club_id)
     UserClub.find_by(club: club_id, user: id) ? true : false

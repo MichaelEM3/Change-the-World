@@ -1,5 +1,6 @@
 require 'rails_helper'
 
+
 RSpec.describe 'Creating a club' do
   before(:each) do
       visit ('/signup')
@@ -15,8 +16,10 @@ RSpec.describe 'Creating a club' do
   end
 end
 
+
 it 'should be at clubs/new' do
   visit '/clubs/new'
     expect(current_path).to be == '/login'
   end
 end
+

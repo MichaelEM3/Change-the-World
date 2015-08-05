@@ -6,6 +6,8 @@
 <p><%= @club.title %></p>
 <p><%= @club.description %></p>
 <p><%= @club.location %></p>
+
+
 <p><%= image_tag @club.image(:large) %></p>
 
 <!-- @club.tags.each do |tag|
@@ -50,6 +52,7 @@ Tags:
 
     <p>Tags:
       <%= @club.thumbtag %></p>
+
 
     <% if current_user && @club.users.exists?(current_user) %>
     <%= button_to "Leave Club", unjoin_club_path(@club) unless current_user.user_admin_in_club?(@club.id)%>
