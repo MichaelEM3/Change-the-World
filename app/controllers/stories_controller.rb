@@ -64,7 +64,7 @@ class StoriesController < ApplicationController
     end
 
     def set_club
-      @club = current_user.user_clubs.find(params[:club_id])
+    current_user.user_clubs.find_by(club_id: params[:club_id])    
     end
     
     # Never trust parameters from the scary internet, only allow the white list through.
