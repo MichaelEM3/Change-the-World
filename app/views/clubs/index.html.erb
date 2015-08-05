@@ -48,7 +48,7 @@
 	    <p>
 	      	<%=h truncate(activity.trackable.story, :length => 10) %>
 	    </p>
-	    		<%= link_to activity.owner.name, activity.owner if activity.owner %>
+	    		<%= link_to activity.owner.name, activity.owner  if activity.owner %>
 	  <% else %>
 			<p> This club was deleted. :( </p>
 	  <% end %>
