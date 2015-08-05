@@ -10,8 +10,15 @@ class UsersController < ApplicationController
     # redirect_to profile_path
   end
 
+  def index
+      @user = User.find(params[:user_id])
+  end
+    
   def show
-  end 
+
+  @user = User.find(params[:user_id])
+    # @user = User.find_by(user_id: user_id)
+  end
 
   def create
     @user = User.new(user_params)
@@ -23,11 +30,6 @@ class UsersController < ApplicationController
       # render action: 'new'
       flash[:error] = 'An error occured!'
     end
-  end
-
-  def edit
-    @user = current_user
-    # redirect_to profile_path
   end
 
   def update
@@ -45,7 +47,7 @@ class UsersController < ApplicationController
 
 
   def user_params
-    params.require(:user)
+    params.require(:user_id)
     .permit(:username, :name, :email, :password, :password_confirmation, :avatar)
     # strong parameters!
   end

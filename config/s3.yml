@@ -1,0 +1,8 @@
+development:
+  access_key_id: AKIAIUEZBD7DB6RDXSHQ
+  secret_access_key: 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
+  bucket: wyncodeproject-development
+production:
+  access_key_id: AKIAIUEZBD7DB6RDXSHQ
+  secret_access_key: 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
+  bucket: wyncodeproject-production
