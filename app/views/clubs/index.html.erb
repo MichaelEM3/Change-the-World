@@ -2,7 +2,7 @@
 <!-- form_tag search_tags_path  -->
 <!-- <input class "xyz" name="query" placeholder="search tags" type="text" autocomplete="off"> -->
 <!-- end  -->
-<%= link_to 'Profile', user_path(:id) %>
+<%= link_to 'Profile', profile_path(current_user) %>
 
 <%= form_tag(clubs_path, :method => "get", id: "search-form") do %>
 	<%= text_field_tag :search, params[:search], placeholder: "Search Clubs" %>
@@ -48,13 +48,12 @@
 	    <p>
 	      	<%=h truncate(activity.trackable.story, :length => 10) %>
 	    </p>
-	    		<%= link_to activity.owner.name, owner_profile_path(:owner_id) %>
+	    		<%= activity.owner.name %>
 	  <% else %>
 			<p> This club was deleted. :( </p>
 	  <% end %>
 	<%end%>
 	</div>
-
 <!-- @users.each do |user| >
 if user.avatar? %>
  link_to (image_tag user.avatar(:thumb)), profile_path(user) >
