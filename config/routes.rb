@@ -20,7 +20,6 @@ Rails.application.routes.draw do
   resources :tags
 
   # root 'posts#index'
-  
   get '/users/:id/profile', to: 'users#show', as: 'profile'
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'
