@@ -16,12 +16,10 @@ Rails.application.routes.draw do
     resources :commentaries
   end
   resources :user_clubs
-  resources :posts
   resources :tags
 
-  # root 'posts#index'
   get '/users/:id/profile', to: 'users#show', as: 'profile'
-# 
+
   get '/users/:owner_id/owner_profile', to: 'users#show', as: 'owner_profile'
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'
@@ -32,7 +30,6 @@ Rails.application.routes.draw do
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'
   delete '/logout' => 'sessions#destroy'
-  get '/post' => 'posts#index'
 
   post '/clubs/:id/join', to: 'clubs#join', as: 'join_club'
   post '/clubs/:id/unjoin', to: 'clubs#unjoin', as: 'unjoin_club'
