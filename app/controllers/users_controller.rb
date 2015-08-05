@@ -1,12 +1,24 @@
 class UsersController < ApplicationController
-  skip_before_action :require_user, only: [:new, :create,:show]
+  skip_before_action :require_user, only: [:new, :create, :update, :edit]
+
 
   def new
     @user = User.new
   end
 
+  def edit
+    @user = current_user
+    # redirect_to profile_path
+  end
+
+  def index
+      @user = User.find(params[:user_id])
+  end
+
   def show
-    @user = User.find(current_user)
+  # @user = User.find(params[:user_id])
+
+    # @user = User.find_by(user_id: user_id)
   end
 
   def create
@@ -16,15 +28,28 @@ class UsersController < ApplicationController
       session[:user_id] = @user.id
       redirect_to clubs_path, notice: 'Created user'
     else
-      render action: 'new'
+      # render action: 'new'
+      flash[:error] = 'An error occured!'
+    end
+  end
+
+  def update
+    @user = current_user
+    if @user.update_attributes(user_params)
+      flash[:success] = "Profile updated"
+
+      redirect_to user_path
+    else
+      flash[:error] = 'An error occured!'
     end
   end
 
   private
 
+
   def user_params
-    params.require(:user)
-      .permit(:username, :name, :email, :password, :password_confirmation)
+    params.require(:user_id)
+    .permit(:username, :name, :email, :password, :password_confirmation, :avatar)
     # strong parameters!
   end
 end

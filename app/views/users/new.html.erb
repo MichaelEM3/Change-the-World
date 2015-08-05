@@ -1,6 +1,6 @@
 <h1> Sign Up </h1>
 
-<%= form_for @user, html: {multipart: true} do |f| %>
+<%= form_for @user, :remote => true do |f| %>
   <p>
     <%= f.label :username %>
     <%= f.text_field :username %>
@@ -20,10 +20,6 @@
   <p>
     <%= f.label :password_confirmation %>
     <%= f.password_field :password_confirmation %>
-  </p>
-      <%= f.label :image, "Attach an Image" %><br>
-      <%= f.file_field :image %>
-  <p>
     <%= f.submit %>
   </p>
   <% end %>

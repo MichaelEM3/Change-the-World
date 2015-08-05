@@ -3,6 +3,7 @@ class ClubsController < ApplicationController
   before_action :require_user, only: [:new]
 
   def index
+    @users = User.all
     @club = Club.all
     @activities = PublicActivity::Activity.order("created_at desc")
     if params[:search]
@@ -62,12 +63,16 @@ class ClubsController < ApplicationController
   end
 
   def join
-    UserClub.create(club:@club, user:current_user, role: 'user')
-    redirect_to @club
+    if current_user.nil?
+      redirect_to '/signup'
+    else
+      UserClub.create(club:@club, user:current_user, role: 'user') 
+      redirect_to @club
+    end
   end
 
   def unjoin
-    UserClub.find_by(club:@club, user:current_user).destroy unless current_user.user_admin_in_club?(@club.id)
+    UserClub.find_by(club:@club, user:current_user).destroy 
     redirect_to @club
   end
 
