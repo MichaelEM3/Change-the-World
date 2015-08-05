@@ -55,16 +55,6 @@ ActiveRecord::Schema.define(version: 20150805013824) do
 
   add_index "commentaries", ["story_id"], name: "index_commentaries_on_story_id", using: :btree
 
-  create_table "posts", force: :cascade do |t|
-    t.string   "title"
-    t.text     "content"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.integer  "user_id"
-  end
-
-  add_index "posts", ["user_id"], name: "index_posts_on_user_id", using: :btree
-
   create_table "projects", force: :cascade do |t|
     t.integer  "club_id"
     t.string   "name"
@@ -131,7 +121,6 @@ ActiveRecord::Schema.define(version: 20150805013824) do
   add_index "users", ["username"], name: "index_users_on_username", unique: true, using: :btree
 
   add_foreign_key "commentaries", "stories"
-  add_foreign_key "posts", "users"
   add_foreign_key "projects", "clubs"
   add_foreign_key "stories", "clubs"
   add_foreign_key "tag_clubs", "clubs"

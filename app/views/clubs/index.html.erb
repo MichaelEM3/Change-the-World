@@ -55,15 +55,14 @@
 	<%end%>
 	</div>
 
-<% @users.each do |user| %>
-<%= user.name %>
-<% if user.avatar? %>
-<%= link_to (image_tag user.avatar(:thumb)), profile_path(id: user.username) %>
-<% else %>
-<%= link_to image_tag("http://orig05.deviantart.net/c4a0/f/2013/036/5/d/marioquestionbox_by_camdencc-d5ty7xb.gif"), profile_path(id: user.username) %>
+<!-- @users.each do |user| >
+if user.avatar? %>
+ link_to (image_tag user.avatar(:thumb)), profile_path(user) >
+< else >
+< link_to image_tag("http://orig05.deviantart.net/c4a0/f/2013/036/5/d/marioquestionbox_by_camdencc-d5ty7xb.gif"), profile_path(user) >
 
-<% end %>
-<% end %>
+< end >
+< end > -->
 
 <!-- <p>
 	Tags:
@@ -78,5 +77,5 @@
 
 
 <%= link_to 'back', '/' %>
-
+<%= link_to 'Members Page', users_path %></div>
 
