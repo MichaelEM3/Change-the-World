@@ -1,11 +1,11 @@
 Rails.application.routes.draw do
+  root 'home#index'
+
   resources :activities
   get 'activities/index'
 
   resources :stories
   get 'tags/show'
-
-  root to: 'sessions#new'
 
   resource :sessions
   resources :users
