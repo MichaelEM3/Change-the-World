@@ -48,14 +48,22 @@
 	    <p>
 	      	<%=h truncate(activity.trackable.story, :length => 10) %>
 	    </p>
-	    		<%= link_to activity.owner.name, activity.owner if activity.owner %>
+	    		<%= link_to activity.owner.name, owner_profile_path(:owner_id) %>
 	  <% else %>
 			<p> This club was deleted. :( </p>
 	  <% end %>
 	<%end%>
 	</div>
 
+<% @users.each do |user| %>
+<%= user.name %>
+<% if user.avatar? %>
+<%= link_to (image_tag user.avatar(:thumb)), profile_path(id: user.username) %>
+<% else %>
+<%= link_to image_tag("http://orig05.deviantart.net/c4a0/f/2013/036/5/d/marioquestionbox_by_camdencc-d5ty7xb.gif"), profile_path(id: user.username) %>
 
+<% end %>
+<% end %>
 
 <!-- <p>
 	Tags:

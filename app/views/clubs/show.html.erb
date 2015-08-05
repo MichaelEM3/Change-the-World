@@ -46,7 +46,11 @@ Tags:
     <h2>Current Members:</h2>
     <ul>
       <% @club.user_clubs.each do |userclub| %>
-      <li><%= userclub.user.username %></li>
+      <% if userclub.user.avatar? %>
+        <%= image_tag userclub.user.avatar(:thumb) %>
+      <% else %>
+        <img src="http://orig05.deviantart.net/c4a0/f/2013/036/5/d/marioquestionbox_by_camdencc-d5ty7xb.gif">
+      <% end %>
       <% end %>
     </ul>
 
