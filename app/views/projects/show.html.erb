@@ -1,2 +1,8 @@
-<h1>Projects#show</h1>
-<p>Find me in app/views/projects/show.html.erb</p>
+<p>Title: <%= @project.name %></p>
+<p>Description: <%= @project.description %></p>
+<p>Location:<%= @project.location %></p>
+<p>Due Date: <%= @project.due_date %></p>
+
+<%= link_to "Back", club_projects_path%>
+<%= link_to "Edit", edit_club_project_path(@club, @project) %>
+<%# link_to "Delete", club_project_path(@club, @project), method: :delete, data: { confirm: 'Are you sure?' } %>
