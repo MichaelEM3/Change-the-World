@@ -62,8 +62,12 @@ class ClubsController < ApplicationController
   end
 
   def join
-    UserClub.create(club:@club, user:current_user, role: 'user')
-    redirect_to @club
+    if current_user.nil?
+      redirect_to '/signup'
+    else
+      UserClub.create(club:@club, user:current_user, role: 'user') 
+      redirect_to @club
+    end
   end
 
   def unjoin

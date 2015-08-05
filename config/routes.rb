@@ -1,11 +1,11 @@
 Rails.application.routes.draw do
+  root 'home#index'
+
   resources :activities
   get 'activities/index'
 
   resources :stories
   get 'tags/show'
-
-  root to: 'sessions#new'
 
   resource :sessions
   resources :users
@@ -20,7 +20,6 @@ Rails.application.routes.draw do
   resources :tags
 
   # root 'posts#index'
-  
   get '/users/:id/profile', to: 'users#show', as: 'profile'
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'
