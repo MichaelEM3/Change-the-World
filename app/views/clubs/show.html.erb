@@ -47,6 +47,7 @@ Tags:
      <ul>
       <% @club.user_clubs.each do |userclub| %>
       <% if userclub.user.avatar? %>
+
         <%= link_to image_tag(userclub.user.avatar(:thumb)), profile_path(:user_id) %>
       <% else %>
       <%= link_to image_tag("http://orig05.deviantart.net/c4a0/f/2013/036/5/d/marioquestionbox_by_camdencc-d5ty7xb.gif"), profile_path(:user_id) %>

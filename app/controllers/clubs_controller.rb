@@ -3,6 +3,7 @@ class ClubsController < ApplicationController
   before_action :require_user, only: [:new]
 
   def index
+    @users = User.all
     @club = Club.all
     @activities = PublicActivity::Activity.order("created_at desc")
     if params[:search]
