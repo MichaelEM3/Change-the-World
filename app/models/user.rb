@@ -20,6 +20,7 @@ class User < ActiveRecord::Base
 
   def user_admin_in_club?(club_id)
     userclub = UserClub.find_by(club: club_id, user: id)
+    return false if userclub.nil?
     userclub.role == 'admin' ? true : false
   end
 end
