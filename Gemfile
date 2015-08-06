@@ -10,7 +10,7 @@ gem 'pg'
 group :production do
   gem 'rails_12factor'
 end
-
+# gem install pg -- --with-pg-config=/Applications/Postgres.app/Contents/Versions/9.4/bin/pg_config
 # gem 'aws-sdk', '~> 1.61.0'
 
 gem 'faker'
