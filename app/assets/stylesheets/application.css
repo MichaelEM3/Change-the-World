@@ -18,7 +18,7 @@
   padding-bottom: 7em;
 }
 
-#nabar a {
+#navbar a {
   text-decoration: none;
 }
 
@@ -33,4 +33,10 @@
  display: inline-block;
  padding: 0em 2em;
  font-family: sans-serif;
+}
+
+h1 {
+  padding-top: 7em;
+  text-align: center;
+  font-family: sans-serif;
 }
