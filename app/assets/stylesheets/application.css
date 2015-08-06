@@ -14,6 +14,11 @@
  *= require_self
  */
 
+
+/*******************/
+/* Navigation Bar */
+/*****************/
+
 #navbar {
   padding-bottom: 7em;
 }
@@ -35,8 +40,12 @@
  font-family: sans-serif;
 }
 
-h1 {
-  padding-top: 7em;
+/*****************/
+/* Landing Page */
+/*****************/
+
+#title h1 {
+  padding-top: 3em;
   text-align: center;
   font-family: sans-serif;
 }
