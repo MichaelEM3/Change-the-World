@@ -2,6 +2,9 @@
 <!-- form_tag search_tags_path  -->
 <!-- <input class "xyz" name="query" placeholder="search tags" type="text" autocomplete="off"> -->
 <!-- end  -->
+<div class="clubsIndexbody">
+
+
 <%= link_to 'Profile', profile_path(current_user) unless current_user.nil? %>
 
 <div>
@@ -66,3 +69,5 @@ if user.avatar? %>
 
 <%= link_to 'back', '/' %>
 <%= link_to 'Members Page', users_path %></div>
+
+</div>
