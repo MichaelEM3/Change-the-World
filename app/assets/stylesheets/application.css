@@ -13,3 +13,56 @@
  *= require_tree .
  *= require_self
  */
+
+
+/*******************/
+/* Navigation Bar */
+/*****************/
+
+#navbar {
+  padding-bottom: 10em;
+  width: 100%;
+  position: fixed;
+}
+
+#navbar a {
+  text-decoration: none;
+}
+
+#navbar ul {
+ list-style-type: none;
+ margin: 0;
+ padding: 0;
+ padding-left: 30px;
+ height: 65px;
+}
+
+#navbar li {
+ display: inline-block;
+ padding: 0em .3em ;
+ font-family: sans-serif;
+}
+
+/*****************/
+/* Landing Page */
+/*****************/
+
+#title h1 {
+  padding-top: 3em;
+  text-align: center;
+  font-family: sans-serif;
+}
+
+#body{
+  margin-top: 0px;
+  padding-top: 100px;
+}
+
+#search-form{
+  margin-left: 25%;
+}
+
+#navMenuItems{
+  position: absolute;
+  top: -.5em; left: 65%;
+}
