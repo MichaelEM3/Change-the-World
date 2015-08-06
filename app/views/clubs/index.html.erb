@@ -2,7 +2,7 @@
 <!-- form_tag search_tags_path  -->
 <!-- <input class "xyz" name="query" placeholder="search tags" type="text" autocomplete="off"> -->
 <!-- end  -->
-<%= link_to 'Profile', profile_path(current_user) %>
+<%= link_to 'Profile', profile_path(current_user) unless current_user.nil?%>
 
 <%= form_tag(clubs_path, :method => "get", id: "search-form") do %>
 	<%= text_field_tag :search, params[:search], placeholder: "Search Clubs" %>
@@ -78,7 +78,5 @@ if user.avatar? %>
 
 
 <%= link_to 'back', '/' %>
-<<<<<<< HEAD
-=======
+
 <%= link_to 'Members Page', users_path %></div>
->>>>>>> 851f42b58419f9628367310c1e15dd061ed3bc84
