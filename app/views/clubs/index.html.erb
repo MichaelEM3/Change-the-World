@@ -2,7 +2,7 @@
 <!-- form_tag search_tags_path  -->
 <!-- <input class "xyz" name="query" placeholder="search tags" type="text" autocomplete="off"> -->
 <!-- end  -->
-<%= link_to 'Profile', user_path(:id) %>
+<%= link_to 'Profile', profile_path(current_user) %>
 
 <%= form_tag(clubs_path, :method => "get", id: "search-form") do %>
 	<%= text_field_tag :search, params[:search], placeholder: "Search Clubs" %>
@@ -49,23 +49,21 @@
 	      	<%=h truncate(activity.trackable.story, :length => 10) %>
 	    </p>
 
-	    		<%= link_to activity.owner.name, owner_profile_path(:owner_id) %>
+	    		<%= activity.owner.name %>
 
-	  <% else %>
+		  <% else %>
 			<p> This club was deleted. :( </p>
 	  <% end %>
 	<%end%>
 	</div>
+<!-- @users.each do |user| >
+if user.avatar? %>
+ link_to (image_tag user.avatar(:thumb)), profile_path(user) >
+< else >
+< link_to image_tag("http://orig05.deviantart.net/c4a0/f/2013/036/5/d/marioquestionbox_by_camdencc-d5ty7xb.gif"), profile_path(user) >
 
-<% @users.each do |user| %>
-<%= user.name %>
-<% if user.avatar? %>
-<%= link_to (image_tag user.avatar(:thumb)), profile_path(id: user.username) %>
-<% else %>
-<%= link_to image_tag("http://orig05.deviantart.net/c4a0/f/2013/036/5/d/marioquestionbox_by_camdencc-d5ty7xb.gif"), profile_path(id: user.username) %>
-
-<% end %>
-<% end %>
+< end >
+< end > -->
 
 <!-- <p>
 	Tags:
@@ -80,3 +78,7 @@
 
 
 <%= link_to 'back', '/' %>
+<<<<<<< HEAD
+=======
+<%= link_to 'Members Page', users_path %></div>
+>>>>>>> 851f42b58419f9628367310c1e15dd061ed3bc84

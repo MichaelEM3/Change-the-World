@@ -22,7 +22,7 @@ Rails.application.routes.draw do
   resources :tags
 
   get '/users/:id/profile', to: 'users#show', as: 'profile'
-# 
+
   get '/users/:owner_id/owner_profile', to: 'users#show', as: 'owner_profile'
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'

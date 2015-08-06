@@ -12,10 +12,9 @@ before(:each) do
 	click_button('Create User')
 end
 #do it
-it 'should be at clubs/5' do 
+it 'should be at clubs/5' do
 	visit ('/clubs/:id')
 	first('input[type="submit"]')
 # selecting the first "button"
 	end
 end
-
