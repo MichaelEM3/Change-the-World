@@ -1,6 +1,7 @@
 class ClubsController < ApplicationController
   before_action :set_club, only: [:show, :edit, :update, :destroy, :join, :unjoin]
   before_action :require_user, only: [:new]
+  before_action :require_club_admin, only: [:destroy, :update, :edit]
 
   def index
     @users = User.all
@@ -18,6 +19,7 @@ class ClubsController < ApplicationController
   end
 
   def show
+    @user = User.find(params[:id])
     @club = Club.find(params[:id])
     @story= Story.new
 
@@ -66,13 +68,13 @@ class ClubsController < ApplicationController
     if current_user.nil?
       redirect_to '/signup'
     else
-      UserClub.create(club:@club, user:current_user, role: 'user') 
+      UserClub.create(club:@club, user:current_user, role: 'user')
       redirect_to @club
     end
   end
 
   def unjoin
-    UserClub.find_by(club:@club, user:current_user).destroy 
+    UserClub.find_by(club:@club, user:current_user).destroy
     redirect_to @club
   end
 

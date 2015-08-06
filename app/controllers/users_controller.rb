@@ -11,23 +11,27 @@ class UsersController < ApplicationController
   end
 
   def index
-      @user = User.find(params[:user_id])
+      # @user = User.find(params[:user_id])
+    @users = User.all
   end
-    
-  def show
-  # @user = User.find(params[:user_id])
 
+  def show
+    @user = User.find(params[:id])
+    # @user = User.find(params[:name])
     # @user = User.find_by(user_id: user_id)
   end
 
   def create
+    # puts "********"
+    # puts params
+    # puts+= User.new(user_params)
     @user = User.new(user_params)
-
     if @user.save
+
       session[:user_id] = @user.id
-      redirect_to clubs_path, notice: 'Created user'
+      redirect_to root_path
     else
-      # render action: 'new'
+      render action: 'new'
       flash[:error] = 'An error occured!'
     end
   end
@@ -47,7 +51,7 @@ class UsersController < ApplicationController
 
 
   def user_params
-    params.require(:user_id)
+    params.require(:user)
     .permit(:username, :name, :email, :password, :password_confirmation, :avatar)
     # strong parameters!
   end
