@@ -19,9 +19,10 @@ class ClubsController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:id])
+    # @user = User.find(params[:id])
     @club = Club.find(params[:id])
     @story= Story.new
+
 
     # @stories = @club.stories.find(@story)
     @stories = @club.stories.page(params[:page]).per(3)

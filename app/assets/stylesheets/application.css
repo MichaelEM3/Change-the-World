@@ -4,8 +4,10 @@
 */
 
 #navbar {
+
   /*padding-bottom: 10em;*/
   height: 100px;
+
   width: 100%;
   position: fixed;
   /*background-color: black;*/
@@ -19,7 +21,7 @@
  list-style-type: none;
  margin: 0;
  padding: 0;
- padding-left: 30px;
+ padding-left: 20px;
  height: 65px;
 }
 

@@ -27,7 +27,7 @@ class StoriesController < ApplicationController
   def create
     @story = Story.new(story_params)
     if @story.save
-      redirect_to :back, notice: 'Story was successfully created.'
+      redirect_to :back
     else
       redirect_to club_path(@club), notice: 'Please enter title and story.'
     end
