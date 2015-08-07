@@ -1,6 +1,6 @@
-<p><%= @club.title %></p>
+<h2><%= @club.title %></h2>
 <p><%= @club.description %></p>
-<p><%= @club.location %></p>
+<p>Location: <%= @club.location %></p>
 
 
 <p><%= image_tag @club.image(:large) %></p>
@@ -19,6 +19,8 @@
       <%= flash[:error] unless flash[:error].blank? %>
       <p><% story.commentaries.each do |com| %>
           <%= com.comment %><br>
+          Posted by: <%= com.user.username %><br>
+          <%= time_ago_in_words(com.created_at) %>
           <% end %></p>
       <%= render 'commentaries/form', locals: {story: story} %>
       <hr>
@@ -63,4 +65,4 @@
     <br>
 
     <%= link_to 'Create New Project', new_club_project_path(@club) if current_user && current_user.user_in_club(@club.id) && current_user.user_admin_in_club?(@club.id) %><br>
-    <%= link_to 'View Current Projects', club_projects_path(@club) if current_user && current_user.user_in_club(@club.id) && current_user.user_admin_in_club?(@club.id)%>
+    <%= link_to 'View Current Projects', club_projects_path(@club) if current_user && current_user.user_in_club(@club.id)%>
