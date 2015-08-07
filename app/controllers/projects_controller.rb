@@ -9,7 +9,10 @@ class ProjectsController < ApplicationController
   end
 
   def index
+    # @club = current_user.clubs.last
     @projects = Project.all
+    # @projects = Project.last.club
+    # @projects = current_user.clubs.last.projects
   end
 
   def show
