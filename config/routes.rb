@@ -1,4 +1,14 @@
 Rails.application.routes.draw do
+  get 'tasks/new'
+
+  get 'tasks/index'
+
+  get 'tasks/edit'
+
+  get 'tasks/view'
+
+  get 'tasks/show'
+
   root 'home#index'
 
   resources :activities
@@ -18,8 +28,10 @@ Rails.application.routes.draw do
   resources :stories do
     resources :commentaries
   end
+  resources :projects do
+    resources :tasks
+  end
   resources :user_clubs
-  resources :tags
 
   get '/users/:id/profile', to: 'users#show', as: 'profile'
 

@@ -1,8 +1,26 @@
-<p>Title: <%= @project.name %></p>
+<h1><%= @project.name %></h1>
 <p>Description: <%= @project.description %></p>
-<p>Location:<%= @project.location %></p>
+<p>Location: <%= @project.location %></p>
 <p>Due Date: <%= @project.due_date %></p>
 
+<%= link_to "Edit", edit_club_project_path(@project.club, @project) %>
+<%= link_to "Delete", club_project_path(@project.club, @project), method: :delete, data: { confirm: 'Are you sure?' } %>
+
+
+<h2>Tasks:</h2>
+
+<%@tasks.each do |task| %>
+  <p><strong><%= task.title %></strong></p>
+  <p>Description: <%= task.description %></p>
+  <p>Due Date: <%= task.due_date %></p>
+  <p>Project Status: <%= task.completed ? "Completed": "Not Completed" %></p>
+  <%= link_to "Edit Task | Edit Completion Status", edit_project_task_path(@project.club, @project, task)%>
+  <%= link_to "Delete Task", club_project_path(@project.club) %>
+
+
+<% end %>
+<br>
+
+<%= link_to "Create New Task", new_project_task_path(@project)%><br>
+
 <%= link_to "Back", club_projects_path%>
-<%= link_to "Edit", edit_club_project_path(@club, @project) %>
-<%= link_to "Delete", club_project_path(@club, @project), method: :delete, data: { confirm: 'Are you sure?' } %>
