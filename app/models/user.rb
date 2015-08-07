@@ -1,6 +1,7 @@
 class User < ActiveRecord::Base
 
   has_many :posts
+  has_many :commentaries
 
   has_many :clubs, through: :user_clubs
   has_many :user_clubs

@@ -24,8 +24,10 @@ Tags:
       <%= flash[:error] unless flash[:error].blank? %>
       <p><% story.commentaries.each do |com| %>
           <%= com.comment %><br>
+            Posted by: <%= com.user.name %><br>
+            <%= time_ago_in_words(com.created_at)%>
           <% end %></p>
-      <%= render 'commentaries/form', locals: {story: story} %>
+      <%= render 'commentaries/form', locals: {story: story, user_id: current_user.id} %>
       <hr>
   <% end %>
 
