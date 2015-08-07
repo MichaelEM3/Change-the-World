@@ -1,13 +1,12 @@
 <h1>Projects</h1>
 
-<% @projects.each do |proj| %>
-<ul>
-  <li><%= link_to proj.name, club_project_path(proj.club, proj) %></li>
-  <li><%= proj.description%></li>
-</ul>
-
-<%end%>
+<% @projects.each do |projects| %>
+  <ul>
+    <li><%= link_to projects.name, club_project_path(projects.club, projects) %></li>
+    <li><%= projects.description%></li>
+  </ul>
+<% end%>
 
 <% if current_user %>
-  <%= link_to "Back", club_path(current_user.clubs.last) %>
+  <%# link_to "Return to Club", club_project_path(@club) %>
 <% end %>

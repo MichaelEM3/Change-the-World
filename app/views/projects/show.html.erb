@@ -14,8 +14,8 @@
   <p>Description: <%= task.description %></p>
   <p>Due Date: <%= task.due_date %></p>
   <p>Project Status: <%= task.completed ? "Completed": "Not Completed" %></p>
-  <%= link_to "Edit Task | Edit Completion Status", edit_project_task_path(@project.club, @project, task)%>
-  <%= link_to "Delete Task", club_project_path(@project.club) %>
+  <%# link_to "Edit Task | Edit Completion Status", edit_project_task_path(@project.club, @project, task)%>
+  <%# link_to "Delete Task", club_project_path(@project.club) %>
 
 
 <% end %>
