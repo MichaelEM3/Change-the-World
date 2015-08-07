@@ -26,11 +26,12 @@
 <div class= 'club body'>
 	<% @club.each do |club| %>
 	<div class="club">
-		<p><%= link_to club.title, club %></p>
+		<h1> <%= link_to club.title, club %> </h1>
 		<p>Club Description: <%= club.description %></p>
 		<p>Club Tags: <%= club.thumbtag %></p>
 	</div>
 	<% end %>
+
 </div>
 
 <div id="New"><%= link_to 'Create a New Club', new_club_path %></div>

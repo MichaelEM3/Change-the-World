@@ -1,6 +1,7 @@
 class CommentariesController < ApplicationController
   before_action :set_commentary, only: [:show, :edit, :update, :destroy]
   before_action :set_story, only: [:create]
+  before_action :set_user, only: [:create]
 
   def new
     @commentary = Commentary.new
@@ -47,12 +48,16 @@ class CommentariesController < ApplicationController
     @commentary = Commentary.find(params[:id])
   end
 
+  def set_user
+    @user = User.find_by(id: current_user.id)
+  end
+
   def set_story
     @story = Story.find(params[:story_id])
   end
 
   def commentary_params
-    params.require(:commentary).permit(:story_id, :comment)
+    params.require(:commentary).permit(:story_id, :comment, :user_id)
   end
 
 end
