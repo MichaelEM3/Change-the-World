@@ -16,7 +16,6 @@
 
   <% if current_user && current_user.user_in_club(@club.id) %>
     <h4>Leave a comment:</h4>
-      <%= flash[:error] unless flash[:error].blank? %>
       <p><% story.commentaries.each do |com| %>
           <%= com.comment %><br>
             Posted by: <%= com.user.username %><br>
