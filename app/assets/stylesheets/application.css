@@ -1,20 +1,26 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
- * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any styles
- * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
- * file per style scope.
- *
- *= require_tree .
- *= require_self
- */
 
+* This is a manifest file that'll be compiled into application.css, which will include all the files
+* listed below.
+*
+* Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+* or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+*
+* You're free to add application-wide styles to this file and they'll appear at the bottom of the
+* compiled file so the styles you add here take precedence over styles defined in any styles
+* defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+* file per style scope.
+*
+*= require_tree .
+*= require_self
+*/
 
+/*******************/
+/* Main Application */
+/*******************/
+
+html {
+  font-family: 'Playfair Display SC', serif;
+}
 /*******************/
 /* Navigation Bar */
 /*****************/
@@ -66,3 +72,206 @@
   position: absolute;
   top: -.5em; left: 65%;
 }
+
+
+/***************************/
+/* Beginning of Clubs Page */
+/***************************/
+
+.clubs_body {
+ background-color: #e2e6e9;
+ min-width: 110%;
+ min-height: 110%; 
+}
+
+.separator {
+height: 100px;
+}
+
+
+.button_response {
+
+}
+
+.about_text_container {
+clear: both;
+}
+
+
+/* about section */
+
+.clubs_information {
+  /* text-shadow: 6px 6px 0px rgba(0,0,0,0.2); */
+  text-shadow: 0px 4px 3px rgba(0,0,0,0.4),
+  0px 8px 13px rgba(0,0,0,0.1),
+  30px 8px 13px rgba(0,0,0,0.1);
+  color: #FFFF66;
+  text-align: center;
+  line-height: 42px;
+  font-size: 2em;
+}
+
+.clubs_title h1 {
+  color: #827c89;
+  font-size: 6em;
+  text-align: center;
+  text-shadow: 0px 4px 3px rgba(0,0,0,0.4),
+  0px 8px 13px rgba(0,0,0,0.1),
+  30px 8px 13px rgba(0,0,0,0.1);
+  background-color:  #f46954;
+
+}
+
+.club_infobox {
+  display: inline-block;
+}
+
+.club_about {
+  float: left;
+}
+
+.club_about p {
+  height: auto;
+  background-size: contain;
+}
+
+.about_container {
+  margin-left: 20%;
+  margin-right: 20%;
+  background-color:  #f46954; 
+}
+
+
+/* end of about section*/
+
+/* beg of button section*/
+
+
+
+.nav {
+  list-style: none;
+  text-align: center;
+}
+
+.nav .club_button, .nav a:visited {
+  display:block;
+  text-decoration: none;
+  color: #a7a7a7;
+  width: 84px;
+  background-image: ;
+  height: 84px;
+  text-align: center;
+  line-height: 84px;
+  font-family: 'Playfair Display SC', serif;
+  border-radius: 50%;
+  box-shadow: 0px 0px 12px #CB99C9, inset 0px 2px 3px #966FD6;
+  border: solid 1px transparent;
+}
+
+.club_button {
+ display: inline-block;
+ padding: 6em;
+ margin: 10em;
+}
+
+.club_button_container {
+  overflow: auto;
+  margin: auto;
+  display: inline-block;
+}
+
+.club_button_container li {
+  float: left;
+}
+
+.club_button:before {
+  display:block;
+  text-decoration: none;
+  background-image: -webkit-linear-gradient(top, #f7f7f7, #e7e7e7); 
+  background-image: -moz-linear-gradient(top, #f7f7f7, #e7e7e7); 
+  background-image: -ms-linear-gradient(top, #f7f7f7, #e7e7e7); 
+  background-image: -o-linear-gradient(top, #f7f7f7, #e7e7e7); 
+  color: #a7a7a7;
+  width: 74px;
+  height: 74px;
+  text-align: center;
+  line-height: 74px;
+  border-radius: 50%;
+  box-shadow: 0px 3px 8px #aaa, inset 0px 2px 3px #fff;
+  border: solid 1px transparent;
+}
+
+.club_button:hover {
+/*background-color: #36648B;
+opacity: 0.2;*/
+}
+
+.button_response {
+  clear: both;
+}
+
+.button_text {
+  font-size: 2em;
+}
+
+
+.club_button:active {
+  box-shadow: 10px 0px 25px #CB99C9 inset, 0px 0px 3px #e7e7e7;
+}
+
+
+.user_club_show, .stories_show, .edit_club_page_buttons  {
+  clear: both;
+  display: block;
+  margin-top: 100px;
+  margin-left: 15em;
+  margin-right: 15em;
+  margin-bottom: 50px;
+  line-height: 2em;
+}
+
+/* Club User photo section */
+
+.user_club_show li{
+  display: block;
+  margin-left: 20%;
+  margin-right: 20%;
+}
+
+/* end of the Club User photos section */
+
+.edit_club_page_buttons {
+  display: inline-block;
+
+}
+
+.edit_club_page_buttons li{
+  text-decoration: none;
+  font-family: 'Playfair Display SC', serif;
+  display: inline-block;
+  margin: 0 auto;
+  margin-top: 5%;
+  width: 84px;
+  height: 21px;
+  padding: 2em 4em 2em 4em;
+  border-radius: 40%;
+  text-align: center;
+  box-shadow: 0px 3px 8px #aaa, inset 0px 2px 3px #fff;
+}
+
+.edit_club_page_buttons li:nth-child(2){
+  margin-left: 4em;
+}
+
+/* end of button section*/
+
+.clubs_middle_section div{
+
+}
+
+.story_comment_bar {
+  clear: both;
+  float: ;
+}
+
+/* ------------------ end of clubs show page ---------------------- */

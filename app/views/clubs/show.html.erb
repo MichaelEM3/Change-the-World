@@ -1,72 +1,157 @@
-<div>
-    <p><%= link_to 'Edit', edit_club_path(@club) if current_user && current_user.user_in_club(@club.id) && current_user.user_admin_in_club?(@club.id) %></p>
-    <p><%= link_to 'Destroy', @club, method: :delete, data: { confirm: 'Are you sure?' } if current_user && current_user.user_in_club(@club.id) && current_user.user_admin_in_club?(@club.id) %></p>
+
+  
+
+<div class="separator">
 </div>
 
-<p><%= @club.title %></p>
-<p><%= @club.description %></p>
-<p><%= @club.location %></p>
+<!-- Beginning of toggled About section -->
+
+<div class="about_container">
+
+    <div class="button_response">
+          <div class="club_about"> <%= image_tag @club.image(:large) %> 
+          </div> 
+    </div>
+
+    <span class="clubs_title">
+            <h1><%= @club.title %></h1>
+    </span>
 
 
-<p><%= image_tag @club.image(:large) %></p>
+          <span class="clubs_information">
+            <p><%= @club.description %></p>
+            <hr>
+            <p><%= @club.location %></p>
+          </span>
 
-<!-- @club.tags.each do |tag|
-Tags:
- tag.name
- end  -->
- ************************
-<%@stories.each_with_index do |story, index| %>
-  <h3><%= story.title %></h3>
-  <p><%= story.story%></p>
+    <div class="about_text_container">
+      
+    </div>
 
-  <% if current_user && current_user.user_in_club(@club.id) %>
-    <h4>Leave a comment:</h4>
-      <%= flash[:error] unless flash[:error].blank? %>
-      <p><% story.commentaries.each do |com| %>
-          <%= com.comment %><br>
-          <% end %></p>
-      <%= render 'commentaries/form', locals: {story: story} %>
-      <hr>
-  <% end %>
+</div>
 
-<%end%>
-<%= paginate @stories%>
-************************
 
+  <!-- End of toggled About section-->
+
+    <div class="nav">
+      <ul class="nav">
+        <div class="club_button_container">
+          <li>
+            <a class="club_details club_button">
+              <span class="button_text">About</span>
+            </a>
+         </li>
+          <li>
+            <a class="club_stories club_button">
+              <span class="button_text">Posts</span>
+
+            </a></li>
+            <li>
+              <a class="club_users club_button">
+                <span class="button_text">Users</span>
+
+              </a>
+            </li>
+
+          </div>
+        </ul>
+      </div>
+
+<div class="clubs_middle_section">
+
+
+  <!-- Beginning of toggled Story section -->
+
+        <div class="stories_show"> 
+            <%@stories.each_with_index do |story, index| %>
+                <div class="story_info">
+                <h3><%= story.title %></h3>
+                <p><%= story.story%></p>
+                  <div class="leave_a_comment">
+                  <% if current_user && current_user.user_in_club(@club.id) %>
+                      <h4>Leave a comment:</h4>
+                  </div>
+                  <div  class="story_comments">
+                      <%= flash[:error] unless flash[:error].blank? %>
+                      <p>
+                        <% story.commentaries.each do |com| %>
+                        <%= com.comment %><br>
+                        <% end %>
+                      </p>
+                     <div class="story_comment_bar"> <%= render 'commentaries/form', locals: {story: story} %>
+                     </div>
+                  <% end %>
+                </div>
+                </div>
+            <%end%>
+
+            <% if current_user && current_user.user_in_club(@club.id) && current_user.user_admin_in_club?(@club.id) %>
+            
+                <h3>New Story</h3>
+                
+                <div id='creatorfeed'>
+                  <%= flash[:error] unless flash[:error].blank? %>
+                  <%= render 'stories/form'%>
+                </div>
+            <%end%>
+          </div>
+          <div class="pagination">
+            <%= paginate @stories%>
+        </div>
+
+  <!--  End of Story section -->
+
+  <!-- Beginning of toggled Club User manifest section -->
+      <div class="button_response">
+        <span class="user_club_show">
+          <h2>Current Members:</h2>
+            
+            <ul>
+              <% @club.user_clubs.each do |userclub| %>
+                <% if userclub.user.avatar? %>
+                <li> <%= link_to image_tag(userclub.user.avatar(:thumb)), profile_path(@user) %></li>
+                <% else %>
+                <li>  <%= link_to image_tag("http://orig05.deviantart.net/c4a0/f/2013/036/5/d/marioquestionbox_by_camdencc-d5ty7xb.gif"), profile_path(@user)
+                 %></li>
+                <% end %>
+              <% end %>
+            </ul>
+        </span>
+      </div>
+
+  <!-- End of Club User manifest section -->
+
+  <!-- end of CSSed text  -->
+   
+          <p>Club identifiers:
+            <%= link_to 'Create New Project', new_club_project_path(@club) %><br>
+            <%= link_to 'View Current Projects', club_projects_path(@club)%>
+</div>
+
+    <li><%= @club.thumbtag %></li>
 
 <% if current_user && current_user.user_in_club(@club.id) && current_user.user_admin_in_club?(@club.id) %>
-  <h3>New Story</h3>
-  <div id='creatorfeed'>
-    <%= flash[:error] unless flash[:error].blank? %>
-    <%= render 'stories/form'%>
-  </div>
-<%end%>
+<div class="edit_club_page_buttons"> <%= link_to 'Edit', edit_club_path(@club) %></div>
+<% end %>
 
+<div class="edit_club_page_buttons ">
 
-    <h2>Current Members:</h2>
-    <ul>
-      <% @club.user_clubs.each do |userclub| %>
-      <% if userclub.user.avatar? %>
+    <li>
+        <%= link_to 'Edit', edit_club_path(@club) if current_user && current_user.user_in_club(@club.id) && current_user.user_admin_in_club?(@club.id) %>
+    </li>
 
-        <%= link_to image_tag(userclub.user.avatar(:thumb)), profile_path(@user) %>
-      <% else %>
-      <%= link_to image_tag("http://orig05.deviantart.net/c4a0/f/2013/036/5/d/marioquestionbox_by_camdencc-d5ty7xb.gif"), profile_path(@user) %>
-      <% end %>
-      <% end %>
-    </ul>
+    <li>
+        <%= link_to 'Destroy', @club, method: :delete, data: { confirm: 'Are you sure?' } if current_user && current_user.user_in_club(@club.id) && current_user.user_admin_in_club?(@club.id) %>
+    </li>
+    <li> 
+        <% if current_user && @club.users.exists?(current_user) %>
+          <%= button_to "Leave Club", unjoin_club_path(@club) unless current_user.user_admin_in_club?(@club.id)%>
+        <% else %>
+          <%= button_to "Join Club", join_club_path(@club) %>
+        <% end %>
+    </li>
 
-    <p>Tags:
-      <%= @club.thumbtag %></p>
+    <li><%= link_to 'Back', clubs_path %></li>
 
+</div>
 
-    <% if current_user && @club.users.exists?(current_user) %>
-    <%= button_to "Leave Club", unjoin_club_path(@club) unless current_user.user_admin_in_club?(@club.id)%>
-    <% else %>
-    <%= button_to "Join Club", join_club_path(@club) %>
-    <% end %>
-    <%= link_to 'Back', clubs_path %>
-
-    <br>
-
-    <%= link_to 'Create New Project', new_club_project_path(@club) %><br>
-    <%= link_to 'View Current Projects', club_projects_path(@club)%>

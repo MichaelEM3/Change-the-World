@@ -31,4 +31,33 @@
 // // $(ready);
 // // $(document).on('page:load', ready);
 
-// $(document).on('ready page:load', ready);
+
+$(function(){
+  $('.club_users').on('click', function(){
+          $('.user_club_show').slideToggle();            
+      });     
+
+     $('.club_stories').on('click', function(){
+          $('.stories_show').slideToggle();            
+      });    
+    
+      $('.club_details').on('click', function(){
+          $('.club_about').slideToggle();            
+      });
+
+     // $('.leave_a_comment').on('click', function(){
+     //      $(this).sibling('story_comments').slideToggle();            
+     //  });
+
+       $('.leave_a_comment').on('click', function(){
+          $(this).next().slideToggle();            
+      });   
+
+      //  $('.leave_a_comment').on('click', function(){
+      //     $('.story_comments').slideToggle();            
+      // });  
+
+      // $('.leave_a_comment').on('click', function(){
+      //     $('.story_comments').slideToggle();            
+      // });    
+});
