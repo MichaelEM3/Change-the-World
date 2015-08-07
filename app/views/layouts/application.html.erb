@@ -6,7 +6,7 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-<body>
+ <body>
 
     <div id="navbar">
 
@@ -20,17 +20,18 @@
           <% else %>
             <p>There are no club containing the term(s) <%= params[:search] %>.</p>
           <% end %>
-      <% end %></div>
+        <% end %>
+      </div>
       <div id="navMenuItems">
-      <ul>
-        <li><%= link_to 'Join a Club', clubs_path %></li>
-        <li><%= link_to 'Create a New Club', new_club_path %></li>
-        <li><%= link_to 'Profile', profile_path(current_user) %></li>
-      <% if current_user %>
-        <li><p id="login"><%= current_user.username %>  |  <%= link_to "Log out", logout_path, method: "delete" %></p></li>
-      <% else %>
-        <li id="user"><p id="login"><%= link_to "Log In", login_path %>  |  <%= link_to "Sign Up", signup_path %></p></li>
-      </ul>
+        <ul>
+          <li><%= link_to 'Join a Club', clubs_path %></li>
+          <li><%= link_to 'Create a New Club', new_club_path %></li>
+          <li><%= link_to 'Profile', profile_path(current_user) %></li>
+        <% if current_user %>
+          <li><p id="login"><%= current_user.username %>  |  <%= link_to "Log out", logout_path, method: "delete" %></p></li>
+        <% else %>
+          <li id="user"><p id="login"><%= link_to "Log In", login_path %>  |  <%= link_to "Sign Up", signup_path %></p></li>
+        </ul>
       <% end %>
       </div>
     </div>
@@ -39,9 +40,10 @@
     <p class="alert"><%= alert %></p>
 
     <div id="body">
+    </div>
 
 <%= yield %>
 
-    </div>
+    
 </body>
 </html>
