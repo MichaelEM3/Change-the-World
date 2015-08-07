@@ -10,11 +10,6 @@
 
 <p><%= image_tag @club.image(:large) %></p>
 
-<!-- @club.tags.each do |tag|
-Tags:
- tag.name
- end  -->
- ************************
 <%@stories.each_with_index do |story, index| %>
   <h3><%= story.title %></h3>
   <p><%= story.story%></p>
@@ -47,13 +42,13 @@ Tags:
 
     <h2>Current Members:</h2>
     <ul>
-      <% @club.users.each do |user| %>
-      <% if user.avatar? %>
+      <% @club.user_clubs.each do |userclub| %>
+        <% if userclub.user.avatar? %>
+          <%= link_to image_tag(userclub.user.avatar(:thumb)), profile_path(userclub.user_id) %>
+        <% else %>
+          <%= link_to image_tag("http://orig05.deviantart.net/c4a0/f/2013/036/5/d/marioquestionbox_by_camdencc-d5ty7xb.gif"), profile_path(userclub.user_id) %>
+        <% end %>
 
-        <%= link_to image_tag(user.avatar(:thumb)), profile_path(user) %>
-      <% else %>
-      <%= link_to image_tag("http://orig05.deviantart.net/c4a0/f/2013/036/5/d/marioquestionbox_by_camdencc-d5ty7xb.gif"), profile_path(user) %>
-      <% end %>
       <% end %>
     </ul>
 
@@ -70,5 +65,5 @@ Tags:
 
     <br>
 
-    <%= link_to 'Create New Project', new_club_project_path(@club) %><br>
-    <%= link_to 'View Current Projects', club_projects_path(@club)%>
+    <%= link_to 'Create New Project', new_club_project_path(@club) if current_user && current_user.user_in_club(@club.id) && current_user.user_admin_in_club?(@club.id) %><br>
+    <%= link_to 'View Current Projects', club_projects_path(@club) if current_user && current_user.user_in_club(@club.id) && current_user.user_admin_in_club?(@club.id)%>

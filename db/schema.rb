@@ -95,6 +95,18 @@ ActiveRecord::Schema.define(version: 20150806210312) do
     t.string   "name"
   end
 
+  create_table "tasks", force: :cascade do |t|
+    t.integer  "project_id"
+    t.string   "title"
+    t.text     "description"
+    t.boolean  "completed"
+    t.date     "due_date"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "tasks", ["project_id"], name: "index_tasks_on_project_id", using: :btree
+
   create_table "user_clubs", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "club_id"
@@ -128,6 +140,7 @@ ActiveRecord::Schema.define(version: 20150806210312) do
   add_foreign_key "stories", "clubs"
   add_foreign_key "tag_clubs", "clubs"
   add_foreign_key "tag_clubs", "tags"
+  add_foreign_key "tasks", "projects"
   add_foreign_key "user_clubs", "clubs"
   add_foreign_key "user_clubs", "users"
 end
