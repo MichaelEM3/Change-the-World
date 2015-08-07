@@ -62,7 +62,7 @@
     <% end %>
 
     <%= link_to 'Create New Project', new_club_project_path(@club) if current_user && current_user.user_in_club(@club.id) && current_user.user_admin_in_club?(@club.id) %><br>
-    <%= link_to 'View Current Projects', club_projects_path(@club) if current_user && current_user.user_in_club(@club.id)%>
+    <%= link_to 'View Current Projects', club_projects_path(@club) if current_user %>
 
     <br><br>
 
