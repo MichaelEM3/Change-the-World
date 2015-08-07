@@ -1,29 +1,46 @@
+<div class="activities">
+<h1>Activity Feed</h1>
+<% @activities.each do |activity| %>
+	<div class="activity">
 
+	<% if activity.trackable %>
+		<p>
+			<b>
+				<%= activity.trackable.title %>
+			</b>
+		</p>
+		<p>
+				<%=h truncate(activity.trackable.story, :length => 10) %>
+		</p>
+				<%= activity.owner.name %>
+	<% else %>
+		<p> This club was deleted. :( </p>
+	<% end %>
+<%end%>
+</div>
+
+<<<<<<< HEAD
 <!-- form_tag search_tags_path  -->
 <!-- <input class "xyz" name="query" placeholder="search tags" type="text" autocomplete="off"> -->
 <!-- end  -->
 
 <div class="clubsIndexbody">
 <%= link_to 'Profile', profile_path(current_user) unless current_user.nil? %>
+=======
+<h1>Clubs</h1> 
+>>>>>>> 8770165463ab82c66b20f5413182aa956b8ca7ac
 
-<div>
-<p>Your tags:
-<% @club.each do |club| %>
-<%= club.thumbtag %></p>
-<% end %>
-<hr>
-</div>
+<div class="clubsIndexbody">
 
 <div class= 'club body'>
 	<% @club.each do |club| %>
 	<div class="club">
-		<p><%= club.title %></p>
-		<p><%= club.location %></p>
-		<p><%= club.description %></p>
-		<p><%= club.thumbtag %></p>
-		<p><%= link_to 'Show Me More', club %></p>
+		<p><%= link_to club.title, club %></p>
+		<p>Club Description: <%= club.description %></p>
+		<p>Club Tags: <%= club.thumbtag %></p>
 	</div>
 	<% end %>
+<<<<<<< HEAD
 
 	<div class="activities">
 	<h1>Activity Feed</h1>
@@ -72,4 +89,10 @@ if user.avatar? %>
 
 <%= link_to 'Members Page', users_path %></div>
 
+=======
+</div>
+
+<div id="New"><%= link_to 'Create a New Club', new_club_path %></div>
+<%= link_to 'Back', '/' %>
+>>>>>>> 8770165463ab82c66b20f5413182aa956b8ca7ac
 </div>
