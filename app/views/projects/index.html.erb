@@ -8,5 +8,5 @@
 <% end%>
 
 <% if current_user %>
-  <%# link_to "Return to Club", club_project_path(@club) %>
+  <%= link_to "Return to Club", club_path(params[:club_id]) %>
 <% end %>

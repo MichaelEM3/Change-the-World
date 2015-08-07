@@ -10,6 +10,7 @@ class ProjectsController < ApplicationController
 
   def index
     @projects = Project.where(club_id: params[:club_id])
+
   end
 
   def show
