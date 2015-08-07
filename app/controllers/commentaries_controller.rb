@@ -16,9 +16,9 @@ class CommentariesController < ApplicationController
   def create
     @commentary = Commentary.new(commentary_params)
     if @commentary.save
-      redirect_to :back, notice: 'Comment was successfully created.'
+      redirect_to :back
     else
-      redirect_to club_path(@club), notice: 'Please leave a comment.'
+      redirect_to :back, notice: "Please don't submit a blank comment."
     end
   end
 

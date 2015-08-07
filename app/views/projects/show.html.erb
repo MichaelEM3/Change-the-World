@@ -6,6 +6,7 @@
 <%= link_to "Edit", edit_club_project_path(@project.club, @project) %>
 <%= link_to "Delete", club_project_path(@project.club, @project), method: :delete, data: { confirm: 'Are you sure?' } %>
 
+<%= render 'tasks/form' %>
 
 <h2>Tasks:</h2>
 

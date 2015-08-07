@@ -10,7 +10,7 @@
 			</b>
 		</p>
 		<p>
-				<%=h truncate(activity.trackable.story, :length => 10) %>
+				<%=h truncate(activity.trackable.story, :length => 40) %>
 		</p>
 				<%= activity.owner.name %>
 	<% else %>
@@ -19,17 +19,14 @@
 <%end%>
 </div>
 
-
-
 <h1>Clubs</h1>
-
 
 <div class="clubsIndexbody">
 
 <div class= 'club body'>
 	<% @club.each do |club| %>
 	<div class="club">
-		<h1> <%= link_to club.title, club %> </h1>
+		<h4> <%= link_to club.title, club %> </h4>
 		<p>Club Description: <%= club.description %></p>
 		<p>Club Tags: <%= club.thumbtag %></p>
 	</div>
