@@ -1,6 +1,6 @@
 class TasksController < ApplicationController
   before_action :set_task, only: [:show, :edit, :update, :destroy]
-  before_action :set_project, only: [:index, :create, :new, :edit, :update]
+  before_action :set_project, only: [:index, :create, :new, :edit, :update, :destroy]
 
 
   def new
@@ -21,7 +21,7 @@ class TasksController < ApplicationController
   def create
     @task = Task.new(task_params)
     if @task.save
-      redirect_to club_project_path(@club, @project)
+      redirect_to club_project_path(@project.club , @project)
     else
       redirect_to project_tasks_path(@project)
     end
@@ -29,13 +29,13 @@ class TasksController < ApplicationController
 
   def update
     if @task.update(task_params)
-      redirect_to club_project_path(@club, @project)
+      redirect_to club_project_path(@project.club, @project)
     end
   end
 
   def destroy
     @task.destroy
-    redirect_to project_tasks_path(@project)
+    redirect_to club_project_path(@project.club, @project)
   end
 
 
