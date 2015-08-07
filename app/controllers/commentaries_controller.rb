@@ -59,5 +59,4 @@ class CommentariesController < ApplicationController
   def commentary_params
     params.require(:commentary).permit(:story_id, :comment, :user_id)
   end
-
 end

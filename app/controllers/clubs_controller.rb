@@ -69,11 +69,6 @@ class ClubsController < ApplicationController
     redirect_to @club
   end
 
-  def unjoin
-    UserClub.find_by(club:@club, user:current_user).destroy
-    redirect_to @club
-  end
-
   private
   def set_club
     @club = Club.find(params[:id])

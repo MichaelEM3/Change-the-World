@@ -1,7 +1,6 @@
 class UsersController < ApplicationController
   skip_before_action :require_user, only: [:new, :create, :update, :edit]
 
-
   def new
     @user = User.new
   end
@@ -49,7 +48,6 @@ class UsersController < ApplicationController
   end
 
   private
-
 
   def user_params
     params.require(:user)
