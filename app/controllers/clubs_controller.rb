@@ -19,24 +19,14 @@ class ClubsController < ApplicationController
   end
 
   def show
-    # @user = User.find(params[:id])
     @club = Club.find(params[:id])
     @story= Story.new
-
-
-    # @stories = @club.stories.find(@story)
     @stories = @club.stories.page(params[:page]).per(3)
     @commentary = Commentary.new
   end
 
   def edit
   end
-
-# def search
-#   @q  = "%#{params[:query]}%"
-#   @tag = Tag.where("name LIKE ? or description LIKE ? or short_description LIKE ?", @q, @q, @q)
-
-# end
 
   def create
     @club = Club.new(club_params)
@@ -72,11 +62,6 @@ class ClubsController < ApplicationController
       UserClub.create(club:@club, user:current_user, role: 'user')
       redirect_to @club
     end
-  end
-
-  def unjoin
-    UserClub.find_by(club:@club, user:current_user).destroy
-    redirect_to @club
   end
 
   def unjoin

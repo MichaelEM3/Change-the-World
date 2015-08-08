@@ -12,7 +12,6 @@ class UserClubsController < ApplicationController
     user = current_user
     club = @club
     @user_club = UserClub.new(user_id:user.id, club_id:@club.id)
-    # @user_club.save
     if @user_club.save
       redirect_to :back, notice: "Created user"
     else

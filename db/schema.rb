@@ -11,7 +11,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150806210553) do
+
+ActiveRecord::Schema.define(version: 20150808014550) do
+
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -51,9 +53,11 @@ ActiveRecord::Schema.define(version: 20150806210553) do
     t.integer  "story_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "user_id"
   end
 
   add_index "commentaries", ["story_id"], name: "index_commentaries_on_story_id", using: :btree
+  add_index "commentaries", ["user_id"], name: "index_commentaries_on_user_id", using: :btree
 
   create_table "conversations", force: :cascade do |t|
     t.integer  "sender_id"
@@ -126,7 +130,6 @@ ActiveRecord::Schema.define(version: 20150806210553) do
 
   create_table "tasks", force: :cascade do |t|
     t.integer  "project_id"
-    t.string   "title"
     t.text     "description"
     t.boolean  "completed"
     t.date     "due_date"
@@ -142,9 +145,11 @@ ActiveRecord::Schema.define(version: 20150806210553) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string   "role"
+    t.integer  "task_id"
   end
 
   add_index "user_clubs", ["club_id"], name: "index_user_clubs_on_club_id", using: :btree
+  add_index "user_clubs", ["task_id"], name: "index_user_clubs_on_task_id", using: :btree
   add_index "user_clubs", ["user_id"], name: "index_user_clubs_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|
@@ -164,14 +169,19 @@ ActiveRecord::Schema.define(version: 20150806210553) do
   add_index "users", ["username"], name: "index_users_on_username", unique: true, using: :btree
 
   add_foreign_key "commentaries", "stories"
+<<<<<<< HEAD
   add_foreign_key "messages", "conversations"
   add_foreign_key "messages", "users"
   add_foreign_key "posts", "users"
+=======
+  add_foreign_key "commentaries", "users"
+>>>>>>> ccc0163d1874630254ad7278bf169f5dff0cbc6a
   add_foreign_key "projects", "clubs"
   add_foreign_key "stories", "clubs"
   add_foreign_key "tag_clubs", "clubs"
   add_foreign_key "tag_clubs", "tags"
   add_foreign_key "tasks", "projects"
   add_foreign_key "user_clubs", "clubs"
+  add_foreign_key "user_clubs", "tasks"
   add_foreign_key "user_clubs", "users"
 end

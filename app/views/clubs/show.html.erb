@@ -1,6 +1,6 @@
-<p><%= @club.title %></p>
+<h2><%= @club.title %></h2>
 <p><%= @club.description %></p>
-<p><%= @club.location %></p>
+<p>Location: <%= @club.location %></p>
 
 
 <p><%= image_tag @club.image(:large) %></p>
@@ -16,11 +16,16 @@
 
   <% if current_user && current_user.user_in_club(@club.id) %>
     <h4>Leave a comment:</h4>
-      <%= flash[:error] unless flash[:error].blank? %>
-      <p><% story.commentaries.each do |com| %>
-          <%= com.comment %><br>
-          <% end %></p>
-      <%= render 'commentaries/form', locals: {story: story} %>
+      <% story.commentaries.each do |com| %>
+        <%=  div_for com do %>
+            <%= com.comment %><br>
+            Posted by: <%= com.user.username %><br>
+            <%= time_ago_in_words(com.created_at)%> ago<br>
+          <%= link_to 'Delete', story_commentary_path(story, com), method: :delete, data: { confirm: 'Are you sure?' }, remote: true %>
+          <br>
+          <% end %>
+          <% end %>
+      <%= render 'commentaries/form', locals: {story: story, user_id: current_user.id} %>
       <hr>
   <% end %>
 
@@ -46,6 +51,7 @@
         <% else %>
           <%= link_to image_tag("http://orig05.deviantart.net/c4a0/f/2013/036/5/d/marioquestionbox_by_camdencc-d5ty7xb.gif"), profile_path(userclub.user_id) %>
         <% end %>
+
       <% end %>
     </ul>
 
@@ -58,9 +64,10 @@
     <% else %>
     <%= button_to "Join Club", join_club_path(@club) %>
     <% end %>
-    <%= link_to 'Back', clubs_path %>
-
-    <br>
 
     <%= link_to 'Create New Project', new_club_project_path(@club) if current_user && current_user.user_in_club(@club.id) && current_user.user_admin_in_club?(@club.id) %><br>
-    <%= link_to 'View Current Projects', club_projects_path(@club) if current_user && current_user.user_in_club(@club.id) && current_user.user_admin_in_club?(@club.id)%>
+    <%= link_to 'View Current Projects', club_projects_path(@club) if current_user %>
+
+    <br><br>
+
+    <%= link_to 'Back', clubs_path %>

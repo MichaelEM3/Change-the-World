@@ -10,6 +10,7 @@ RSpec.describe 'Creating a club' do
         fill_in('Password', with: 'Testing')
       click_button('Create User')
   end
+  
   it 'should be at clubs/new' do
       visit('/clubs/new')
       expect(current_path).to be == '/login'

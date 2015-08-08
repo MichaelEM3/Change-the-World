@@ -3,24 +3,38 @@
 <p>Location: <%= @project.location %></p>
 <p>Due Date: <%= @project.due_date %></p>
 
-<%= link_to "Edit", edit_club_project_path(@project.club, @project) %>
-<%= link_to "Delete", club_project_path(@project.club, @project), method: :delete, data: { confirm: 'Are you sure?' } %>
+<%= link_to "Edit", edit_club_project_path(@project.club, @project) if current_user && current_user.user_in_club(@project.club.id) && current_user.user_admin_in_club?(@project.club.id) %>
+<%= link_to "Delete", club_project_path(@project.club, @project), method: :delete, data: { confirm: 'Are you sure?' } if current_user && current_user.user_in_club(@project.club.id) && current_user.user_admin_in_club?(@project.club.id) %><br><br>
 
-
-<h2>Tasks:</h2>
+<h2>Tasks</h2>
 
 <%@tasks.each do |task| %>
-  <p><strong><%= task.title %></strong></p>
   <p>Description: <%= task.description %></p>
   <p>Due Date: <%= task.due_date %></p>
   <p>Project Status: <%= task.completed ? "Completed": "Not Completed" %></p>
-  <%# link_to "Edit Task | Edit Completion Status", edit_project_task_path(@project.club, @project, task)%>
-  <%# link_to "Delete Task", club_project_path(@project.club) %>
+
+    <% task.users.each do |user| %>
+      <% if user.avatar? %>
+        <%= link_to image_tag(user.avatar(:thumb)), profile_path(user.id) %>
+      <% else %>
+        <%=link_to image_tag("http://orig05.deviantart.net/c4a0/f/2013/036/5/d/marioquestionbox_by_camdencc-d5ty7xb.gif"), profile_path(user.id) %>
+      <% end %>
+    <% end %>
 
 
-<% end %>
+    <% if current_user && task.users.include?(current_user) %>
+      <%= button_to "Leave Task", unjoin_task_path(@project, task) unless current_user.user_admin_in_club?(@project.club.id)%>
+    <% else %>
+      <%= button_to "Join Task", join_task_path(@project, task) %>
+    <% end %><br>
+
+    <%= link_to "Edit Task | Edit Completion Status", edit_project_task_path(@project.club, task) if current_user && current_user.user_in_club(@project.club.id) && current_user.user_admin_in_club?(@project.club.id)%><br>
+    <%= link_to "Delete Task", project_task_path(@project, task),  method: :delete, data: { confirm: 'Are you sure?' } if current_user && current_user.user_in_club(@project.club.id) && current_user.user_admin_in_club?(@project.club.id) %>
+    <% end %>
+
 <br>
-
-<%= link_to "Create New Task", new_project_task_path(@project)%><br>
-
+<% if current_user && current_user.user_in_club(@project.club.id) && current_user.user_admin_in_club?(@project.club.id) %>
+  <h2>Create a New Task</h2>
+  <%= render "tasks/form" %>
+<% end %>
 <%= link_to "Back", club_projects_path%>
