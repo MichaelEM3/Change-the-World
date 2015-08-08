@@ -12,9 +12,26 @@
   <p>Description: <%= task.description %></p>
   <p>Due Date: <%= task.due_date %></p>
   <p>Project Status: <%= task.completed ? "Completed": "Not Completed" %></p>
-  <%= link_to "Edit Task | Edit Completion Status", edit_project_task_path(@project.club, task) if current_user && current_user.user_in_club(@project.club.id) && current_user.user_admin_in_club?(@project.club.id)%><br>
-  <%= link_to "Delete Task", project_task_path(@project, task),  method: :delete, data: { confirm: 'Are you sure?' } if current_user && current_user.user_in_club(@project.club.id) && current_user.user_admin_in_club?(@project.club.id) %>
-<% end %>
+
+    <% @project.club.user_clubs.each do |userclub| %>
+      <% if userclub.user.avatar? %>
+        <%= link_to image_tag(userclub.user.avatar(:thumb)), profile_path(userclub.user_id) %>
+      <% else %>
+        <% link_to image_tag("http://orig05.deviantart.net/c4a0/f/2013/036/5/d/marioquestionbox_by_camdencc-d5ty7xb.gif"), profile_path(userclub.user_id) %>
+      <% end %>
+    <% end %>
+
+
+    <% if current_user && @project.club.users.exists?(current_user) %>
+      <%= button_to "Leave Task", unjoin_task_path(@project.club, @project) unless current_user.user_admin_in_club?(@project.club.id)%>
+    <% else %>
+      <%= button_to "Join Task", join_task_path(@project.club, @project) %>
+    <% end %>
+
+    <%= link_to "Edit Task | Edit Completion Status", edit_project_task_path(@project.club, task) if current_user && current_user.user_in_club(@project.club.id) && current_user.user_admin_in_club?(@project.club.id)%><br>
+    <%= link_to "Delete Task", project_task_path(@project, task),  method: :delete, data: { confirm: 'Are you sure?' } if current_user && current_user.user_in_club(@project.club.id) && current_user.user_admin_in_club?(@project.club.id) %>
+    <% end %>
+
 <br>
 <% if current_user && current_user.user_in_club(@project.club.id) && current_user.user_admin_in_club?(@project.club.id) %>
   <h2>Create a New Task</h2>

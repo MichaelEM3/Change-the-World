@@ -48,5 +48,7 @@ Rails.application.routes.draw do
 
   post '/clubs/:id/join', to: 'clubs#join', as: 'join_club'
   post '/clubs/:id/unjoin', to: 'clubs#unjoin', as: 'unjoin_club'
+  post '/clubs/:club_id/projects/:id/join', to: 'projects#join', as: 'join_task'
+  post 'clubs/:club_id/projects/:id/unjoin', to: 'projects#unjoin', as: 'unjoin_task'
 
 end

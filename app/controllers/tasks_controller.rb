@@ -37,17 +37,6 @@ class TasksController < ApplicationController
     redirect_to club_project_path(@project.club, @project)
   end
 
-  # def join
-  #   if current_user.nil?
-  #     redirect_to '/signup'
-  #   else
-  #     UserClub.create(club:@club, user:current_user, role: 'user')
-  #     redirect_to @club
-  # end
-  #
-  # def unjoin
-  #
-  # end
 
   private
 

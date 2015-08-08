@@ -1,6 +1,6 @@
 class ProjectsController < ApplicationController
-  before_action :set_project, only: [:show, :edit, :update, :destroy]
-  before_action :set_club, only: [:index, :show, :create, :edit, :update, :destroy]
+  before_action :set_project, only: [:show, :edit, :update, :destroy, :join, :unjoin]
+  before_action :set_club, only: [:index, :show, :create, :edit, :update, :destroy, :join, :unjoin]
 
   def new
     @project = Project.new
@@ -52,6 +52,20 @@ class ProjectsController < ApplicationController
       club_options << [c.title, c.id]
     end
     club_options
+  end
+
+  def join
+    if current_user.nil?
+      redirect_to '/signup'
+    else
+      UserClub.create(club:@project.club, user:current_user, task: @task)
+      redirect_to club_project_path(@project.club, @project)
+    end
+  end
+
+  def unjoin
+    UserClub.find_by(club:@project.club, user:current_user).destroy
+    redirect_to club_project_path(@project.club, @project)
   end
 
   private
