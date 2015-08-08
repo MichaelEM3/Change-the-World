@@ -42,6 +42,9 @@ gem 'better_errors'
 
 gem 'kaminari'
 
+gem 'public_activity', '~> 1.4.2'
+
+
 # Use Unicorn as the app server
 # gem 'unicorn'
 
@@ -59,5 +62,4 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.3.3'
   gem 'shoulda-matchers', '~> 2.8.0'
   gem 'capybara', '~> 2.4.4'
-  gem 'public_activity', '~> 1.4.2'
 end
