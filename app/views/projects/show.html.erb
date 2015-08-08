@@ -23,7 +23,7 @@
 
 
     <% if current_user && task.users.include?(current_user) %>
-      <%= button_to "Leave Task", unjoin_task_path(@project, task) unless current_user.user_admin_in_club?(@project.club.id)%>
+      <%= button_to "Leave Task", unjoin_task_path(@project, task)%>
     <% else %>
       <%= button_to "Join Task", join_task_path(@project, task) %>
     <% end %><br>
@@ -31,6 +31,7 @@
     <%= link_to "Edit Task | Edit Completion Status", edit_project_task_path(@project.club, task) if current_user && current_user.user_in_club(@project.club.id) && current_user.user_admin_in_club?(@project.club.id)%><br>
     <%= link_to "Delete Task", project_task_path(@project, task),  method: :delete, data: { confirm: 'Are you sure?' } if current_user && current_user.user_in_club(@project.club.id) && current_user.user_admin_in_club?(@project.club.id) %>
     <% end %>
+      <%= paginate @tasks, :window => 1 %> 
 
 <br>
 <% if current_user && current_user.user_in_club(@project.club.id) && current_user.user_admin_in_club?(@project.club.id) %>
