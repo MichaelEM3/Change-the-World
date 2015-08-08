@@ -11,7 +11,7 @@ body {
 .content {
   width: 200px;
   font-size: 36px;
-  line-height: 40px;
+  line-height: 80px;
   font-family: 'Muli';
   color: #ecf0f1;
   height: 40px;
@@ -20,18 +20,19 @@ body {
   left: 50%;
   margin-top: -15px;
   margin-left: -118px;
+
 }
 .content:before {
   content: '[';
   position: absolute;
   left: -30px;
   line-height: 40px;
+  height: 40px;
 }
 .content:after {
   content: ']';
   position: absolute;
   right: -30px;
-  line-height: 40px;
 }
 .content:after,
 .content:before {
@@ -157,6 +158,7 @@ body {
     border-style: solid;
     border-color: rgba(0,0,0,.2);
     background-color: white;
+    
 }
 .foo2 {   
     float: left;
@@ -167,6 +169,7 @@ body {
     border-style: solid;
     border-color: rgba(0,0,0,.2);
     background-color: #f4a32e;
+
 }
 /*circles home page*/
 /*.circle {
@@ -238,3 +241,18 @@ body {
   display: inline;
 }
 */
+
+.ourstroy {
+  white-space: wrap;
+  font-family: Helvetica Neue,Helvetica,Arial,sans-serif; 
+  font-size: 45px;
+  line-height: 2.0;
+}
+
+.about {
+  padding: 1%;
+  white-space: wrap;
+  line-height: 3.0;
+  font-size: 25px;
+  font-family: Helvetica Neue,Helvetica,Arial,sans-serif; 
+}

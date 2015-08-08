@@ -11,9 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
 ActiveRecord::Schema.define(version: 20150808014550) do
-
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -169,13 +167,10 @@ ActiveRecord::Schema.define(version: 20150808014550) do
   add_index "users", ["username"], name: "index_users_on_username", unique: true, using: :btree
 
   add_foreign_key "commentaries", "stories"
-<<<<<<< HEAD
+  add_foreign_key "commentaries", "users"
   add_foreign_key "messages", "conversations"
   add_foreign_key "messages", "users"
   add_foreign_key "posts", "users"
-=======
-  add_foreign_key "commentaries", "users"
->>>>>>> ccc0163d1874630254ad7278bf169f5dff0cbc6a
   add_foreign_key "projects", "clubs"
   add_foreign_key "stories", "clubs"
   add_foreign_key "tag_clubs", "clubs"

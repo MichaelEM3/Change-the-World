@@ -2,10 +2,9 @@
 <div class="profilebox">
 <div class = "listprofile">
 <strong><center>
-	<%= image_tag @user.avatar(:thumb) %>
-	<p><%= @user.name %></p>
-    <p><%= @user.username %></p>
-    <p><%= @user.email %></p>
+	<p><strong>Name:</strong> <%= @user.name %></p>
+    <p><strong>Username:</strong> <%= @user.username %></p>
+    <%= image_tag @user.avatar(:medium) %>
 </strong>
 </center>
 </div>
@@ -17,8 +16,8 @@
 <br>
 <br>
 <br>
-	<%= link_to 'Update Profile', edit_user_path(:id) %>
-	<%= link_to 'Back', clubs_path(:id) %>
+	<%= link_to 'Update Profile', edit_user_path(:id) %><br>
+    <%= link_to 'Back', clubs_path(:id) %>
 </div>
 <div class="droplet"></div>
 <div class="droplet"></div>
@@ -88,12 +87,4 @@
 <div class="droplet"></div>
 
 
-<!--
-<p><strong>Name:</strong> <%= @user.name %></p>
-<p><strong>Username:</strong> <%= @user.username %></p>
-<%= image_tag @user.avatar(#:medium) %>
-
-<br><br>
-<%= link_to #'Update Profile', edit_user_path(:id) %><br>
-<%= link_to #'Back', clubs_path(:id) %> -->
 
