@@ -19,8 +19,8 @@
       <p><% story.commentaries.each do |com| %>
           <%= com.comment %><br>
             Posted by: <%= com.user.username %><br>
-            <%= time_ago_in_words(com.created_at)%> ago
-          <% end %></p>
+            <%= time_ago_in_words(com.created_at)%> ago</p><br>
+          <% end %>
       <%= render 'commentaries/form', locals: {story: story, user_id: current_user.id} %>
       <hr>
   <% end %>
