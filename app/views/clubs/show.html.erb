@@ -16,10 +16,14 @@
 
   <% if current_user && current_user.user_in_club(@club.id) %>
     <h4>Leave a comment:</h4>
-      <p><% story.commentaries.each do |com| %>
-          <%= com.comment %><br>
+      <% story.commentaries.each do |com| %>
+        <%=  div_for com do %>
+            <%= com.comment %><br>
             Posted by: <%= com.user.username %><br>
-            <%= time_ago_in_words(com.created_at)%> ago</p><br>
+            <%= time_ago_in_words(com.created_at)%> ago<br>
+          <%= link_to 'Delete', story_commentary_path(story, com), method: :delete, data: { confirm: 'Are you sure?' }, remote: true %>
+          <br>
+          <% end %>
           <% end %>
       <%= render 'commentaries/form', locals: {story: story, user_id: current_user.id} %>
       <hr>
