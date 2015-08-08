@@ -13,8 +13,9 @@ class ProjectsController < ApplicationController
   end
 
   def show
-    @tasks = Task.all
+    @tasks = @project.tasks.all
     @task = @project.tasks.new
+    @club
   end
 
   def edit
