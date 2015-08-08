@@ -6,11 +6,10 @@
 #navbar {
 
   /*padding-bottom: 10em;*/
-  height: 100px;
-
+  height: 90px;
   width: 100%;
   position: fixed;
-  /*background-color: black;*/
+  background-color: #292929;
 }
 
 #navbar a {
