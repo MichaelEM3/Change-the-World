@@ -13,6 +13,8 @@
   <p>Due Date: <%= task.due_date %></p>
   <p>Project Status: <%= task.completed ? "Completed": "Not Completed" %></p>
 
+  <h3>Members handling this task:</h3>
+
     <% task.users.each do |user| %>
       <% if user.avatar? %>
         <%= link_to image_tag(user.avatar(:thumb)), profile_path(user.id) %>
@@ -21,6 +23,7 @@
       <% end %>
     <% end %>
 
+    <br><br>
 
     <% if current_user && task.users.include?(current_user) %>
       <%= button_to "Leave Task", unjoin_task_path(@project, task)%>
@@ -31,11 +34,46 @@
     <%= link_to "Edit Task | Edit Completion Status", edit_project_task_path(@project.club, task) if current_user && current_user.user_in_club(@project.club.id) && current_user.user_admin_in_club?(@project.club.id)%><br>
     <%= link_to "Delete Task", project_task_path(@project, task),  method: :delete, data: { confirm: 'Are you sure?' } if current_user && current_user.user_in_club(@project.club.id) && current_user.user_admin_in_club?(@project.club.id) %>
     <% end %>
-      <%= paginate @tasks, :window => 1 %> 
+      <%= paginate @tasks, :window => 1 %>
 
 <br>
 <% if current_user && current_user.user_in_club(@project.club.id) && current_user.user_admin_in_club?(@project.club.id) %>
   <h2>Create a New Task</h2>
   <%= render "tasks/form" %>
 <% end %>
+<h2>Live Chat:<h2>
+<!-- Include the PubNub Library -->
+<script src="https://cdn.pubnub.com/pubnub-dev.js"></script>
+
+<ul id="chat_log">
+</ul>
+<form id="chat">
+  <input type="text" name="chattext" id="chat_text">
+  <input type="submit" value="Submit">
+</form>
+
+<script type="text/javascript">
+    var PUBNUB_demo = PUBNUB.init({
+        publish_key: 'pub-c-442c28cb-bab8-4ac5-b5ac-d8cc6cba2e8f',
+        subscribe_key: 'sub-c-f38868fa-3e19-11e5-bcbe-0619f8945a4f'
+    });
+
+    PUBNUB_demo.subscribe({
+      channel: 'demo_tutorial',
+      message: function(m){$('#chat_log').append('<li type="circle">' + m.name + ': ' + m.text + '</li>')}
+    });
+
+    $( "#chat" ).submit(function( event ) {
+      var username = "<%= @current_user.username %>";
+      var text = $('#chat_text').val();
+      PUBNUB_demo.publish({
+        channel: 'demo_tutorial',
+        message: {'name': username, 'text': text}
+      });
+      event.preventDefault();
+    });
+</script>
+
+<br><br>
+
 <%= link_to "Back", club_projects_path%>
