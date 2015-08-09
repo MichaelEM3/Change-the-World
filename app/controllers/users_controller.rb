@@ -17,6 +17,8 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @clubs = @user.clubs
+    @projects = Project.where('club_id IN (?)', @clubs.map(&:id))
     # @user = User.find(params[:name])
     # @user = User.find_by(user_id: user_id)
   end

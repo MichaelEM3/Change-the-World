@@ -1,36 +1,3 @@
 /*// Place all the styles related to the projects controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/*/
-
-
-.input_container {
-	margin: auto 20vw auto 20vw;
-		background-color: rgb(80,187,182);
-		padding: 10em 20em 10em 20em;
-}
-
-.input_container h1 {
-	font-size: 4vw;
-	line-height: 4vw;
-		text-align: center;
-		font-family: 'Playfair Display SC', serif;
-		color: #fff;
-
-}
-
-.field {
-	margin-top: 1em;
-	margin-bottom: 1em;
-	padding-top: 1em;
-	padding-bottom: 1em;
-}
-
-.field_title {
-	text-align: center;
-	font-family: 'Playfair Display SC', serif;
-}
-
-.field_box {
-	width: 38vw;
-	height: 3vw;
-}

@@ -1,5 +1,13 @@
+
 /*
 * This is a manifest file that'll be compiled into application.css, which will include all the files
+=======
+
+
+/*
+=======
+/* This is a manifest file that'll be compiled into application.css, which will include all the files
+>>>>>>> 1b65e2521dadd94f752ecbf23de2ad8cb361d5b6
 * listed below.
 *
 * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
@@ -10,29 +18,38 @@
 * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
 * file per style scope.
 *
+>>>>>>> clubstyle
 *= require_tree .
 *= require_self
 */
 
+
 /*******************/
 /* Main Application */
 /*******************/
+
 
 html {
   font-family: 'Playfair Display SC', serif;
 }
 
 button::-moz-focus-inner { border: 0; }
+
+
 /*******************/
 /* Navigation Bar */
 /*****************/
 
+
 #navbar {
+  /*padding-bottom: 10em;*/
+  margin: 0;
+  padding: 0;
+  height: 50px;
   width: 100%;
   position: fixed;
-  background-color: #827c89;
-  padding-bottom: 20px;
-  padding-left: 200px;
+  background-color: #50bbb6;
+  z-index:9999;
 
 }
 
@@ -44,8 +61,8 @@ button::-moz-focus-inner { border: 0; }
  list-style-type: none;
  margin: 0;
  padding: 0;
- padding-left: 20px;
- height: 65px;
+ padding-left: 0px;
+ height: 40px;
 }
 
 #navbar li {
@@ -66,7 +83,7 @@ button::-moz-focus-inner { border: 0; }
 
 #body{
   margin-top: 0px;
-  padding-top: 2.5%;
+  padding-top: 50px;
 }
 
 #search-form{
@@ -78,4 +95,8 @@ button::-moz-focus-inner { border: 0; }
   top: -.5em; left: 65%;
 }
 
+
+.wow {
+  font-size: 12px;
+}
 
