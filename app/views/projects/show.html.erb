@@ -1,3 +1,5 @@
+
+
 <h1><%= @project.name %></h1>
 <p>Project description: <%= @project.description %></p>
 <p>Location: <%= @project.location %> | Due Date: <%= @project.due_date %></p>
@@ -46,8 +48,7 @@
   <!-- Include the PubNub Library -->
   <script src="https://cdn.pubnub.com/pubnub-dev.js"></script>
 
-  <ul id="chat_log">
-  </ul>
+  <ul id="chat_log"></ul>
   <form id="chat">
     <input type="text" name="chattext" id="chat_text">
     <input type="submit" value="Submit">
@@ -61,7 +62,8 @@
 
       PUBNUB_demo.subscribe({
         channel: 'demo_tutorial',
-        message: function(m){$('#chat_log').append('<li type="circle">' + m.name + ': ' + m.text + '</li>')}
+        message: function(m){$('#chat_log').prepend('<li type="circle">' + m.name + ': ' + m.text + '</li>')}
+
       });
 
       $( "#chat" ).submit(function( event ) {
@@ -71,6 +73,7 @@
           channel: 'demo_tutorial',
           message: {'name': username, 'text': text}
         });
+        $('#chat_text').val(' ');
         event.preventDefault();
       });
   </script>

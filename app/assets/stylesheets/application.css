@@ -22,10 +22,12 @@
 #navbar {
   width: 100%;
   position: fixed;
+  font-family:
 }
 
 #navbar a {
   text-decoration: none;
+  font
 }
 
 #navbar ul {
@@ -39,7 +41,6 @@
 #navbar li {
  display: inline-block;
  padding: 0em .3em ;
- font-family: sans-serif;
 }
 
 /*****************/
@@ -59,9 +60,18 @@
 
 #search-form{
   margin-left: 25%;
+   
 }
 
 #navMenuItems{
   position: absolute;
   top: -.5em; left: 65%;
+}
+
+
+#chat_log {
+  border-style: solid;
+  width: 300px;
+  height: 300px;
+  overflow: scroll;
 }

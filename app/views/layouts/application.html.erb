@@ -3,6 +3,7 @@
 <head>
   <title>Changetheworld</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag    params[:controller] %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
@@ -11,11 +12,10 @@
     <div id="navbar">
 
     <div><%= link_to 'Home', root_path %></div>
-      <div id="search"><%= form_tag(clubs_path, :method => "get", id: "search-form") do %>
+      <%= form_tag(clubs_path, :method => "get", id: "search-form") do %>
         <%= text_field_tag :search, params[:search], placeholder: "Search Clubs" %>
         <%= submit_tag "Search" %>
       <% end %>
-      </div>
       <div id="navMenuItems">
       <ul>
         <li><%= link_to 'Join a Club', clubs_path %></li>
