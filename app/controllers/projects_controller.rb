@@ -16,7 +16,7 @@ def calendar
 
 
   def show
-    @tasks = @project.tasks.all
+    @tasks = @project.tasks.page(params[:page]).per(2)
     @task = @project.tasks.new
     @club
   end

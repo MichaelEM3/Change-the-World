@@ -1,73 +1,190 @@
-<h2><%= @club.title %></h2>
-<p><%= @club.description %></p>
-<p>Location: <%= @club.location %></p>
 
 
-<p><%= image_tag @club.image(:large) %></p>
 
-<div>
-    <p><%= link_to 'Edit', edit_club_path(@club) if current_user && current_user.user_in_club(@club.id) && current_user.user_admin_in_club?(@club.id) %></p>
-    <p><%= link_to 'Destroy', @club, method: :delete, data: { confirm: 'Are you sure?' } if current_user && current_user.user_in_club(@club.id) && current_user.user_admin_in_club?(@club.id) %></p>
-</div>
+<div class="clubs_body">
+  <div class="separator">
+  </div>
 
-<%@stories.each_with_index do |story, index| %>
-  <h3><%= story.title %></h3>
-  <p><%= story.story%></p>
+  <!-- Beginning of toggled About section -->
 
-  <% if current_user && current_user.user_in_club(@club.id) %>
-    <h4>Leave a comment:</h4>
-      <% story.commentaries.each do |com| %>
-        <%=  div_for com do %>
-            <%= com.comment %><br>
-            Posted by: <%= com.user.username %><br>
-            <%= time_ago_in_words(com.created_at)%> ago<br>
-          <%= link_to 'Delete', story_commentary_path(story, com), method: :delete, data: { confirm: 'Are you sure?' }, remote: true %>
+
+  <div class="about_container">
+      <div class="button_response">
+            <span class="club_about">
+            <%= image_tag @club.image(:large), :class => "club_about"%> 
+            </span> 
+      </div>
+
+
+      <div>
+      <span class="clubs_title">
+          <br>
+          <h1><%= @club.title %></h1>
+      </span>
+
+
+      <span class="clubs_information">
+        <p><%= @club.description %></p>
+        
+        
+        <p><%= @club.location %></p>
+        <br>
+      </span>
+      </div>
+      <div class="about_text_container"></div>
+  </div>
+
+
+
+    <!-- End of toggled About section-->
+
+  <div class="nav">
+    <ul class="nav">
+      <div class="club_button_container">
+              <li>
+            <%= link_to 'Current Projects', club_projects_path(@club), :class => "club_users club_button button_text" if current_user %>
+        </li>
+        
+        <li>
+        <%= link_to 'Create New Project', new_club_project_path(@club), class: "club_stories club_button button_text" if current_user && current_user.user_in_club(@club.id) && current_user.user_admin_in_club?(@club.id) %>
+        </li>
+        <li>
+          <a class="club_stories club_button">
+            <span class="button_text">Stories</span>
+          </a>
+        </li>
+        <li>
+          <a class="club_users club_button">
+            <span class="button_text">
+
+          <% if current_user && @club.users.exists?(current_user) %>
+            <%= button_to "Leave Club", unjoin_club_path(@club) unless current_user.user_admin_in_club?(@club.id)%>
+          <% else %>
+            <%= button_to "Join Club", join_club_path(@club) %>
+          <% end %>
+
+            </span>
+          </a>
+        </li>
+<li>
+          <a class="club_users club_button">
+            <span class="button_text">Users</span>
+          </a>
+       </li>
+      </div>
+    </ul>
+  </div>
+
+ 
+
+    <!-- Beginning of toggled Story section -->
+
+  <div class="stories_show"> 
+  <h1> Posts </h1>
+  <br>
+      <%@stories.each_with_index do |story, index| %>
+      <div class="story_inner_container">
+      <div class="story_title">
+        <h3><%= story.title %></h3>
+      </div>
+      <div class="story_info">
+      <h4> Description: </h4>
+        <p><%= story.story%></p>
+        <div class="leave_a_comment">
+          <% if current_user && current_user.user_in_club(@club.id) %>
+          <h4>Comments:</h4>
+        </div>
+        <div  class="story_comments">
+          <%= flash[:error] unless flash[:error].blank? %>
+            <% story.commentaries.each do |com| %>
+            <p><%= com.comment %><br>
+            Posted by: <%= com.user.username %>, 
+            <%= time_ago_in_words(com.created_at)%> ago70px
+            <br></p>
+            <% end %>
+
+
+          <div class="story_comment_bar"> <%= render 'commentaries/form', locals: {story: story, user_id: current_user.id}  %>
+          </div>
           <br>
           <% end %>
+        </div>
+      </div>
+      </div>
+      <%end%>
+
+      <% if current_user && current_user.user_in_club(@club.id) && current_user.user_admin_in_club?(@club.id) %>
+      
+      <h3 class="creatorfeed_title">New Story</h3>
+      <div id='creatorfeed'>
+        <%= flash[:error] unless flash[:error].blank? %>
+        <%= render 'stories/form'%>
+      </div>
+      <%end%>
+    </div>
+    <div class="pagination">
+      <%= paginate @stories%>
+    </div>
+  </div>
+
+    <!--  End of Story section -->
+
+    <!-- Beginning of toggled Club User manifest section -->
+      <span class="button_response">
+          <div class="user_club_show">
+            <h2>Current Members:</h2>
+            <ul>
+              <% @club.user_clubs.each do |userclub| %>
+                  
+                <% if userclub.user.avatar? %>
+
+                  <li class="avatar"> <%= link_to image_tag(userclub.user.avatar(:medium)), profile_path(userclub.user_id) %></li>
+                  
+                <% else %>
+
+                  <li class="avatar">  <%= link_to image_tag("https://i.vimeocdn.com/portrait/1328552_300x300.jpg"), profile_path(userclub.user_id)
+                   %></li>
+  
+                <% end %>
+              <% end %>
+            </ul>
+          </div>
+
+        </span>
+
+    <!-- End of Club User manifest section -->
+
+    <!-- end of CSSed text  -->
+     
+            <p>Club identifiers:
+              
+         <li> 
+          <% if current_user && @club.users.exists?(current_user) %>
+            <%= button_to "Leave Club", unjoin_club_path(@club) unless current_user.user_admin_in_club?(@club.id)%>
+          <% else %>
+            <%= button_to "Join Club", join_club_path(@club) %>
           <% end %>
-      <%= render 'commentaries/form', locals: {story: story, user_id: current_user.id} %>
-      <hr>
+      </li>
+  
+
+      <li><%= @club.thumbtag %></li>
+
+  <% if current_user && current_user.user_in_club(@club.id) && current_user.user_admin_in_club?(@club.id) %>
+ 
   <% end %>
 
-<%end%>
-<%= paginate @stories%>
-************************
+  <div class="edit_club_page_buttons ">
 
+      <li>
+          <%= link_to 'Edit', edit_club_path(@club) if current_user && current_user.user_in_club(@club.id) && current_user.user_admin_in_club?(@club.id) %>
+      </li>
 
-<% if current_user && current_user.user_in_club(@club.id) && current_user.user_admin_in_club?(@club.id) %>
-  <h3>New Story</h3>
-  <div id='creatorfeed'>
-    <%= flash[:error] unless flash[:error].blank? %>
-    <%= render 'stories/form'%>
+      <li>
+          <%= link_to 'Destroy', @club, method: :delete, data: { confirm: 'Are you sure?' } if current_user && current_user.user_in_club(@club.id) && current_user.user_admin_in_club?(@club.id) %>
+      </li>
+
+      <li><%= link_to 'Back', clubs_path %></li>
+
   </div>
-<%end%>
 
-
-    <h2>Current Members:</h2>
-    <ul>
-      <% @club.user_clubs.each do |userclub| %>
-        <% if userclub.user.avatar? %>
-          <%= link_to image_tag(userclub.user.avatar(:thumb)), profile_path(userclub.user_id) %>
-        <% else %>
-          <%= link_to image_tag("http://orig05.deviantart.net/c4a0/f/2013/036/5/d/marioquestionbox_by_camdencc-d5ty7xb.gif"), profile_path(userclub.user_id) %>
-        <% end %>
-
-      <% end %>
-    </ul>
-
-    <p>Tags:
-      <%= @club.thumbtag %></p>
-
-
-    <% if current_user && @club.users.exists?(current_user) %>
-    <%= button_to "Leave Club", unjoin_club_path(@club) unless current_user.user_admin_in_club?(@club.id)%>
-    <% else %>
-    <%= button_to "Join Club", join_club_path(@club) %>
-    <% end %>
-
-    <%= link_to 'Create New Project', new_club_project_path(@club) if current_user && current_user.user_in_club(@club.id) && current_user.user_admin_in_club?(@club.id) %><br>
-    <%= link_to 'View Current Projects', club_projects_path(@club) if current_user %>
-
-    <br><br>
-
-    <%= link_to 'Back', clubs_path %>
+</div>
