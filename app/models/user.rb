@@ -2,7 +2,7 @@ class User < ActiveRecord::Base
 
 
   # has_many :conversations, :foreign_key => :sender_id
-  
+
 
   has_many :clubs, through: :user_clubs
   has_many :user_clubs

@@ -9,7 +9,8 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 </head>
 
-<body style="background-color: #827c89;">
+<body >
+
 
 
 
@@ -28,11 +29,11 @@
       <% else %>
         <li id="user"><p id="login"><%= link_to "Log In", login_path %>  |  <%= link_to "Sign Up", signup_path %></p></li>
       </ul>
- 
+
       <% end %>
       </div>
        </div>
-  
+
 
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
@@ -42,6 +43,6 @@
 
 <%= yield %>
 
-    
+
 </body>
 </html>

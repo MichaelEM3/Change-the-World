@@ -1,5 +1,19 @@
 
+
 /*
+=======
+/* This is a manifest file that'll be compiled into application.css, which will include all the files
+* listed below.
+*
+* Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+* or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+*
+* You're free to add application-wide styles to this file and they'll appear at the bottom of the
+* compiled file so the styles you add here take precedence over styles defined in any styles
+* defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+* file per style scope.
+*
+>>>>>>> clubstyle
 *= require_tree .
 *= require_self
 */
@@ -82,7 +96,7 @@ html {
 .clubs_body {
  background-color: #e2e6e9;
  min-width: 110%;
- min-height: 110%; 
+ min-height: 110%;
 }
 
 .button_response {
@@ -132,7 +146,7 @@ clear: both;
 
 .about_container {
   overflow: hidden;
-  background-color:  #f46954; 
+  background-color:  #f46954;
 }
 
 
@@ -144,7 +158,7 @@ clear: both;
 
 .nav {
   list-style: none;
-  background-color: 
+  background-color:
 }
 
 .nav .club_button, .nav a:visited {
@@ -189,10 +203,10 @@ clear: both;
 .club_button:before {
   display:block;
   text-decoration: none;
-  background-image: -webkit-linear-gradient(top, #f7f7f7, #e7e7e7); 
-  background-image: -moz-linear-gradient(top, #f7f7f7, #e7e7e7); 
-  background-image: -ms-linear-gradient(top, #f7f7f7, #e7e7e7); 
-  background-image: -o-linear-gradient(top, #f7f7f7, #e7e7e7); 
+  background-image: -webkit-linear-gradient(top, #f7f7f7, #e7e7e7);
+  background-image: -moz-linear-gradient(top, #f7f7f7, #e7e7e7);
+  background-image: -ms-linear-gradient(top, #f7f7f7, #e7e7e7);
+  background-image: -o-linear-gradient(top, #f7f7f7, #e7e7e7);
   color: #a7a7a7;
   width: 74px;
   height: 74px;
@@ -322,7 +336,7 @@ li.avatar:hover > {
 
 h1 {
     margin-left: 10%;
-  font-size: 6em;
+    font-size: 6vw;
 }
 
 .story_comment_bar {
