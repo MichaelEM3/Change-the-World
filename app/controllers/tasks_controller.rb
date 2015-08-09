@@ -2,7 +2,6 @@ class TasksController < ApplicationController
   before_action :set_task, only: [:show, :edit, :update, :destroy]
   before_action :set_project, only: [:index, :create, :new, :edit, :update, :destroy]
 
-
   def new
     @task = Task.new
   end
@@ -40,6 +39,7 @@ class TasksController < ApplicationController
 
 
   private
+
   def set_task
     @task = Task.find(params[:id])
   end
@@ -47,7 +47,6 @@ class TasksController < ApplicationController
   def set_project
     @project = Project.find(params[:project_id])
   end
-
 
   def task_params
     params.require(:task).permit(:title, :description, :due_date, :completed, :project_id)

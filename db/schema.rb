@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150806210312) do
+ActiveRecord::Schema.define(version: 20150808014550) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -81,7 +81,6 @@ ActiveRecord::Schema.define(version: 20150806210312) do
 
   create_table "tasks", force: :cascade do |t|
     t.integer  "project_id"
-    t.string   "title"
     t.text     "description"
     t.boolean  "completed"
     t.date     "due_date"
@@ -97,9 +96,11 @@ ActiveRecord::Schema.define(version: 20150806210312) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string   "role"
+    t.integer  "task_id"
   end
 
   add_index "user_clubs", ["club_id"], name: "index_user_clubs_on_club_id", using: :btree
+  add_index "user_clubs", ["task_id"], name: "index_user_clubs_on_task_id", using: :btree
   add_index "user_clubs", ["user_id"], name: "index_user_clubs_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|
@@ -124,5 +125,6 @@ ActiveRecord::Schema.define(version: 20150806210312) do
   add_foreign_key "stories", "clubs"
   add_foreign_key "tasks", "projects"
   add_foreign_key "user_clubs", "clubs"
+  add_foreign_key "user_clubs", "tasks"
   add_foreign_key "user_clubs", "users"
 end
