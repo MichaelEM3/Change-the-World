@@ -13,11 +13,18 @@ pre {
 }
 
 a { color: #000; }
-a:visited { color: #666; }
-a:hover { color: #fff; background-color:#000; }
 
-div.field, div.actions {
+a:hover { color: #fff; }
+
+div.field, div.actions, {
   margin-bottom: 10px;
+     margin: 0;
+      /*padding: 12px 110px 30px 110px;*/
+  background: none;
+  border: none;
+  text-decoration:none;
+  padding: none;
+  color: blue;
 }
 
 #notice {

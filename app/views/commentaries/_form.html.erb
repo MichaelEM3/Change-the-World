@@ -1,13 +1,14 @@
-<%= form_for([locals[:story], @commentary]) do |f| %>
+
+<%= form_for ([locals[:story], @commentary]) do |f| %>
 
   <div class="field">
-    <%=f.hidden_field :story_id, :value => locals[:story].id, class: "comment_box" %>
+    <%=f.hidden_field :story_id, :value => locals[:story].id %>
   </div>
   <div class="field">
-    <%=f.hidden_field :user_id, :value => locals[:user_id], class: "comment_box" %>
+    <%=f.hidden_field :user_id, :value => locals[:user_id] %>
   </div>
   <div class="field">
-    <%= f.text_area :comment, placeholder: "Respond here", class: "comment_box"  %>
+    <%= f.text_area :comment, placeholder: "User comment", class: "comment_box"  %>
   </div>
   <div class="actions">
     <%= f.submit %>
