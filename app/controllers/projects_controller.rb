@@ -13,7 +13,7 @@ class ProjectsController < ApplicationController
   end
 
   def show
-    @tasks = @project.tasks.page(params[:page]).per(2)
+    @tasks = @project.tasks.page(params[:page]).per(3)
     @task = @project.tasks.new
     @club
   end

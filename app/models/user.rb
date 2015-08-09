@@ -10,7 +10,7 @@ class User < ActiveRecord::Base
   validates :email, uniqueness: true
   has_secure_password
 
-  has_attached_file :avatar, styles: { large: "600x600>", medio: "300x300>", thumb: "96x96#"}
+  has_attached_file :avatar, styles: { large: "600x600>", medio: "300x300>", thumb: "96x96#", tiny: "25x25#"}
   validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
 
   def user_in_club(club_id)

@@ -1,3 +1,4 @@
+<div class= 'proj'>
 <h1><%= @project.name %></h1>
 <p>Description: <%= @project.description %></p>
 <p>Location: <%= @project.location %></p>
@@ -5,10 +6,11 @@
 
 <%= link_to "Edit", edit_club_project_path(@project.club, @project) if current_user && current_user.user_in_club(@project.club.id) && current_user.user_admin_in_club?(@project.club.id) %>
 <%= link_to "Delete", club_project_path(@project.club, @project), method: :delete, data: { confirm: 'Are you sure?' } if current_user && current_user.user_in_club(@project.club.id) && current_user.user_admin_in_club?(@project.club.id) %><br><br>
+</div>
 
 <h2>Tasks</h2>
-
 <%@tasks.each do |task| %>
+<div class= "task">
   <p>Description: <%= task.description %></p>
   <p>Due Date: <%= task.due_date %></p>
   <p>Project Status: <%= task.completed ? "Completed": "Not Completed" %></p>
@@ -33,14 +35,18 @@
 
     <%= link_to "Edit Task | Edit Completion Status", edit_project_task_path(@project.club, task) if current_user && current_user.user_in_club(@project.club.id) && current_user.user_admin_in_club?(@project.club.id)%><br>
     <%= link_to "Delete Task", project_task_path(@project, task),  method: :delete, data: { confirm: 'Are you sure?' } if current_user && current_user.user_in_club(@project.club.id) && current_user.user_admin_in_club?(@project.club.id) %>
+  </div>
     <% end %>
-      <%= paginate @tasks, :window => 1 %>
+
+      <div class= 'page'><%= paginate @tasks, :window => 1 %></div>
 
 <br>
 <% if current_user && current_user.user_in_club(@project.club.id) && current_user.user_admin_in_club?(@project.club.id) %>
+  <div id= 'newtsk'>
   <h2>Create a New Task</h2>
   <%= render "tasks/form" %>
 <% end %>
+  </div>
 <h2>Live Chat:<h2>
 <!-- Include the PubNub Library -->
 <script src="https://cdn.pubnub.com/pubnub-dev.js"></script>
@@ -75,5 +81,6 @@
 </script>
 
 <br><br>
-
-<%= link_to "Back", club_projects_path%>
+<div class= 'bottom_bar_container'>
+  <span><%= link_to "Back", club_projects_path, class: "bottom_bar_buttons" %></span>
+</div>
