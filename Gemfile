@@ -14,6 +14,7 @@ end
 # gem 'aws-sdk', '~> 1.61.0'
 
 gem 'faker'
+gem 'simple_calendar', '~> 1.1.10'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'

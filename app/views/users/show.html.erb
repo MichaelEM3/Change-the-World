@@ -1,90 +1,64 @@
-<div id="rectangle">
+<!-- <div id="rectangle"> -->
+<div id="kinetic-container">
+  <span id="s-1"></span>
+  <span id="s-2"></span>
+  <span id="s-3"></span>
+  <span id="s-4"></span>
+  <span id="s-5"></span>
+  <span id="s-6"></span>
+  <span id="s-7"></span>
+  <span id="s-8"></span>
+  <span id="s-9"></span>
+  <span id="s-10"></span>
 <div class="profilebox">
 <div class = "listprofile">
 <strong><center>
-	<p><strong>Name:</strong> <%= @user.name %></p>
-    <p><strong>Username:</strong> <%= @user.username %></p>
+	<h2 class="profile"><strong>Name:</strong> <%= @user.name %></h2>
+    <h2 class="profile"><strong>Username:</strong> <%= @user.username %></h2>
     <%= image_tag @user.avatar(:medium) %>
 </strong>
 </center>
 </div>
 </div>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-	<%= link_to 'Update Profile', edit_user_path(:id) %><br>
-    <%= link_to 'Back', clubs_path(:id) %>
 </div>
-<div class="droplet"></div>
-<div class="droplet"></div>
-<div class="droplet"></div>
-<div class="droplet"></div>
-<div class="droplet"></div>
-<div class="droplet"></div>
-<div class="droplet"></div>
-<div class="droplet"></div>
-<div class="droplet"></div>
-<div class="droplet"></div>
-<div class="droplet"></div>
-<div class="droplet"></div>
-<div class="droplet"></div>
-<div class="droplet"></div>
-<div class="droplet"></div>
-<div class="droplet"></div>
-<div class="droplet"></div>
-<div class="droplet"></div>
-<div class="droplet"></div>
-<div class="droplet"></div>
-<div class="droplet"></div>
-<div class="droplet"></div>
-<div class="droplet"></div>
-<div class="droplet"></div>
-<div class="droplet"></div>
-<div class="droplet"></div>
-<div class="droplet"></div>
-<div class="droplet"></div>
-<div class="droplet"></div>
-<div class="droplet"></div>
-<div class="droplet"></div>
-<div class="droplet"></div>
-<div class="droplet"></div>
-<div class="droplet"></div>
-<div class="droplet"></div>
-<div class="droplet"></div>
-<div class="droplet"></div>
-<div class="droplet"></div>
-<div class="droplet"></div>
-<div class="droplet"></div>
-<div class="droplet"></div>
-<div class="droplet"></div>
-<div class="droplet"></div>
-<div class="droplet"></div>
-<div class="droplet"></div>
-<div class="droplet"></div>
-<div class="droplet"></div>
-<div class="droplet"></div>
-<div class="droplet"></div>
-<div class="droplet"></div>
-<div class="droplet"></div>
-<div class="droplet"></div>
-<div class="droplet"></div>
-<div class="droplet"></div>
-<div class="droplet"></div>
-<div class="droplet"></div>
-<div class="droplet"></div>
-<div class="droplet"></div>
-<div class="droplet"></div>
-<div class="droplet"></div>
-<div class="droplet"></div>
-<div class="droplet"></div>
-<div class="droplet"></div>
-<div class="droplet"></div>
-<div class="droplet"></div>
-<div class="droplet"></div>
+<br>
+<div class = "foo5">
+<ul class = "updateandback">
+	<li class = "updateback"><%= link_to 'Update Profile', edit_user_path(:id) %></li>
+    <li class = "updateback"><%= link_to 'Back', clubs_path(:id) %></li>
+</ul>
+</div>
+
+<div class="boxed">
+<div class="column">
+    <h2 class = "sometext">Clubs a part of</h2>
+    <ul class="column2">
+    	<li>
+			<% @clubs.each do |club| %>
+			<%= club.title %>
+		</li>
+			<% end %>
+    </ul>
+</div>
+</div>
+
+<!-- <div class="column">
+    <h2 class = "sometext">Projects a part of</h2>
+    <ul class="column3">
+		<li>
+		<% @projects.each do |project| %>
+		<%= project.name %>
+		<% end %>
+		</li>
+    </ul>
+</div>
+ -->
+
+
+
+
+
+
 
 
 

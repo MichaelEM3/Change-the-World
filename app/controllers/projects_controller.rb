@@ -1,7 +1,9 @@
 class ProjectsController < ApplicationController
   before_action :set_project, only: [:show, :edit, :update, :destroy]
   before_action :set_club, only: [:index, :show, :create, :edit, :update, :destroy, :join, :unjoin]
-
+def calendar
+    @events = Event.all
+  end
   def new
     @project = Project.new
     @club = current_user.clubs.last

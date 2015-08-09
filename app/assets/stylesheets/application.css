@@ -4,12 +4,14 @@
 */
 
 #navbar {
-
   /*padding-bottom: 10em;*/
-  height: 90px;
+  margin: 0;
+  padding: 0;
+  height: 50px;
   width: 100%;
   position: fixed;
-  /*background-color: #292929;*/
+  background-color: #50bbb6;
+  z-index:9999;
 }
 
 #navbar a {
@@ -20,8 +22,8 @@
  list-style-type: none;
  margin: 0;
  padding: 0;
- padding-left: 20px;
- height: 65px;
+ padding-left: 0px;
+ height: 40px;
 }
 
 #navbar li {

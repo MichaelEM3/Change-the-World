@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html style = "margin-top: -13px";>
 <head>
   <title>Changetheworld</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
@@ -7,18 +7,10 @@
   <%= csrf_meta_tags %>
 </head>
  <body>
-
     <div id="navbar">
-
-    <div><%= link_to 'Home', root_path %></div>
-      <div id="search"><%= form_tag(clubs_path, :method => "get", id: "search-form") do %>
-        <%= text_field_tag :search, params[:search], placeholder: "Search Clubs" %>
-        <%= submit_tag "Search" %>
-
-      <% end %>
-      </div>
-      <div id="navMenuItems">
+    <div id="navMenuItems">
       <ul>
+    <li><%= link_to 'Home', root_path %></li>
         <li><%= link_to 'Join a Club', clubs_path %></li>
         <li><%= link_to 'Create a New Club', new_club_path %></li>
         <% if current_user %>
@@ -29,10 +21,11 @@
       <% else %>
         <li id="user"><p id="login"><%= link_to "Log In", login_path %>  |  <%= link_to "Sign Up", signup_path %></p></li>
       </ul>
-
+ 
       <% end %>
       </div>
-    </div>
+       </div>
+  
 
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
