@@ -26,9 +26,12 @@ html {
 /*****************/
 
 #navbar {
-  padding-bottom: 10em;
   width: 100%;
   position: fixed;
+  background-color: #827c89;
+  padding-bottom: 20px;
+  padding-left: 200px;
+
 }
 
 #navbar a {
@@ -39,7 +42,7 @@ html {
  list-style-type: none;
  margin: 0;
  padding: 0;
- padding-left: 30px;
+ padding-left: 20px;
  height: 65px;
 }
 
@@ -61,7 +64,7 @@ html {
 
 #body{
   margin-top: 0px;
-  padding-top: 100px;
+  padding-top: 2.5%;
 }
 
 #search-form{
@@ -84,9 +87,7 @@ html {
  min-height: 110%; 
 }
 
-.separator {
-height: 100px;
-}
+
 
 
 .button_response {
@@ -102,23 +103,22 @@ clear: both;
 
 .clubs_information {
   /* text-shadow: 6px 6px 0px rgba(0,0,0,0.2); */
-  text-shadow: 0px 4px 3px rgba(0,0,0,0.4),
-  0px 8px 13px rgba(0,0,0,0.1),
-  30px 8px 13px rgba(0,0,0,0.1);
-  color: #FFFF66;
+  color: #358287;
   text-align: center;
   line-height: 42px;
-  font-size: 2em;
+  font-size: 1.5em;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+.clubs_information p:nth-child(2){
+
 }
 
 .clubs_title h1 {
   color: #827c89;
-  font-size: 6em;
+  font-size: 5em;
   text-align: center;
-  text-shadow: 0px 4px 3px rgba(0,0,0,0.4),
-  0px 8px 13px rgba(0,0,0,0.1),
-  30px 8px 13px rgba(0,0,0,0.1);
-  background-color:  #f46954;
 
 }
 
@@ -136,8 +136,7 @@ clear: both;
 }
 
 .about_container {
-  margin-left: 20%;
-  margin-right: 20%;
+  overflow: hidden;
   background-color:  #f46954; 
 }
 
@@ -150,38 +149,46 @@ clear: both;
 
 .nav {
   list-style: none;
-  text-align: center;
+  background-color: 
 }
 
 .nav .club_button, .nav a:visited {
   display:block;
   text-decoration: none;
   color: #a7a7a7;
-  width: 84px;
+  width: 100%;
   background-image: ;
-  height: 84px;
+  height: 100px;
   text-align: center;
   line-height: 84px;
-  font-family: 'Playfair Display SC', serif;
-  border-radius: 50%;
   box-shadow: 0px 0px 12px #CB99C9, inset 0px 2px 3px #966FD6;
   border: solid 1px transparent;
 }
 
 .club_button {
  display: inline-block;
- padding: 6em;
- margin: 10em;
+}
+
+.club_button_container li{
+  display: inline-block;
+  margin-left: 40px;
+  width: 300px;
+
+}
+
+.club_button:hover {
+  -webkit-transform: rotate(360deg);
+  transform: rotate(360deg);
 }
 
 .club_button_container {
-  overflow: auto;
   margin: auto;
   display: inline-block;
 }
 
 .club_button_container li {
   float: left;
+  width:;
 }
 
 .club_button:before {
@@ -195,15 +202,15 @@ clear: both;
   width: 74px;
   height: 74px;
   text-align: center;
-  line-height: 74px;
+  line-height: 34px;
   border-radius: 50%;
   box-shadow: 0px 3px 8px #aaa, inset 0px 2px 3px #fff;
   border: solid 1px transparent;
 }
 
 .club_button:hover {
-/*background-color: #36648B;
-opacity: 0.2;*/
+  z-index: 1;
+opacity: 0.8;
 }
 
 .button_response {
@@ -214,29 +221,66 @@ opacity: 0.2;*/
   font-size: 2em;
 }
 
+a.button_text:active {
+  font-size: 2em;
+  color: #4d004b;
+}
 
 .club_button:active {
   box-shadow: 10px 0px 25px #CB99C9 inset, 0px 0px 3px #e7e7e7;
+  z-index: 2;
+  color: #4d004b;
+}
+
+.club_button:active a{
+  color: #4d004b;
 }
 
 
-.user_club_show, .stories_show, .edit_club_page_buttons  {
+.user_club_show, .edit_club_page_buttons  {
+  display: none;
   clear: both;
-  display: block;
+  display: ;
   margin-top: 100px;
   margin-left: 15em;
   margin-right: 15em;
   margin-bottom: 50px;
+}
+
+.stories_show, .edit_club_page_buttons  {
+    clear: both;
   line-height: 2em;
 }
 
 /* Club User photo section */
 
 .user_club_show li{
+  float: left;
   display: block;
-  margin-left: 20%;
-  margin-right: 20%;
+  padding: 10px;
+
 }
+
+.user_club_show ul {
+  list-style: none;
+  margin: 0px auto;
+  display: block;
+  max-width: 60%;
+  text-align: center;
+}
+
+.user_club_show {
+    opacity: .88;
+}
+
+
+li.avatar:hover > {
+  z-index: 1;
+    transform: scale(1.7,1.7);
+  transition: .3s transform;
+}
+
+
 
 /* end of the Club User photos section */
 
@@ -250,10 +294,9 @@ opacity: 0.2;*/
   font-family: 'Playfair Display SC', serif;
   display: inline-block;
   margin: 0 auto;
-  margin-top: 5%;
   width: 84px;
   height: 21px;
-  padding: 2em 4em 2em 4em;
+  padding: 2em 4ecomment_boxm 2em 4em;
   border-radius: 40%;
   text-align: center;
   box-shadow: 0px 3px 8px #aaa, inset 0px 2px 3px #fff;
@@ -269,9 +312,64 @@ opacity: 0.2;*/
 
 }
 
+.stories_show {
+/*  background-color: #FFF;
+  margin-right: 30%;
+  margin-left: 30%;*/
+  color: #FFF;
+    background-color:  #358287;
+/*  margin-left: 15%;
+  margin-right: 15%;*/
+  width: 100%;
+  padding-top: 2.5%;
+  padding-bottom: 2.5%;
+}
+
+h1 {
+    margin-left: 10%;
+  font-size: 6em;
+}
+
 .story_comment_bar {
   clear: both;
   float: ;
 }
 
+.story_info, .creatorfeed_title, .story_title {
+  margin-left: 10%;
+  margin-right: 10%;
+   font-size: 30px;
+   font-family: Georgia,serif;
+}
+
+#creatorfeed {
+  margin-left: 10%;
+  margin-right: 10%;
+  font-family: Georgia,serif;
+  margin-bottom: -10px;
+}
+
+.story_title {
+      font-family: Georgia,serif;
+    font-size: 27px;
+    line-height: 24px;
+}
+
+.story_comments, .leave_a_comment, .story_info {
+      font-family: Georgia,serif;
+    font-size: 17px;
+    line-height: 24px;
+}
+.story_comments p{
+  margin-top: 10px;
+}
+
+.story_inner_container {
+
+}
 /* ------------------ end of clubs show page ---------------------- */
+
+.comment_box {
+  width: 395px;
+  height: 74px;
+}

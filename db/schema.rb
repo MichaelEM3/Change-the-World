@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150805013824) do
+ActiveRecord::Schema.define(version: 20150806210312) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -51,9 +51,11 @@ ActiveRecord::Schema.define(version: 20150805013824) do
     t.integer  "story_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "user_id"
   end
 
   add_index "commentaries", ["story_id"], name: "index_commentaries_on_story_id", using: :btree
+  add_index "commentaries", ["user_id"], name: "index_commentaries_on_user_id", using: :btree
 
   create_table "projects", force: :cascade do |t|
     t.integer  "club_id"
@@ -77,21 +79,17 @@ ActiveRecord::Schema.define(version: 20150805013824) do
 
   add_index "stories", ["club_id"], name: "index_stories_on_club_id", using: :btree
 
-  create_table "tag_clubs", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.integer  "tag_id"
-    t.integer  "club_id"
+  create_table "tasks", force: :cascade do |t|
+    t.integer  "project_id"
+    t.string   "title"
+    t.text     "description"
+    t.boolean  "completed"
+    t.date     "due_date"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
-  add_index "tag_clubs", ["club_id"], name: "index_tag_clubs_on_club_id", using: :btree
-  add_index "tag_clubs", ["tag_id"], name: "index_tag_clubs_on_tag_id", using: :btree
-
-  create_table "tags", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string   "name"
-  end
+  add_index "tasks", ["project_id"], name: "index_tasks_on_project_id", using: :btree
 
   create_table "user_clubs", force: :cascade do |t|
     t.integer  "user_id"
@@ -121,10 +119,10 @@ ActiveRecord::Schema.define(version: 20150805013824) do
   add_index "users", ["username"], name: "index_users_on_username", unique: true, using: :btree
 
   add_foreign_key "commentaries", "stories"
+  add_foreign_key "commentaries", "users"
   add_foreign_key "projects", "clubs"
   add_foreign_key "stories", "clubs"
-  add_foreign_key "tag_clubs", "clubs"
-  add_foreign_key "tag_clubs", "tags"
+  add_foreign_key "tasks", "projects"
   add_foreign_key "user_clubs", "clubs"
   add_foreign_key "user_clubs", "users"
 end

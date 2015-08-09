@@ -1,13 +1,15 @@
 <!DOCTYPE html>
-<html>
+<html style="margin-top: -18px; margin-left: -6px;">
 <head>
   <title>Changetheworld</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
-  <link href='http://fonts.googleapis.com/css?family=Playfair+Display+SC' rel='stylesheet' type='text/css'>
 </head>
-<body>
+<body style="background-color: #827c89;">
+
+  <link href='http://fonts.googleapis.com/css?family=Playfair+Display+SC' rel='stylesheet' type='text/css'>
+
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 
     <div id="navbar">
 
@@ -15,16 +17,15 @@
       <div id="search"><%= form_tag(clubs_path, :method => "get", id: "search-form") do %>
         <%= text_field_tag :search, params[:search], placeholder: "Search Clubs" %>
         <%= submit_tag "Search" %>
-          <% if @club.present? %>
-          <% else %>
-            <span>No Such term exists</span>
-          <% end %>
-      <% end %></div>
+      <% end %>
+      </div>
       <div id="navMenuItems">
       <ul>
         <li><%= link_to 'Join a Club', clubs_path %></li>
         <li><%= link_to 'Create a New Club', new_club_path %></li>
-        <li><%= link_to 'Profile', profile_path(:id) %></li>
+        <% if current_user %>
+          <li><%= link_to 'Profile', profile_path(current_user) unless current_user.nil? %></li>
+        <%end%>
       <% if current_user %>
         <li><p id="login"><%= current_user.username %>  |  <%= link_to "Log out", logout_path, method: "delete" %></p></li>
       <% else %>

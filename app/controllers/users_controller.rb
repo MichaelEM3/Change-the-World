@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   skip_before_action :require_user, only: [:new, :create, :update, :edit]
 
+
   def new
     @user = User.new
   end
