@@ -1,28 +1,71 @@
 /***************************/
+/* Activity Feed Page */
+/***************************/
+
+#welcome h2 {
+  text-align: left;
+  font-size: 1.5vw;
+}
+
+#welcome p {
+  text-align: left;
+  font-size: 1.5vw;
+}
+
+#user_clubs {
+  float: left;
+  width: 50%;
+}
+
+#user_clubs h2 {
+  text-align: left;
+  font-size: 1.5vw;
+}
+
+.club_area {
+  float: left;
+  margin: 0 auto;
+}
+
+.club_area img {
+  height: 300px;
+  width: 300px;
+  /*border-radius: 100%;*/
+  padding: 5px;
+}
+
+.club_title {
+  text-align: center;
+  font-weight: bold;
+}
+
+#activities {
+  float: right;
+  width: 50%;
+}
+
+#activities h2 {
+  font-size: 1.5vw;
+}
+
+#all_clubs h2 {
+  font-size: 1.5vw;
+}
+
+#all_clubs {
+  clear: both;
+}
+
+/***************************/
 /* Beginning of Clubs Page */
 /***************************/
 
 .clubs_body {
- background-color: ;
- min-width: 100%;
- min-height: 100%;
-list-style-type: none;
-text-decoration: none;
-}
-
-
-display:inline-block;
-    -webkit-box-sizing:border-box;
-    -moz-box-sizing:border-box;
-    box-sizing:border-box;
-    width:100px;
-    height:100px;
-    -webkit-border-radius:50px;
-    -moz-border-radius:50px;
-    border-radius:50px;
-
-.button_response {
-
+   background-color: ;
+   min-width: 100%;
+   min-height: 100%;
+   list-style-type: none;
+   text-decoration: none;
 }
 
 .about_text_container {
@@ -625,10 +668,6 @@ background-color: #f46954;
 
 }
 
-#clubs_image {
-
-}
-
 #submit input, .actions input, .submit_button input[type="submit"], .image_field_button {
  background-color: rgb(237,66,85);
   color: rgb(80,187,182);
@@ -645,25 +684,7 @@ background-color: #f46954;
     width:194px;
   height:41px;
   text-decoration: none;
-}/*
-
-.image_field_button {
-   background-color: rgb(237,66,85);
-  color: rgb(80,187,182);
-  font-family:'Helvetica Neue',sans-serif;
-  font-size:18px;
-  border-radius:20px;
-  -webkit-border-radius:20px;
-  -moz-border-radius:20px;
-  border:0;
-  text-shadow:#C17C3A 0 -1px 0;
-  outline: none;
-  padding: 0.5em;
-  margin-bottom: 1.25vw;
-    width:194px;
-  height:41px;
-  text-decoration: none;
-}*/
+}
 
 #submit input:hover, .actions input:hover, .image_field_button:hover, .submit_button input[type="submit"]:hover {
   color: #fff;

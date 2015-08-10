@@ -6,6 +6,7 @@ class ClubsController < ApplicationController
   def index
     @users = User.all
     @club = Club.all
+    @clubs = current_user.clubs
     @activities = PublicActivity::Activity.order("created_at desc")
     if params[:search]
       @club = Club.search(params[:search]).order("created_at DESC")
