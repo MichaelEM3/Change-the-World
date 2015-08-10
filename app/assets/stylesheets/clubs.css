@@ -413,14 +413,14 @@ box-shadow: 0px 3px 8px #aaa, inset 0px 2px 3px #fff;
 padding-top: 1.25%;
 padding-bottom: 1.25%;
 display: block;
-  text-align: center;
-  vertical-align: middle;
+text-align: center;
+vertical-align: middle;
 }
 
 .bottom_bar_container a {
-    text-decoration: none;
-    font-size: 3em;
-     font-family: 'Playfair Display SC', serif;
+  text-decoration: none;
+  font-size: 3em;
+  font-family: 'Playfair Display SC', serif;
 }
 
 .bottom_bar_buttons:before {
