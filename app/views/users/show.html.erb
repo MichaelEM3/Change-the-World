@@ -29,30 +29,29 @@
 </ul>
 </div>
 
-<div class="boxed">
-<div class="column">
+<div class="box11">
     <h2 class = "sometext">Clubs a part of</h2>
     <ul class="column2">
-    	<li>
+    	<li class = "listing">
 			<% @clubs.each do |club| %>
 			<%= club.title %>
 		</li>
 			<% end %>
     </ul>
 </div>
+
+<div class="box22">
+<h2 class = "sometext">Projects a part of</h2>
+<ul class="column3">
+<li class = "listing">
+<% @projects.each do |project| %>
+<%= project.name %>
+</li>
+<% end %>
+</ul>
 </div>
 
-<!-- <div class="column">
-    <h2 class = "sometext">Projects a part of</h2>
-    <ul class="column3">
-		<li>
-		<% @projects.each do |project| %>
-		<%= project.name %>
-		<% end %>
-		</li>
-    </ul>
-</div>
- -->
+
 
 
 
