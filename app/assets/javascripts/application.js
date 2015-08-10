@@ -25,3 +25,59 @@
 
 
 
+
+$(document).ready(function(){
+
+  $('.club_users').on('click', function(){
+
+          $('.user_club_show').slideToggle();
+
+      });     
+
+     $('.club_stories').on('click', function(){
+      console.log("This")
+
+          $('.stories_show').slideToggle();
+
+      });    
+    
+      $('.club_details').on('page:load', function(){
+
+          $('.about_container').slideToggle();  
+
+      });
+
+      
+
+     // $('.leave_a_comment').on('click', function(){
+     //      $(this).sibling('story_comments').slideToggle();            
+     //  });
+
+       $('.leave_a_comment').on('page:load', function(){
+
+          $(this).next().slideToggle();
+
+      });   
+
+      //  $('.leave_a_comment').on('click', function(){
+      //     $('.story_comments').slideToggle();            
+      // });  
+
+      // $('.leave_a_comment').on('click', function(){
+      //     $('.story_comments').slideToggle();            
+      // });  
+
+      $('.toggle_live_chat').on('click', function(){
+      	$('live_chat_container').slideToggle();
+      });
+});
+
+
+$(document).ready(function(){
+
+$('.leave_a_comment').on('click', function(){
+
+          $(this).next().slideToggle();
+
+      });   
+  });  
