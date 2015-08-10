@@ -41,36 +41,36 @@
   <div class="nav">
     <ul class="nav">
       <div class="club_button_container">
-              <li>
-            <%= link_to 'Current Projects', club_projects_path(@club), :class => "club_users club_button button_text" if current_user %>
+        <li>
+          <%= link_to 'Current Projects', club_projects_path(@club), class: "club_button button_text" if current_user %>
         </li>
         
         <li>
-        <%= link_to 'Create New Project', new_club_project_path(@club), class: "club_stories club_button button_text" if current_user && current_user.user_in_club(@club.id) && current_user.user_admin_in_club?(@club.id) %>
+          <%= link_to 'Create New Project', new_club_project_path(@club), class: "club_button button_text" if current_user && current_user.user_in_club(@club.id) && current_user.user_admin_in_club?(@club.id) %>
         </li>
         <li>
           <a class="club_stories club_button">
-            <span class="button_text">Stories</span>
-          </a>
-        </li>
-        <li>
-          <a class="club_users club_button">
             <span class="button_text">
 
-          <% if current_user && @club.users.exists?(current_user) %>
-            <%= button_to "Leave Club", unjoin_club_path(@club) unless current_user.user_admin_in_club?(@club.id)%>
-          <% else %>
-            <%= button_to "Join Club", join_club_path(@club) %>
-          <% end %>
+
+            Stories
+
 
             </span>
           </a>
         </li>
-<li>
+        <li>
+                <% if current_user && @club.users.exists?(current_user) %>
+              <%= button_to "Leave Club", unjoin_club_path(@club), class: "join_unjoin_buttons button_text club_button" unless current_user.user_admin_in_club?(@club.id)%>
+              <% else %>
+              <%= button_to "Join Club", join_club_path(@club), class: "join_unjoin_buttons button_text club_button" %>
+              <% end %>
+        </li>
+        <li>
           <a class="club_users club_button">
             <span class="button_text">Users</span>
           </a>
-       </li>
+        </li>
       </div>
     </ul>
   </div>
@@ -79,20 +79,22 @@
 
     <!-- Beginning of toggled Story section -->
 
-  <div class="stories_show"> 
-  <h1> Posts </h1>
+  <div class="stories_show">
+  <div class="story_title">
+  <h1> Stories by '<%= @club.title.downcase %>'</h1>
+  </div>
   <br>
       <%@stories.each_with_index do |story, index| %>
       <div class="story_inner_container">
-      <div class="story_title">
-        <h3><%= story.title %></h3>
+      <div class="story_title story_subtitle">
+        <h2><%= story.title %></h2>
       </div>
       <div class="story_info">
-      <h4> Description: </h4>
+      <h3> Description: </h3>
         <p><%= story.story%></p>
         <div class="leave_a_comment">
           <% if current_user && current_user.user_in_club(@club.id) %>
-          <h4>Comments:</h4>
+          <h3>Comments:</h3>
         </div>
         <div  class="story_comments">
           <%= flash[:error] unless flash[:error].blank? %>
@@ -115,7 +117,7 @@
 
       <% if current_user && current_user.user_in_club(@club.id) && current_user.user_admin_in_club?(@club.id) %>
       
-      <h3 class="creatorfeed_title">New Story</h3>
+      <h2 class="creatorfeed_title"></h2>
       <div id='creatorfeed'>
         <%= flash[:error] unless flash[:error].blank? %>
         <%= render 'stories/form'%>
@@ -128,11 +130,11 @@
   </div>
 
     <!--  End of Story section -->
-
+<hr>
     <!-- Beginning of toggled Club User manifest section -->
       <span class="button_response">
           <div class="user_club_show">
-            <h2>Current Members:</h2>
+            <!-- <h2>Current Members:</h2> -->
             <ul>
               <% @club.user_clubs.each do |userclub| %>
                   
@@ -152,38 +154,29 @@
 
         </span>
 
+        
+
     <!-- End of Club User manifest section -->
 
     <!-- end of CSSed text  -->
-     
-            <p>Club identifiers:
-              
-         <li> 
-          <% if current_user && @club.users.exists?(current_user) %>
-            <%= button_to "Leave Club", unjoin_club_path(@club) unless current_user.user_admin_in_club?(@club.id)%>
-          <% else %>
-            <%= button_to "Join Club", join_club_path(@club) %>
-          <% end %>
-      </li>
-  
 
-      <li><%= @club.thumbtag %></li>
 
   <% if current_user && current_user.user_in_club(@club.id) && current_user.user_admin_in_club?(@club.id) %>
  
   <% end %>
 
-  <div class="edit_club_page_buttons ">
-
-      <li>
-          <%= link_to 'Edit', edit_club_path(@club) if current_user && current_user.user_in_club(@club.id) && current_user.user_admin_in_club?(@club.id) %>
-      </li>
-
-      <li>
-          <%= link_to 'Destroy', @club, method: :delete, data: { confirm: 'Are you sure?' } if current_user && current_user.user_in_club(@club.id) && current_user.user_admin_in_club?(@club.id) %>
-      </li>
-
-      <li><%= link_to 'Back', clubs_path %></li>
+  <div class="bottom_bar_container">
+      <% if current_user && current_user.user_in_club(@club.id) && current_user.user_admin_in_club?(@club.id) %>
+      <span>
+          <%= link_to 'Modify Group', edit_club_path(@club), class: "bottom_bar_buttons" %>
+      </span>
+      <% end %>
+      <% if current_user && current_user.user_in_club(@club.id) && current_user.user_admin_in_club?(@club.id) %>
+      <span>
+          <%= link_to 'Delete Group', @club, method: :delete, data: { confirm: 'Are you sure?' }, class: "bottom_bar_buttons" %>
+      </span>
+      <% end %>
+      <span class="last_bar"><%= link_to 'Activity Page', clubs_path, class: "bottom_bar_buttons" %></span>
 
   </div>
 

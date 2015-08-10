@@ -16,24 +16,24 @@
 <%= form_for @club, html: {multipart: true} do |f| %>
 
     <p>
-      <%= f.label :title%>
-      <%= f.text_field :title %>
+      <%= f.label :title, class: "field_title"%>
+      <%= f.text_field :title, class: "field_box" %>
     </p>
     <p>
-      <%= f.label :description %>
-      <%= f.text_area :description %>
+      <%= f.label :description, class: "field_title" %>
+      <%= f.text_area :description, class: "field_box" %>
     </p>
     <p>
-      <%= f.label :location %>
-      <%= f.text_field :location %>
+      <%= f.label :location, class: "field_title" %>
+      <%= f.text_field :location, class: "field_box" %>
     </p>
     <p>
-      <%= f.label :image, "Attach an Image" %><br>
-      <%= f.file_field :image, placeholder: "Click to attach a club image" %>
+      <%= f.label :image, "Attach an Image", class: "field_title" %><br>
+      <%= f.file_field :image, placeholder: "Click to attach a club image", class: "field_box" %>
     </p>
     <p>
-      <%= f.label :thumbtag %>
-      <%= f.text_field :thumbtag, placeholder: "Space tags by commas"%>
+      <%= f.label :thumbtag, "Club Id Tags", class: "field_title" %>
+      <%= f.text_field :thumbtag, placeholder: "Space tags by commas", class: "field_box"%>
     </p>
   <!--   <p>
      f.label :tag_list <br />

@@ -1,7 +1,11 @@
+<div class="input_container">
 <h1>New Project</h1>
 
 <%= render 'form' %>
 
 <% if current_user && current_user.clubs %>
+<p id="back_button">
   <%= link_to 'Back', club_path(current_user.clubs.last) %>
+</p>
 <% end %>
+</div>

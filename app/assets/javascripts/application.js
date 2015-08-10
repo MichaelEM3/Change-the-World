@@ -26,25 +26,33 @@
 
 $(document).ready(function(){
 
-  $('.club_users').on('click', function(){
-          $('.user_club_show').slideToggle();            
+  $('.club_users').on('click', function(evt){
+          evt.preventDefault();
+          $('.user_club_show').slideToggle();
+
       });     
 
-     $('.club_stories').on('click', function(){
+     $('.club_stories').on('click', function(evt){
       console.log("This")
-          $('.stories_show').slideToggle();            
+          evt.preventDefault();
+          $('.stories_show').slideToggle();
+
       });    
     
-      $('.club_details').on('click', function(){
-          $('.about_container').slideToggle();            
+      $('.club_details').on('click', function(evt){
+          evt.preventDefault();
+          $('.about_container').slideToggle();  
+
       });
 
      // $('.leave_a_comment').on('click', function(){
      //      $(this).sibling('story_comments').slideToggle();            
      //  });
 
-       $('.leave_a_comment').on('click', function(){
-          $(this).next().slideToggle();            
+       $('.leave_a_comment').on('click', function(evt){
+          evt.preventDefault();
+          $(this).next().slideToggle();
+
       });   
 
       //  $('.leave_a_comment').on('click', function(){
@@ -56,3 +64,15 @@ $(document).ready(function(){
       // });    
 });
 
+
+$(document).ready(function(){
+  $('#new_commentary').on('submit', function(evt){
+    evt.preventDefault();
+    $.ajax('#commentary_comment', {
+      success: function(evt, data) {
+        alert("working");
+        $(this).appendTo(".story_comments");
+      }
+    });
+  });
+});
