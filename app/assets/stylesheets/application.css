@@ -162,7 +162,7 @@ input {
 }
 
 #chat input[type="submit"] {
- background-color: rgb(80,187,182, 0.8);
+  background-color: rgba(80,187,182, 0.8);
  color: rgb(80,187,182);
  font-family: 'Helvetica Neue',sans-serif;
  font-size: 1vw;
