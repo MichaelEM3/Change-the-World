@@ -41,11 +41,10 @@
 
 .field_title {
 	text-align: center;
-	font-family: 'Playfair Display SC', serif;
 }
 
 .field_box {
-	width: 31vw;
+	width: 23vw;
 	height: 3vw;
 	vertical-align: middle;
 }
