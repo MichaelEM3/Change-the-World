@@ -28,7 +28,7 @@
       <%= f.text_field :location, class: "field_box" %>
     </p>
     <p>
-      <%= f.label :image, "Attach an Image", class: "field_title" %><br>
+      <%= f.label :image, "Attach an Image", class: "image_field_button" %><br>
       <%= f.file_field :image, placeholder: "Click to attach a club image", class: "field_box" %>
     </p>
     <p>
@@ -40,7 +40,9 @@
      f.text_field :tag_list
     </p> -->
     <p>
+    <span class="submit_button">
       <%= f.submit %>
+      </span>
     </p>
 
 <% end %>

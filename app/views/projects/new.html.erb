@@ -4,7 +4,7 @@
 <%= render 'form' %>
 
 <% if current_user && current_user.clubs %>
-<p id="back_button">
+<p class="back_button">
   <%= link_to 'Back', club_path(current_user.clubs.last) %>
 </p>
 <% end %>

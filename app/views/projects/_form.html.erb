@@ -36,6 +36,7 @@
 
   <div class="field">
     <div class="field_before">
+     <%= f.label :club_id, "Associated club", class: "field_title" %><br>
     <%= f.select :club_id, options_for_select(@club_options), class: "field_box", placeholder: "club selector"%>
     </div>
   </div>

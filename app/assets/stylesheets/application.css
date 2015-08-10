@@ -109,3 +109,31 @@ button::-moz-focus-inner { border: 0; }
 .wow {
   font-size: 12px;
 }
+
+
+/* ******************************************************* */
+/*                   Project Create Page                   */
+/* ******************************************************* */
+
+.back_button a {
+    padding-left: 4.2em;
+    padding-top: .25em;
+    padding-bottom: .25em;
+    position: absolute;
+    text-decoration: none;
+    color: rgb(80,187,182);
+}
+
+label {
+  font-size: 1.5em;
+} 
+
+select#project_club_id, #project_club_id option {
+     width: 31vw;
+    height: 3vw;
+    font-size: 1vw;
+}
+
+input {
+      font-size: 1vw;
+}
