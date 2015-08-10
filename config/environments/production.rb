@@ -1,5 +1,11 @@
 Rails.application.configure do
-
+:storage => :s3,
+  :s3_credentials => {
+    :bucket => ENV['wyncodeproject'],
+    :access_key_id => ENV['AKIAJOHWY434RKAJYB6A'],
+    :secret_access_key => ENV['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']
+  }
+}
   # Settings specified here will take precedence over those in config/application.rb.
 
   # Code is not reloaded between requests.
