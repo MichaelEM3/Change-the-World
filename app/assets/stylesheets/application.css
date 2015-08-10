@@ -1,5 +1,11 @@
 /*
 * This is a manifest file that'll be compiled into application.css, which will include all the files
+
+
+
+/*
+=======
+/* This is a manifest file that'll be compiled into application.css, which will include all the files
 * listed below.
 *
 * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
@@ -10,6 +16,7 @@
 * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
 * file per style scope.
 *
+
 *= require_tree .
 *= require_self
 */
@@ -20,8 +27,11 @@
 /*******************/
 
 
-html {
+/*html {
   font-family: 'Playfair Display SC', serif;
+}*/
+*{
+  font-family: 'Domine', serif;
 }
 
 button::-moz-focus-inner { border: 0; }
@@ -60,7 +70,7 @@ button::-moz-focus-inner { border: 0; }
 #navbar li {
  display: inline-block;
 
- padding: 0em .3em ; 
+ padding: 0em .3em ;
  font-family: sans-serif;
 
  padding: 0em .3em ;
@@ -93,8 +103,8 @@ button::-moz-focus-inner { border: 0; }
 }
 
 #navMenuItems li a, #login{
-  margin-right: 1em; 
-  font-size : 1.5em ;
+  margin-right: 1em;
+  font-size : 1vw ;
   color : #fff  ;
 }
 
@@ -126,7 +136,7 @@ button::-moz-focus-inner { border: 0; }
 
 label {
   font-size: 1.5em;
-} 
+}
 
 select#project_club_id, #project_club_id option {
      width: 31vw;
@@ -178,3 +188,4 @@ input {
 li[type="circle"] {
   text-align: left;
 }
+

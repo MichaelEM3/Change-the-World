@@ -1,38 +1,38 @@
 
 <%= form_for @user, html: {multipart: true} do |f| %>
   <p>
-    <%= f.label :username %>
+    <%= f.label :username %><br>
     <%= f.text_field :username %>
   </p>
   <p>
-    <%= f.label :name %>
+    <%= f.label :name %><br>
     <%= f.text_field :name %>
   </p>
     <p>
-    <%= f.label :gender %>
+    <%= f.label :gender %><br>
     <%= f.text_field :gender %>
   </p>
     <p>
-    <%= f.label :age %>
+    <%= f.label :age %><br>
     <%= f.number_field :age %>
   </p>
     <p>
-    <%= f.label :about %>
+    <%= f.label :about %><br>
     <%= f.text_field :about %>
   </p>
   <p>
-    <%= f.label :email %>
+    <%= f.label :email %><br>
     <%= f.email_field :email %>
   </p>
   <p>
-    <%= f.label :password %>
+    <%= f.label :password %><br>
     <%= f.password_field :password %>
   </p>
   <p>
-    <%= f.label :password_confirmation %>
+    <%= f.label :password_confirmation %><br>
     <%= f.password_field :password_confirmation %>
   </p>
-      <%= f.label :avatar, "Attach an Image" %><br>
+      <%= f.label :avatar, "Attach an Image" , id: "image_text" %><br>
       <%= f.file_field :avatar %>
   <p>
     <%= f.submit %>
