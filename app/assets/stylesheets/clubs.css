@@ -1,17 +1,72 @@
 /***************************/
+/* Activity Feed Page */
+/***************************/
+
+#welcome h2 {
+  text-align: left;
+  font-size: 1.5vw;
+}
+
+#welcome p {
+  text-align: left;
+  font-size: 1.5vw;
+}
+
+#user_clubs {
+  float: left;
+  width: 50%;
+}
+
+#user_clubs h2 {
+  text-align: left;
+  font-size: 1.5vw;
+}
+
+.club_area {
+  float: left;
+  margin: 0 auto;
+}
+
+.club_area img {
+  height: 300px;
+  width: 300px;
+  /*border-radius: 100%;*/
+  padding: 5px;
+}
+
+.club_title {
+  text-align: center;
+  font-weight: bold;
+}
+
+#activities {
+  float: right;
+  width: 50%;
+}
+
+#activities h2 {
+  font-size: 1.5vw;
+}
+
+#all_clubs h2 {
+  font-size: 1.5vw;
+}
+
+#all_clubs {
+  clear: both; 
+}
+
+/***************************/
 /* Beginning of Clubs Page */
 /***************************/
 
 .clubs_body {
- background-color: ;
- min-width: 100%;
- min-height: 100%;
-list-style-type: none;
-text-decoration: none;
+   background-color: ;
+   min-width: 100%;
+   min-height: 100%;
+   list-style-type: none;
+   text-decoration: none;
 }
-
-
-
 
 .button_response {
 
@@ -603,5 +658,3 @@ background-color: #f46954;
     text-decoration: none;
 
 }
-
-#clubs_
