@@ -29,59 +29,58 @@
 
 /*html {
   font-family: 'Playfair Display SC', serif;
-}*/
-*{
-  font-family: 'Domine', serif;
-}
+  }*/
+  *{
+    font-family: 'Domine', serif;
+  }
 
-button::-moz-focus-inner { border: 0; }
-
-
-/*******************/
-/* Navigation Bar */
-/*****************/
+  button::-moz-focus-inner { border: 0; }
 
 
-#navbar {
-  /*padding-bottom: 10em;*/
-  margin: 0;
-  padding: 0;
-  height: 50px;
-  width: 100%;
-  position: fixed;
+  /*******************/
+  /* Navigation Bar */
+  /*****************/
 
-  background-color: #50bbb6;
-  z-index:9999;
-}
 
-#navbar a {
-  text-decoration: none;
-  font
-}
+  #navbar {
+    /*padding-bottom: 10em;*/
+    margin: 0;
+    padding: 0;
+    height: 50px;
+    width: 100%;
+    position: fixed;
 
-#navbar ul {
- list-style-type: none;
- margin: 0;
- padding: 0;
- padding-left: 0px;
- height: 40px;
-}
+    background-color: #50bbb6;
+    z-index:9999;
+  }
 
-#navbar li {
- display: inline-block;
+  #navbar a {
+    text-decoration: none;
+  }
 
- padding: 0em .3em ;
- font-family: sans-serif;
+  #navbar ul {
+   list-style-type: none;
+   margin: 0;
+   padding: 0;
+   padding-left: 0px;
+   height: 40px;
+ }
 
- padding: 0em .3em ;
+ #navbar li {
+   display: inline-block;
 
-}
+   padding: 0em .3em ;
+   font-family: sans-serif;
 
-/*****************/
-/* Landing Page */
-/*****************/
+   padding: 0em .3em ;
 
-#title h1 {
+ }
+
+ /*****************/
+ /* Landing Page */
+ /*****************/
+
+ #title h1 {
   padding-top: 3em;
   text-align: center;
   font-family: sans-serif;
@@ -99,7 +98,8 @@ button::-moz-focus-inner { border: 0; }
 
 #navMenuItems{
   position: absolute;
-  top: -.25em; left: 40%;
+  top: -.25em;
+  left: 40%;
 }
 
 #navMenuItems li a, #login{
@@ -126,12 +126,12 @@ button::-moz-focus-inner { border: 0; }
 /* ******************************************************* */
 
 .back_button a {
-    padding-left: 4.2em;
-    padding-top: .25em;
-    padding-bottom: .25em;
-    position: absolute;
-    text-decoration: none;
-    color: rgb(80,187,182);
+  padding-left: 4.2em;
+  padding-top: .25em;
+  padding-bottom: .25em;
+  position: absolute;
+  text-decoration: none;
+  color: rgb(80,187,182);
 }
 
 label {
@@ -139,13 +139,53 @@ label {
 }
 
 select#project_club_id, #project_club_id option {
-     width: 31vw;
-    height: 3vw;
-    font-size: 1vw;
+ width: 31vw;
+ height: 3vw;
+ font-size: 1vw;
 }
 
 input {
-      font-size: 1vw;
+  font-size: 1vw;
 }
 
+/* ******************************************************* */
+/*                   Project Show Page                   */
+/* ******************************************************* */
+
+#chat_log {
+  border-style: solid;
+  width: 80vw;
+  height: 20vw;
+  overflow: scroll;
+  margin-left: 9vw;
+  margin-right: 10vw;
+}
+
+#chat input[type="submit"] {
+  background-color: rgba(80,187,182, 0.8);
+ color: rgb(80,187,182);
+ font-family: 'Helvetica Neue',sans-serif;
+ font-size: 1vw;
+ border: 0;
+ text-shadow: #C17C3A 0 -1px 0;
+ outline: none;
+ padding-top: .5vw;
+ padding-bottom: .5vw;
+ margin-bottom: 1.25vw;
+ width: 80vw;
+ text-decoration: none;
+ margin-left: 10vw;
+ margin-right: 10vw;
+}
+
+#chat_text {
+  width: 80vw;
+  height: 4vw;
+  margin-left: 10vw;
+  margin-right: 10vw;
+}
+
+li[type="circle"] {
+  text-align: left;
+}
 

@@ -159,6 +159,7 @@
 }
 /**/
 
+<<<<<<< HEAD
 /*Clubs a part of box*/
 .sometext2 {
   width: 568px;
@@ -166,6 +167,16 @@
   border: 1px solid navy;
   padding-left: 50px;
   margin-left: 70px;
+=======
+.profile {
+  padding-bottom: 32px;
+  font-size: 24px;
+  color: #fff;
+}
+
+
+.checkoutbutton {
+>>>>>>> 8bf8c31b905a523b6f44533f1e4f4f3617c654d3
   background-color: #000;
   vertical-align: top;
 }
@@ -222,6 +233,10 @@
 }
 /**/
 
+<<<<<<< HEAD
+=======
+/***************/
+>>>>>>> 8bf8c31b905a523b6f44533f1e4f4f3617c654d3
 /*Update Profile*/
 
 /**/

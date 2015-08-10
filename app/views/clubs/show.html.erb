@@ -11,7 +11,7 @@
   <div class="about_container">
       <div class="button_response">
             <span class="club_about">
-            <%= image_tag @club.image(:large), :class => "club_about"%> 
+            <%= image_tag @club.image.url(:large), :class => "club_about"%> 
             </span> 
       </div>
 
@@ -41,9 +41,9 @@
   <div class="nav">
     <ul class="nav">
       <div class="club_button_container">
-        <li>
-          <%= link_to 'Current Projects', club_projects_path(@club), class: "club_button button_text" if current_user %>
-        </li>
+      <!--   <li>
+           link_to 'Current Projects', club_projects_path(@club), class: "club_button button_text" if current_user 
+        </li> -->
         
         <li>
           <%= link_to 'Create New Project', new_club_project_path(@club), class: "club_button button_text" if current_user && current_user.user_in_club(@club.id) && current_user.user_admin_in_club?(@club.id) %>
@@ -75,7 +75,15 @@
     </ul>
   </div>
 
- 
+<div class="project_list">
+ <h1>Projects</h1>
+<% @club.projects.each do |projects| %>
+  <ul>
+    <li><%= link_to projects.name, club_project_path(projects.club, projects) %></li>
+    <li><%= projects.description%></li>
+  </ul>
+<% end%>
+</div>
 
     <!-- Beginning of toggled Story section -->
 
@@ -90,13 +98,13 @@
         <h2><%= story.title %></h2>
       </div>
       <div class="story_info">
-      <h3> Description: </h3>
+      <h3> Description</h3>
         <p><%= story.story%></p>
         <div class="leave_a_comment">
           <% if current_user && current_user.user_in_club(@club.id) %>
-          <h3>Comments:</h3>
+          <h3>Comments</h3>
         </div>
-        <div  class="story_comments">
+        <div  class="story_comments" style="display: none;">
           <%= flash[:error] unless flash[:error].blank? %>
             <% story.commentaries.each do |com| %>
             <p><%= com.comment %><br>

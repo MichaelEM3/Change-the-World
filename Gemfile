@@ -7,11 +7,16 @@ gem 'rails', '4.2.3'
 # gem 'sqlite3'
 gem 'pg'
 
+gem 'aws-sdk', '~> 1.61.0'
+
+
+gem 'paperclip'
+
 group :production do
   gem 'rails_12factor'
 end
 # gem install pg -- --with-pg-config=/Applications/Postgres.app/Contents/Versions/9.4/bin/pg_config
-# gem 'aws-sdk', '~> 1.61.0'
+
 
 gem 'faker'
 gem 'simple_calendar', '~> 1.1.10'
@@ -37,7 +42,6 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 
-gem 'paperclip'
 
 gem 'better_errors'
 

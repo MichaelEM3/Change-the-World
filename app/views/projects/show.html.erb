@@ -41,6 +41,8 @@
       <div class= 'page'><%= paginate @tasks, :window => 1 %></div>
 
 <br>
+
+
 <% if current_user && current_user.user_in_club(@project.club.id) && current_user.user_admin_in_club?(@project.club.id) %>
   <div id= 'newtsk'>
   <h2>Create a New Task</h2>
@@ -48,15 +50,17 @@
 <% end %>
     </div>
 
+<div> 
 <% if current_user && current_user.user_in_club(@project.club.id)%>
+<div class="live_chat_container">
   <h2>Live Chat:<h2>
   <!-- Include the PubNub Library -->
   <script src="https://cdn.pubnub.com/pubnub-dev.js"></script>
 
   <ul id="chat_log"></ul>
   <form id="chat">
-    <input type="text" name="chattext" id="chat_text">
-    <input type="submit" value="Submit">
+    <input type="text" name="chattext" id="chat_text" class="chat_input">
+    <input type="submit" value="Submit" class="chat_submit">
   </form>
 
   <script type="text/javascript">
@@ -82,9 +86,15 @@
         event.preventDefault();
       });
   </script>
+  </div>
 <% end %>
 <br><br>
 
+
 <div class= 'bottom_bar_container'>
-  <span><%= link_to "Back", club_projects_path, class: "bottom_bar_buttons" %></span>
+<!-- <span class="toggle_live_chat bottom_bar_buttons"> Hide live chat </span>
+ -->  <!-- <span> link_to "Back", club_projects_path, class: "bottom_bar_buttons" </span>
 </div>
+ -->
+ <span><%= link_to "Return to club page", club_path(params[:club_id]), class: "bottom_bar_buttons" %></span>
+ </div>

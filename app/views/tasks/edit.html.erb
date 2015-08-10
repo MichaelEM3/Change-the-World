@@ -1,7 +1,10 @@
+<div class= "input_container">
 <h1>Edit Task</h1>
 
-<p>Check the completed box to mark the task as completed.<p>
+<p>Check the completed box to mark the task as completed.</p>
 
 <%= render 'form' %>
-
+<p class="back_button">
 <%= link_to 'Back', club_project_path(@project.club, @project) %>
+</p>
+</div>

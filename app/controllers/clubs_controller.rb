@@ -19,6 +19,7 @@ class ClubsController < ApplicationController
   end
 
   def show
+    @projects = Project.where(club_id: params[:club_id])
     @club = Club.find(params[:id])
     @story= Story.new
     @stories = @club.stories.page(params[:page]).per(3)
