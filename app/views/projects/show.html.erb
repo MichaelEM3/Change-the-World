@@ -1,8 +1,9 @@
 <div class= 'proj'>
+
 <h1><%= @project.name %></h1>
-<p>Description: <%= @project.description %></p>
-<p>Location: <%= @project.location %></p>
-<p>Due Date: <%= @project.due_date %></p>
+<p>Project description: <%= @project.description %></p>
+<p>Location: <%= @project.location %> | Due Date: <%= @project.due_date %></p>
+
 
 <%= link_to "Edit", edit_club_project_path(@project.club, @project) if current_user && current_user.user_in_club(@project.club.id) && current_user.user_admin_in_club?(@project.club.id) %>
 <%= link_to "Delete", club_project_path(@project.club, @project), method: :delete, data: { confirm: 'Are you sure?' } if current_user && current_user.user_in_club(@project.club.id) && current_user.user_admin_in_club?(@project.club.id) %><br><br>
@@ -12,8 +13,7 @@
 <%@tasks.each do |task| %>
 <div class= "task">
   <p>Description: <%= task.description %></p>
-  <p>Due Date: <%= task.due_date %></p>
-  <p>Project Status: <%= task.completed ? "Completed": "Not Completed" %></p>
+  <p>Due Date: <%= task.due_date %> | Project Status: <%= task.completed ? "Completed": "Incomplete" %></p>
 
   <h3>Members handling this task:</h3>
 
@@ -33,7 +33,7 @@
       <%= button_to "Join Task", join_task_path(@project, task) %>
     <% end %><br>
 
-    <%= link_to "Edit Task | Edit Completion Status", edit_project_task_path(@project.club, task) if current_user && current_user.user_in_club(@project.club.id) && current_user.user_admin_in_club?(@project.club.id)%><br>
+    <%= link_to "Edit Task Status", edit_project_task_path(@project.club, task) if current_user && current_user.user_in_club(@project.club.id) && current_user.user_admin_in_club?(@project.club.id)%><br>
     <%= link_to "Delete Task", project_task_path(@project, task),  method: :delete, data: { confirm: 'Are you sure?' } if current_user && current_user.user_in_club(@project.club.id) && current_user.user_admin_in_club?(@project.club.id) %>
   </div>
     <% end %>
@@ -46,40 +46,43 @@
   <h2>Create a New Task</h2>
   <%= render "tasks/form" %>
 <% end %>
-  </div>
-<h2>Live Chat:<h2>
-<!-- Include the PubNub Library -->
-<script src="https://cdn.pubnub.com/pubnub-dev.js"></script>
+    </div>
 
-<ul id="chat_log">
-</ul>
-<form id="chat">
-  <input type="text" name="chattext" id="chat_text">
-  <input type="submit" value="Submit">
-</form>
+<% if current_user && current_user.user_in_club(@project.club.id)%>
+  <h2>Live Chat:<h2>
+  <!-- Include the PubNub Library -->
+  <script src="https://cdn.pubnub.com/pubnub-dev.js"></script>
 
-<script type="text/javascript">
-    var PUBNUB_demo = PUBNUB.init({
-        publish_key: 'pub-c-442c28cb-bab8-4ac5-b5ac-d8cc6cba2e8f',
-        subscribe_key: 'sub-c-f38868fa-3e19-11e5-bcbe-0619f8945a4f'
-    });
+  <ul id="chat_log"></ul>
+  <form id="chat">
+    <input type="text" name="chattext" id="chat_text">
+    <input type="submit" value="Submit">
+  </form>
 
-    PUBNUB_demo.subscribe({
-      channel: 'demo_tutorial',
-      message: function(m){$('#chat_log').append('<li type="circle">' + m.name + ': ' + m.text + '</li>')}
-    });
-
-    $( "#chat" ).submit(function( event ) {
-      var username = "<%= @current_user.username %>";
-      var text = $('#chat_text').val();
-      PUBNUB_demo.publish({
-        channel: 'demo_tutorial',
-        message: {'name': username, 'text': text}
+  <script type="text/javascript">
+      var PUBNUB_demo = PUBNUB.init({
+          publish_key: 'pub-c-442c28cb-bab8-4ac5-b5ac-d8cc6cba2e8f',
+          subscribe_key: 'sub-c-f38868fa-3e19-11e5-bcbe-0619f8945a4f'
       });
-      event.preventDefault();
-    });
-</script>
 
+      PUBNUB_demo.subscribe({
+        channel: 'demo_tutorial',
+        message: function(m){$('#chat_log').prepend('<li type="circle">' + m.name + ': ' + m.text + '</li>')}
+
+      });
+
+      $( "#chat" ).submit(function( event ) {
+        var username = "<%= @current_user.username %>";
+        var text = $('#chat_text').val();
+        PUBNUB_demo.publish({
+          channel: 'demo_tutorial',
+          message: {'name': username, 'text': text}
+        });
+        $('#chat_text').val(' ');
+        event.preventDefault();
+      });
+  </script>
+<% end %>
 <br><br>
 
 <div class= 'bottom_bar_container'>

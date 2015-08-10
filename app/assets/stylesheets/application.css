@@ -1,13 +1,5 @@
-
 /*
 * This is a manifest file that'll be compiled into application.css, which will include all the files
-=======
-
-
-/*
-=======
-/* This is a manifest file that'll be compiled into application.css, which will include all the files
->>>>>>> 1b65e2521dadd94f752ecbf23de2ad8cb361d5b6
 * listed below.
 *
 * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
@@ -18,7 +10,6 @@
 * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
 * file per style scope.
 *
->>>>>>> clubstyle
 *= require_tree .
 *= require_self
 */
@@ -48,13 +39,14 @@ button::-moz-focus-inner { border: 0; }
   height: 50px;
   width: 100%;
   position: fixed;
+
   background-color: #50bbb6;
   z-index:9999;
-
 }
 
 #navbar a {
   text-decoration: none;
+  font
 }
 
 #navbar ul {
@@ -67,8 +59,12 @@ button::-moz-focus-inner { border: 0; }
 
 #navbar li {
  display: inline-block;
+
  padding: 0em .3em ; 
  font-family: sans-serif;
+
+ padding: 0em .3em ;
+
 }
 
 /*****************/
@@ -88,6 +84,7 @@ button::-moz-focus-inner { border: 0; }
 
 #search-form{
   margin-left: 25%;
+
 }
 
 #navMenuItems{
@@ -101,7 +98,14 @@ button::-moz-focus-inner { border: 0; }
   color : #fff  ;
 }
 
+#chat_log {
+  border-style: solid;
+  width: 300px;
+  height: 300px;
+  overflow: scroll;
+
+}
+
 .wow {
   font-size: 12px;
 }
-

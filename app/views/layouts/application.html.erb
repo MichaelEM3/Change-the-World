@@ -11,14 +11,15 @@
 </head>
 
 <body >
-
-
-
-
-
-    <div id="navbar">
+  <div id="navbar">
+    <div><%= link_to 'Home', root_path %></div>
+      <%= form_tag(clubs_path, :method => "get", id: "search-form") do %>
+        <%= text_field_tag :search, params[:search], placeholder: "Search Clubs" %>
+        <%= submit_tag "Search" %>
+      <% end %>
     <div id="navMenuItems">
       <ul>
+<<<<<<< HEAD
         <li>
         <%= form_tag(clubs_path, :method => "get", id: "search-form") do %>
         <%= text_field_tag :search, params[:search], placeholder: "Search Clubs" %></li>
@@ -26,6 +27,8 @@
         <% end %>
      
     <li><%= link_to 'Home', root_path %></li>
+=======
+>>>>>>> d3398f359e091e4674bfe90252bf4f30b2ead975
         <li><%= link_to 'Join a Club', clubs_path %></li>
         <li><%= link_to 'Create a New Club', new_club_path %></li>
         <% if current_user %>
