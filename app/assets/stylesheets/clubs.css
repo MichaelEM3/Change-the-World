@@ -100,7 +100,6 @@ clear: both;
 
 .club_button_container li {
   float: left;
-  width:;
 }
 
 li input[type="submit"] {
@@ -182,7 +181,6 @@ a.button_text:active {
  .edit_club_page_buttons  {
   display: none;
   clear: both;
-  display: ;
   margin-top: 100px;
   margin-left: 15em;
   margin-right: 15em;
@@ -294,7 +292,6 @@ a.button_text:active {
 
 .story_comment_bar {
   clear: both;
-  float: ;
 }
 
 .story_info, .creatorfeed_title, .story_title {
