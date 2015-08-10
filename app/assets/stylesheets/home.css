@@ -235,7 +235,7 @@ body {
     width:50%;
     padding-bottom:50%;
     border-radius:50%;
-    border:15px solid #333;
+    border:3px solid #333;
     background-image: url('http://i.imgur.com/6fJjXwk.jpg');
     background-size: 235px 235px;
     background-repeat: no-repeat;
@@ -245,7 +245,7 @@ body {
     width:50%;
     padding-bottom:50%;
     border-radius:50%;
-    border:15px solid #333;
+    border:3px solid #333;
     background-image: url('http://i.imgur.com/CkM9wia.jpg');
     background-size: 260px 260px;
     background-repeat: no-repeat;
@@ -255,7 +255,7 @@ body {
     width:50%;
     padding-bottom:50%;
     border-radius:50%;
-    border:15px solid #333;
+    border:3px solid #333;
     background-image: url('http://i.imgur.com/3ODG9qC.jpg');
     background-size: 235px 235px;
     background-repeat: no-repeat;
@@ -400,24 +400,6 @@ body {
 .meetteam {
  /* padding-top: 20px;*/
   font-size: 35px;
-}
-
-.box11 {
-  display: inline-block;
-  background-color: #fbb64a;
-  padding-right: 20px;
-  margin-left: 360px;
-  box-shadow: 10px 10px 5px #888888;
-
-}
-
-.box22 {
-  display: inline-block;
-  background-color: #fbb64a;
-  margin-left: 180px;
-  box-shadow: 10px 10px 5px #888888;
-  vertical-align: top;
-  
 }
 
 
