@@ -6,6 +6,7 @@
   <%= csrf_meta_tags %>
   <link href='http://fonts.googleapis.com/css?family=Playfair+Display+SC' rel='stylesheet' type='text/css'>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <link href='http://fonts.googleapis.com/css?family=Domine' rel='stylesheet' type='text/css'>
 </head>
 
 <body >
@@ -17,7 +18,7 @@
         <%= text_field_tag :search, params[:search], placeholder: "Search Clubs" %></li>
         <li><%= submit_tag "Search" %><li>
         <% end %>
-     
+
         <li><%= link_to 'Home', root_path %></li>
         <li><%= link_to 'Join a Club', clubs_path %></li>
         <li><%= link_to 'Create a New Club', new_club_path %></li>
