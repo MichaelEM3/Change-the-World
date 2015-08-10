@@ -9,17 +9,35 @@
   display: inline;
 }
 .foo5 {
+
     /*float: left;*/
+
+    /*float: left;*/
+
     width: 100%;
-    height: 100px;
-    /*margin: 5px;*/
-    /*border-width: 1px;
-    border-style: solid;*/
-   /* border-color: rgba(0,0,0,.2);*/
+    height: 50px;
+    margin: 5px;
+    /*border-width: 1px;*/
+   /* border-style: solid;
+    border-color: rgba(0,0,0,.2);*/
+    background-color: #fc8d59;
     margin: 0;
     padding: 0;
-    /*opacity:0.7;*/
 }
+
+.foo10 {
+    float: left;
+    width: 100%;
+    height: 10px;
+    margin: 5px;
+    /*border-width: 1px;*/
+    /*border-style: solid;*/
+    /*border-color: rgba(0,0,0,.2);*/
+    background-color: #fff;
+    margin: 0;
+    padding: 0;
+}
+
 
 
 .column .column2 {
@@ -38,8 +56,9 @@ padding-left: 75px;
 float: left;
 margin: 0 450px 0 0;
 }
-.sometext {
-padding-left: 75px;
+
+.sometext1 {
+padding-left: 6px;
 }
 .boxed {
   border: 1px solid green ;
@@ -47,7 +66,7 @@ padding-left: 75px;
 
 #kinetic-container {
   width: 100%;
-  height: 40em;
+  height: 20em;
   overflow: hidden;
   background-image: -webkit-linear-gradient(top, #272727, #272727);
   background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#272727), to(#272727));
@@ -159,6 +178,81 @@ padding-left: 75px;
   font-size: 24px;
   color: #fff;
 }
+
+
+.checkoutbutton {
+  background-color: #000;
+  -moz-border-radius: 15px;
+  -webkit-border-radius: 15px;
+  /*border: 5px solid #009900;*/
+  padding: 5px;
+  display: inline;
+
+}
+
+.updateandback {
+  padding-left: 1300px;
+}
+
+.listing {
+  list-style: none;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.listing1 {
+  list-style: none;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#banner {
+  width: 100%;
+  height: 200px;
+  background-color: #202030;
+}
+
+#name {
+  font-size: 20px;
+  color: #f8f8f8;
+  margin: auto;
+  text-align: center;
+  padding: 10px;
+}
+#photo img{
+ width: 150px;
+  height: 150px;
+  margin: auto;
+  border-style: solid;
+  border-color: #e08040;
+  border-radius: 50%;
+  position: relative;
+}
+
+
+.box11 {
+  display: inline-block;
+  background-color: #fbb64a;
+  padding-right: 20px;
+  margin-left: 0;
+  width: 700px;
+  height: 1000px;
+  float: left;
+}
+
+.box22 {
+  display: inline-block;
+  background-color: #fbb64a;
+  margin-left: 200px;
+  margin-right: 0;
+  vertical-align: top;
+  float: right;
+  width: 600px;
+  height: 1000px;
+}
+
 /***************/
 /*Update Profile*/
 /********************/
@@ -215,3 +309,4 @@ padding-left: 75px;
 #image_text:hover{
   color: white;
 }
+

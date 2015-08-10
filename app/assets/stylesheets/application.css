@@ -143,3 +143,45 @@ select#project_club_id, #project_club_id option {
 input {
       font-size: 1vw;
 }
+
+/* ******************************************************* */
+/*                   Project Show Page                   */
+/* ******************************************************* */
+
+#chat_log {
+      border-style: solid;
+    width: 80vw;
+    height: 20vw;
+    overflow: scroll;
+    margin-left: 9vw;
+    margin-right: 10vw;
+}
+
+#chat input[type="submit"] {
+     background-color: rgb(80,187,182, 0.8);
+    color: rgb(80,187,182);
+    font-family: 'Helvetica Neue',sans-serif;
+    font-size: 1vw;
+    border: 0;
+    text-shadow: #C17C3A 0 -1px 0;
+    outline: none;
+    padding-top: .5vw;
+    padding-bottom: .5vw;
+    margin-bottom: 1.25vw;
+    width: 80vw;
+    text-decoration: none;
+    margin-left: 10vw;
+    margin-right: 10vw;
+}
+
+#chat_text {
+        width: 80vw;
+    height: 4vw;
+    margin-left: 10vw;
+    margin-right: 10vw;
+}
+
+li[type="circle"] {
+  text-align: left;
+}
+

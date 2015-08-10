@@ -107,7 +107,6 @@ input {
 clear: both;
 }
 
-
 /* about section */
 
 .clubs_information {
@@ -153,7 +152,6 @@ clear: both;
 /* end of about section*/
 
 /* beg of button section*/
-
 
 
 .nav {
@@ -381,19 +379,14 @@ a.button_text:active {
   height: 5em;
 }
 
-.story_title h2 {
+.story_title h2, h3 {
      text-align: center;
     border-top: 4px double rgb(131,236,184);
     border-bottom: 4px double rgb(131,236,184);
     padding-top: .5em;
      padding-bottom: .5em;
        color: #FFF;
-
-}
-
-h3 {
-   color: rgb(131,236,184);
-}
+  }
 
 .story_comment_bar {
   clear: both;

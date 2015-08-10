@@ -44,7 +44,7 @@
 }
 
 .field_box {
-	width: 23vw;
+	width: 31vw;
 	height: 3vw;
 	vertical-align: middle;
 }
@@ -165,6 +165,7 @@ h2 {
   text-align: center;
   vertical-align: top;
 }
+
 .page {
   text-align: center;
 }
@@ -175,9 +176,11 @@ h2 {
 
 #newtsk {
   text-align: center;
-  background-color: #fbb64a;
+  background-color: rgb(80,187,182);
   padding: 1vw;
 }
+
+
 #task_description {
   margin: 0px;
   width: 35vw;
@@ -186,7 +189,7 @@ h2 {
 
 /**/
 /*Back button*/
-/**/
+/**/d
 
 .bottom_bar_container {
 margin: 0;
@@ -194,10 +197,12 @@ display: block;
 }
 .bottom_bar_buttons {
 width: 100%;
+background-color: rgb(80,187,182);
 box-shadow: 0px 3px 8px #aaa, inset 0px 2px 3px #fff;
 padding-top: 1.25%;
 padding-bottom: 1.25%;
 display: block;
+color: rgb(138,141,143);
   text-align: center;
   vertical-align: middle;
 }
@@ -207,6 +212,35 @@ display: block;
     font-family: 'Playfair Display SC', serif;
 }
 .bottom_bar_buttons:hover {
-  opacity: 0.4;
-  color: blue;
+  color: rgb(138,141,143);
+  opacity: 0.9;
+   background-color: rgb(80,187,182);
+}
+
+.bottom_bar_buttons:active {
+	color: black;
+	  opacity: 0.4;
+	  background-color: rgb(80,187,182);
+}
+
+#chat_log {
+	 border-style: solid;
+    width: 80vw;
+    height: 20vw;
+    overflow: scroll;
+    margin-left: 10vw;
+    margin-right: 10vw;
+}
+
+.project_list {
+  /* border: 3px solid #358287; */
+    opacity: 0.8;
+    padding: 2.5vw 7.5vw 2.5vw 7.5vw;
+    margin-top: 2.5vw;
+    margin-bottom: 2.5vw;
+    margin-right: 5vw;
+    margin-left:5vw;
+    -moz-box-shadow: 1px 2px 3px rgba(0,0,0,.5);
+    -webkit-box-shadow: 1px 2px 3px rgba(0,0,0,.5);
+    box-shadow: 3px 6px 9px rgba(0,0,0,.5);
 }
