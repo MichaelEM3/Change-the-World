@@ -606,4 +606,22 @@ background-color: #f46954;
 
 }
 
-#clubs_
+#clubs_image {
+
+}
+
+#submit input, .actions input{
+ background-color: rgb(237,66,85);
+  color:#fff;
+  font-family:'Helvetica Neue',sans-serif;
+  font-size:18px;
+  line-height:30px;
+  border-radius:20px;
+  -webkit-border-radius:20px;
+  -moz-border-radius:20px;
+  border:0;
+  text-shadow:#C17C3A 0 -1px 0;
+  width:120px;
+  height:32px;
+  outline: none;
+}

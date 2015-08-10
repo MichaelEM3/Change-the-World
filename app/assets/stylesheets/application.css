@@ -67,7 +67,7 @@ button::-moz-focus-inner { border: 0; }
 
 #navbar li {
  display: inline-block;
- padding: 0em .3em ;
+ padding: 0em .3em ; 
  font-family: sans-serif;
 }
 
@@ -92,9 +92,14 @@ button::-moz-focus-inner { border: 0; }
 
 #navMenuItems{
   position: absolute;
-  top: -.5em; left: 65%;
+  top: -.25em; left: 40%;
 }
 
+#navMenuItems li a, #login{
+  margin-right: 1em; 
+  font-size : 1.5em ;
+  color : #fff  ;
+}
 
 .wow {
   font-size: 12px;
