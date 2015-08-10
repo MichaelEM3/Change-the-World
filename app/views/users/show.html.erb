@@ -1,45 +1,71 @@
-<div id="banner">
-  <div id="name">
-    <center><%= @user.name %></center>
-</div>
-    <div id="name">
-    <center><%= @user.username %></center>
-  </div>
-  <div class = "name">
-<center><%= link_to 'Update Profile', edit_user_path(:id) %></center>
-</div>
-  <div id="photo">
-  	<center><%= image_tag @user.avatar(:medium) %></center>
-  </div>
-</div>
+  <div class="backround1">
 
-<div class="box11">
-    <h2 class = "sometext1">Clubs a part of</h2>
-    <ul class="column2">
-    <li class = "listing">
-<% @clubs.each do |club| %>
-<%= club.title %>
-</li>
-<% end %>
+  <div id="kinetic-container">
+  <span id="s-1"></span>
+  <span id="s-2"></span>
+  <span id="s-3"></span>
+  <span id="s-4"></span>
+  <span id="s-5"></span>
+  <span id="s-6"></span>
+  <span id="s-7"></span>
+  <span id="s-8"></span>
+  <span id="s-9"></span>
+  <span id="s-10"></span>
+  <div class="container1">
+  <div class="title-bar">
+  </div>
+  <div class="header-container1">
+  <div class="header-bg"></div>
+  <div class="profile-info">
+    <br><br><br>
+  <div class="avatar">
+      <%= image_tag @user.avatar(:medium) %>
+  </div>
+  <div class="profile-name">
+      <%= @user.name %>
+      <br>
+      <br>
+      <br>
+      <%= @user.username %>
+  </div>
+  <div class="profile-more-info">
+  <div class="profile-page">
+  </div>
+  </div>
+  <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+  <div class = "sometext2">
+      <h2 class = "sometext1">Clubs Joined</h2>
+  </div>
+
+  <div class="box11">
+      <ul class="column2">
+        <% @clubs.each do |club| %>
+        <br>
+        <li class = "listing">
+          <%= link_to club.title, club_path(club) %>
+        </li>
+         <% end %>
     </ul>
+  </div>
+
+  <div class = "sometext3">
+      <h2 class = "sometext">Projects Joined</h2>
+  </div>
+  <div class="box22">
+      <ul class="column3">
+        <% @projects.each do |project| %>
+        <br>
+        <li class = "listing1">
+          <%= link_to project.name, club_project_path(project.club, project) %>
+        </li>
+          <% end %>
+        </ul>
+   </div>
+ </div>
+</div>
+</div>
+</div>
 </div>
 
-<div class="box22">
-<h2 class = "sometext">Projects a part of</h2>
-<ul class="column3">
-<li class = "listing1">
-<% @projects.each do |project| %>
-<%= project.name %>
-</li>
-<% end %>
-</ul>
-</div>
 
-
-
-
-
-
-
-
-
+  
