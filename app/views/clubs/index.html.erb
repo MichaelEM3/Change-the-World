@@ -2,7 +2,7 @@
 
 <div id="welcome">
 	<h2>Welcome, <%=current_user.name%>!</h2>
-	<p>How will you help better your community today?</p>
+	<p>How will you better your community today?</p>
 </div>
 
 <hr>
@@ -24,11 +24,11 @@
 			<% if activity.trackable %>
 				<p>
 					<b>
-						<%= activity.trackable.title %>
+						<div id="activity_stories"><%= link_to activity.trackable.title, club_path(activity) %></div>
 					</b>
 				</p>
 				<p>
-					Preview: <%=h truncate(activity.trackable.story, :length => 30) %>
+					<div id="activity_preview">Preview: <%=h truncate(activity.trackable.story, :length => 150) %></div>
 				</p>
 			<% end %>
 		<% end %>
@@ -39,15 +39,20 @@
 <div id="all_clubs">
 	<h2>Join a New Club</h2>
 
+	<%= form_tag(clubs_path, :method => "get", id: "search-form") do %>
+		<%= text_field_tag :search, params[:search], placeholder: "Search for existing clubs by title, description, location, tag, or field..."%>
+	<% end %>
+
 	<div class='club_body'>
-		<% @club.each do |club| %>
-		<div class="club">
-			<h4> <%= link_to club.title, club %> </h4>
-			<p>Club Description: <%= club.description %></p>
-			<p>Club Tags: <%= club.thumbtag %></p>
+		<% (@club-@clubs).each do |club| %>
+		<div class="club_area" style="float:none; display:inline-block;">
+			<%= link_to image_tag(club.image(:medium)), club_path(club) %>
+			<div class="club_title"><%= club.title %></div>
 		</div>
 		<% end %>
 	</div>
+</div>
 
-<div id="New"><%= link_to 'Create a New Club', new_club_path %></div>
-<%= link_to 'Back', '/' %>
+<div id="New">
+</div><%# link_to 'Create a New Club', new_club_path %></div>
+<%# link_to 'Back', '/' %>

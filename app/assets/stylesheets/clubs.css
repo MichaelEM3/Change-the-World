@@ -14,12 +14,17 @@
 
 #user_clubs {
   float: left;
-  width: 50%;
+  width: 46%;
 }
 
 #user_clubs h2 {
   text-align: left;
   font-size: 1.5vw;
+}
+
+.club_body {
+  overflow: auto;
+  text-align: center;
 }
 
 .club_area {
@@ -28,21 +33,31 @@
 }
 
 .club_area img {
-  height: 300px;
-  width: 300px;
+  height: 275px;
+  width: 275px;
   /*border-radius: 100%;*/
-  padding: 5px;
-
+  padding: 0.5vw;
 }
 
 .club_title {
   text-align: center;
-  font-weight: bold;
+  /*font-weight: bold;*/
 }
 
+.club_content{
+  display: block;
+}
+
+.club_img {
+  /*display: inline-block;*/
+}
 #activities {
   float: right;
-  width: 50%;
+  width: 52%;
+  /*border-style: solid;
+  border-width: 1px;*/
+  margin-right: 0.5vw;
+
 }
 
 #activities h2 {
@@ -55,6 +70,25 @@
 
 #all_clubs {
   clear: both;
+  padding-top: 3vw;
+}
+
+#activity_stories {
+  font-size: 1.5vw;
+  padding-top: 40px;
+}
+
+#activity_preview {
+  font-size: 1vw;
+}
+
+#search-form {
+  text-align: center;
+}
+
+input {
+  width: 35%;
+  padding: 0.5vw 0;
 }
 
 /***************************/
