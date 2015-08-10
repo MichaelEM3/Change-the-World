@@ -12,7 +12,13 @@
     <div id="navbar">
     <div id="navMenuItems">
       <ul>
-    <li><%= link_to 'Home', root_path %></li>
+        <li>
+        <%= form_tag(clubs_path, :method => "get", id: "search-form") do %>
+        <%= text_field_tag :search, params[:search], placeholder: "Search Clubs" %></li>
+        <li><%= submit_tag "Search" %><li>
+        <% end %>
+     
+        <li><%= link_to 'Home', root_path %></li>
         <li><%= link_to 'Join a Club', clubs_path %></li>
         <li><%= link_to 'Create a New Club', new_club_path %></li>
         <% if current_user %>
