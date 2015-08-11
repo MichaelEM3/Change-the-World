@@ -1,4 +1,4 @@
-  <div class="backround1">
+<div class="backround1">
 
   <div id="kinetic-container">
   <span id="s-1"></span>
@@ -23,11 +23,14 @@
   </div>
   <div class="profile-name">
       <%= @user.name %>
-      <%= link_to 'Update Profile', edit_user_path(:id) %>
       <br>
       <br>
       <br>
       <%= @user.username %>
+      <br>
+      <br>
+      <br>
+      <%= link_to 'Update Profile', edit_user_path(:id) %>
   </div>
   <div class="profile-more-info">
   <div class="profile-page">
@@ -68,6 +71,3 @@
 </div>
 </div>
 </div>
-
-
-

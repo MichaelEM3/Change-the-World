@@ -1,51 +1,17 @@
-/****************/
-/*User login */
-
-.sign_up {
-  text-align: center;
-}
-.sign_up input[type="submit"]{
-  background-color: rgb(237,66,85);
-  color: rgb(80,187,182);
-  font-family:'Helvetica Neue',sans-serif;
-  font-size:18px;
-  border-radius:20px;
-  -webkit-border-radius:20px;
-  -moz-border-radius:20px;
-  border:0;
-  text-shadow:#C17C3A 0 -1px 0;
-  outline: none;
-  padding: 0.5em;
-  margin-bottom: 1.25vw;
-    width:194px;
-  height:41px;
-  text-decoration: none;
-  text-align: center;
-}
-.sign_up h2{
-    font-size: 4vw;
-    line-height: 4vw;
-    text-align: center;
-    font-family: 'Playfair Display SC', serif;
-    color: #fff;
-}
-.sign_up input[type="submit"]:hover{
-  color:white;
-}
-
+/*profile css*/
 /*backround*/
 .backround1 {
   background-color: #FFE4C4;
 }
 
 /* profile picture */
-
-.avatar img {
-  width: 100px;
-  height: 160px;
-  padding-left: 640px;
+.avatar img{
+  width: 200px;
+  height: 200px;
   float:left;
   margin-left: 18vw;
+}
+/**/
 
 /*profile name and info*/
 .profile-name {
@@ -59,6 +25,11 @@
   /*text-align: center;*/
   color: #fff;
 }
+
+.profile-name a {
+  color: #fff;
+}
+
 .profile-info {
   position: absolute;
   left: 0;
@@ -282,20 +253,13 @@
   font-size: 27px;
 }
 
-/**/
-
-
 /***************/
 /*Update Profile*/
 /********************/
-#edit_user_1 {
-    text-align: center;
-    padding-left: 6em;
-}
 #updateprofile {
   margin: 5vw 20vw 5vw 20vw;
   background-color: rgb(80,187,182);
-  padding: 1em 11em;
+  padding: 10em 20em 10em 20em;
    box-shadow: 0px 0px 12px #CB99C9, inset 0px 2px 3px #966FD6;
   text-align: center;
 }
@@ -321,7 +285,6 @@
     width:194px;
   height:41px;
   text-decoration: none;
-  margin-left: 4em;
 }
 #image_text {
   background-color: rgb(237,66,85);
@@ -339,7 +302,6 @@
     width:194px;
   height:41px;
   text-decoration: none;
-  margin-right: 4em;
 }
 #updateprofile input[type="submit"]:hover{
   color: white;
@@ -348,6 +310,7 @@
   color: white;
 }
 
+/************/
 /*Sign up */
 /************/
 
