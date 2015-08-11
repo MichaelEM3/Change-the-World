@@ -1,9 +1,10 @@
-Ffbody { background-color: #fff; color: #888; }
+body { background-color: #fff; color: #888; }
 
 body, p, ol, ul, td {
-  font-family: verdana, arial, helvetica, sans-serif;
-  font-size:   13px;
-  line-height: 18px;
+      font-family: verdana, arial, helvetica, sans-serif;
+
+    text-align: left;
+
 }
 
 pre {
@@ -13,8 +14,6 @@ pre {
 }
 
 a { color: #fff; }
-
-a:hover { color: #fff; }
 
 div.field, div.actions, {
   margin-bottom: 10px;

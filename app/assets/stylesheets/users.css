@@ -4,11 +4,16 @@
 }
 
 /* profile picture */
+
 .avatar img {
   width: 100px;
   height: 160px;
   padding-left: 640px;
-}
+
+/*.avatar img{
+  width: 200px;
+  height: 200px;
+}*/
 /**/
 
 /*profile name and info*/
