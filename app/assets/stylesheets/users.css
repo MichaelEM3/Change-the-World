@@ -40,12 +40,7 @@
 
 /* profile picture */
 
-.avatar img {
-  width: 100px;
-  height: 160px;
-  padding-left: 640px;
-  float:left;
-  margin-left: 18vw;
+
 
 /*profile name and info*/
 .profile-name {

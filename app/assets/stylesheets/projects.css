@@ -209,6 +209,8 @@ h2 {
 	text-decoration: none;
 	font-size: 2vw;
 	font-family: 'Playfair Display SC', serif;
+	    padding-top: 1vw;
+    padding-bottom: 1vw;
 }
 .bottom_bar_buttons:hover {
 	color: rgb(138,141,143);
