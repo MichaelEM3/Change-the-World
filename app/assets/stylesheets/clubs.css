@@ -108,8 +108,8 @@ float: right;
 }
 
 .club_area img {
-  height: 275px;
-  width: 275px;
+  height: 200px;
+  width: 200px;
   /*border-radius: 100%;*/
   padding: 3.3vw;
 }
@@ -850,6 +850,25 @@ background-color: #f46954;
     width:194px;
   height:41px;
   text-decoration: none;
+  margin-left: 3.5em;
+}
+.submit_button input[type="submit"]{
+  background-color: rgb(237,66,85);
+   color: rgb(80,187,182);
+   font-family:'Helvetica Neue',sans-serif;
+   font-size:18px;
+   border-radius:20px;
+   -webkit-border-radius:20px;
+   -moz-border-radius:20px;
+   border:0;
+   text-shadow:#C17C3A 0 -1px 0;
+   outline: none;
+   padding: 0.5em;
+   margin-bottom: 1.25vw;
+     width:194px;
+   height:41px;
+   text-decoration: none;
+   margin-left: 2.5em;
 }
 
 #submit input:hover, .actions input:hover, .image_field_button:hover, .submit_button input[type="submit"]:hover {
@@ -884,6 +903,7 @@ input[type="file"] {
 }
 .new_club {
   text-align: center;
+  margin-left: 7em;
 }
 
 .newclub a {
@@ -899,6 +919,7 @@ input[type="file"] {
   outline: none;
   padding: 0.5em;
   margin-bottom: 1.25vw;
+  margin-right: 1em;
   width:194px;
   height:41px;
   text-decoration: none;

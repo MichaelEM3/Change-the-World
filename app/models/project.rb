@@ -3,5 +3,4 @@ class Project < ActiveRecord::Base
   has_many :tasks, dependent: :destroy
 
   validates :name, :description, :location, presence: true
-  validates :description, length: { minimum: 20} 
 end

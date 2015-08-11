@@ -105,8 +105,6 @@
 }
 
 
-
-
   /*******************/
   /* Navigation Bar */
   /*****************/
@@ -116,7 +114,7 @@
     /*padding-bottom: 10em;*/
     margin: 0;
     padding: 0;
-    height: 3.5vw;
+    height: 4vw;
     width: 100%;
     position: fixed;
     top: 0;
@@ -154,20 +152,21 @@
   font-family: sans-serif;
 }
 
-#body{
-  margin-top: 0px;
+body{
+  margin: 0px;
   padding-top: 50px;
 }
 
 
 #navMenuItems{
   position: absolute;
-  top: -.25em;
-  left: -11%;
+  padding-top: 0.5em;
+  top: -.20em;
+  left: -6%;
   margin: 0 auto;
 }
 #navMenuItems li{
-  margin-left: 15em;
+  margin-left: 12em;
 }
 
 #club_login {
@@ -236,7 +235,7 @@ select#project_club_id, #project_club_id option {
 }
 
 input {
-  font-size: 1vw;
+  font-size: 1.2vw;
 }
 
 /* ******************************************************* */

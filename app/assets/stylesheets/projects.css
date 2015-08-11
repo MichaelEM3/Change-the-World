@@ -44,8 +44,13 @@
 
 .field_box {
 	width: 26vw;
-	height: 3vw;
+	height: 2vw;
 	vertical-align: middle;
+	font-size: 15px;
+}
+
+#club_description {
+	height: 10vw;
 }
 
 #project_club_id, {
