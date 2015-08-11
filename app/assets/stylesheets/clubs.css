@@ -94,8 +94,8 @@ clear: both;
 .club_button_container {
   margin-top: 2.5em;
   display: inline-block;
-      margin-left: .5vw;
-    margin-right: .5vw;
+      margin-left: 10vw;
+    margin-right: 10vw;
 }
 
 .club_button_container li {
