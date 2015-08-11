@@ -257,14 +257,15 @@
 /*Update Profile*/
 /********************/
 
-#edit_user_1 {
+.edit_user {
     text-align: center;
-    padding-left: 6em;
+    padding-left: 12em;
 }
+
 #updateprofile {
   margin: 5vw 20vw 5vw 20vw;
   background-color: rgb(80,187,182);
-  padding: 10em 20em 10em 20em;
+  padding: 1em 11em;
    box-shadow: 0px 0px 12px #CB99C9, inset 0px 2px 3px #966FD6;
   text-align: center;
 }
@@ -291,6 +292,9 @@
   height:41px;
   text-decoration: none;
 }
+#updateprofile input{
+  width: 50%;
+}
 #image_text {
   background-color: rgb(237,66,85);
   color: rgb(80,187,182);
@@ -307,6 +311,7 @@
     width:194px;
   height:41px;
   text-decoration: none;
+  margin-right: 11em;
 }
 #updateprofile input[type="submit"]:hover{
   color: white;
