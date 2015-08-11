@@ -205,6 +205,7 @@
   height: 100%;
   position: absolute;
   box-shadow: 10px 10px 5px #888888;
+
 }
 .listing {
   list-style: none;
@@ -220,7 +221,7 @@
   padding-left: 50px;
   margin-left: 750px;
   background-color: #000;
-  margin-top: -50px;
+  margin-top: -53px;
 }
 .sometext {
   color: #fff;
@@ -236,6 +237,7 @@
   height: 100%;
   position: absolute;
   box-shadow: 10px 10px 5px #888888;
+
 }
 .listing1 {
   list-style: none;
