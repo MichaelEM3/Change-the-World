@@ -246,40 +246,13 @@ background-color: rgba(80,187,182, 0.7);
   line-height: 50px;
  box-shadow: 0px 0px 3px rgba(80,187,182, 0.2), inset 26px 32px 51px rgba(80,187,182, 0.2);
   border: solid 1px transparent;
-<<<<<<< HEAD
+
   
 }
 
 .two {
     background-color: rgba(138,141,143,0.3);
-=======
-}
 
-.club_button .bottom_bar_buttons {
- display: inline-block;
-}
-
-.club_button_container li{
-  display: inline-block;
-  margin-left: 40px;
-  width: 400px;
-}
-
-.club_button:hover {
-  -webkit-transform: rotate(360deg);
-  transform: rotate(360deg);
-}
-
-.club_button_container {
-  margin-top: 2.5em;
-  display: inline-block;
-      margin-left: .5vw;
-    margin-right: .5vw;
-}
-
-.club_button_container li {
-  float: left;
->>>>>>> f0ac97db026c06d9ddc80f0450b2c0292aba993a
 }
 
 li input[type="submit"] {
