@@ -196,14 +196,15 @@ clear: both;
   margin-right: 10%;
 }
 
-.clubs_information p:nth-child(2){
-
+.clubs_information p{
+margin-left: 40vw;
 }
 
 .clubs_title h1 {
   color: #827c89;
   font-size: 5em;
   text-align: center;
+  margin-left: 40vw;
 
 }
 

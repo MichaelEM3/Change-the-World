@@ -101,3 +101,17 @@ $(document).ready(function(){
 
 });
 
+
+function initialise(){
+    $('.clickableItem').click(function(){
+        /* do code here */
+        return false;
+    });
+};
+
+$(document).ready(function(){
+    initialise();
+});
+$(document).ajaxComplete(function () {
+    initialise();
+});

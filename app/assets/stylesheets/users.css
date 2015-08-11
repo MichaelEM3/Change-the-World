@@ -20,7 +20,7 @@
   padding-top: 16px;
   -webkit-transition: -webkit-transform 0.55s cubic-bezier(0.455, 0.03, 0.515, 0.955);
   -webkit-transition: -webkit-transform 0.5s ease-in-out;
-  /*text-align: center;*/
+  /* text-align: center; */
   color: #fff;
 }
 .profile-info {
@@ -46,9 +46,9 @@
   padding-left: 660px;
   padding-top: 32px;
 }
-/**/
+/* */
 
-/*moving backround*/
+/* moving backround */
 #kinetic-container {
   width: 100%;
   height: 39em;
@@ -157,9 +157,9 @@
     top: -180px;
   }
 }
-/**/
+/* */
 
-/*Clubs a part of box*/
+/* Clubs a part of box */
 .sometext2 {
   width: 568px;
   height: 50px;
@@ -174,7 +174,7 @@
   font-size: 24px;
   color: #fff;
 }
-/*.box22 {
+/* .box22 {
   display: inline-block;
   background-color: #50bbb6;
   padding-right: 20px;
@@ -183,7 +183,7 @@
   height: 100%;
   position: absolute;
   box-shadow: 10px 10px 5px #888888;
-}*/
+} */
 
 .checkoutbutton {
   background-color: #000;
@@ -251,6 +251,7 @@
 /***************/
 /*Update Profile*/
 /********************/
+
 #edit_user_1 {
     text-align: center;
     padding-left: 6em;
@@ -313,6 +314,7 @@
 /******************
 /* Sign up */
 /************/
+
 .signup{
   margin: 5vw 20vw 5vw 20vw;
     background-color: rgb(80,187,182);
