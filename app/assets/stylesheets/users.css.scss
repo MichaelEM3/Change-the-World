@@ -351,9 +351,9 @@
   font-family: 'Playfair Display SC', serif;
   color: #fff;
 }
-.sign_up input[type="submit"]{
+/*.sign_up input[type="submit"]{
   background-color: rgb(237,66,85);
-  /*color: #fff;*/
+  color: #fff;
   font-family:'Helvetica Neue',sans-serif;
   font-size:18px;
   border-radius:20px;
@@ -369,9 +369,9 @@
   text-decoration: none;
   text-align: center;
   margin-left: 0em;
-}
-/*.signup input[type="submit"]{
-  background-color: rgb(237,66,85);
+}*/
+.signup input[type="submit"]{
+    background-color: rgb(237,66,85);
   color: white;
   font-family:'Helvetica Neue',sans-serif;
   font-size:18px;
@@ -387,7 +387,7 @@
   height:41px;
   text-decoration: none;
   margin-left: 3em;
-}*/
+}
 .signup input[type="submit"]:hover {
   color: rgb(80,187,182);
 }
