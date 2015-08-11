@@ -158,8 +158,6 @@
   }
 }
 /**/
-
-<<<<<<< HEAD
 /*Clubs a part of box*/
 .sometext2 {
   width: 568px;
@@ -167,20 +165,32 @@
   border: 1px solid navy;
   padding-left: 50px;
   margin-left: 70px;
-=======
+  background-color: #000;
+}
+
 .profile {
   padding-bottom: 32px;
   font-size: 24px;
   color: #fff;
 }
-
+/*.box22 {
+  display: inline-block;
+  background-color: #50bbb6;
+  padding-right: 20px;
+  margin-left: 70px;
+  width: 600px;
+  height: 100%;
+  position: absolute;
+  box-shadow: 10px 10px 5px #888888;
+}*/
 
 .checkoutbutton {
->>>>>>> 8bf8c31b905a523b6f44533f1e4f4f3617c654d3
+
   background-color: #000;
   vertical-align: top;
 }
 /*Projects a part of box*/
+
 .sometext1 {
   color: #fff;
   padding-right: 31px;
@@ -233,11 +243,5 @@
 }
 /**/
 
-<<<<<<< HEAD
-=======
-/***************/
->>>>>>> 8bf8c31b905a523b6f44533f1e4f4f3617c654d3
-/*Update Profile*/
 
-/**/
 
