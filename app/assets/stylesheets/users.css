@@ -28,6 +28,8 @@
 
 .profile-name a {
   color: #fff;
+  line-height: 1.5vw;
+  text-decoration: none;
 }
 
 .profile-info {
@@ -291,7 +293,12 @@
   height:41px;
   text-decoration: none;
 }
-#image_text {
+
+#updateprofile input[type="submit"] {
+  width: 100%;
+}
+
+.edit_user #image_text {
   background-color: rgb(237,66,85);
   color: rgb(80,187,182);
   font-family:'Helvetica Neue',sans-serif;
@@ -303,6 +310,7 @@
   text-shadow:#C17C3A 0 -1px 0;
   outline: none;
   padding: 0.5em;
+  margin-top: 5.25vw;
   margin-bottom: 1.25vw;
     width:194px;
   height:41px;
@@ -310,6 +318,7 @@
 }
 #updateprofile input[type="submit"]:hover{
   color: white;
+  width: 100%;
 }
 #image_text:hover{
   color: white;

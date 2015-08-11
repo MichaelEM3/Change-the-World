@@ -81,8 +81,14 @@
 <!--  Beginning of toggled -->
 <br>
 
+<div class="club_project_title">
+      <h1>
+        Projects
+      </h1>
+</div>
+
 <div class="project_list">
- <h1>Projects</h1>
+
 <% @club.projects.each do |projects| %>
     <span class="project_black_box">
 <%= link_to projects.name, club_project_path(projects.club, projects), class: "club_project_name" %>: 
@@ -96,7 +102,7 @@
   <div class="stories_show">
     <div class="story_title">
       <h1>
-        Stories by '<%= @club.title.downcase %>'</h1>
+        Stories</h1>
     </div>
     <br>
     <%@stories.each_with_index do |story, index| %>

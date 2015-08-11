@@ -117,6 +117,7 @@ float: right;
 .club_title {
   text-align: center;
   /*font-weight: bold;*/
+
 }
 
 .club_content{
@@ -163,7 +164,7 @@ float: right;
 }
 
 input {
-  width: 35%;
+  width: 100%;
   padding: 0.5vw 0;
 }
 
@@ -205,6 +206,7 @@ margin-left: 40vw;
   font-size: 5em;
   text-align: center;
   margin-left: 40vw;
+      margin-top: 5vw;
 
 }
 
@@ -289,10 +291,8 @@ opacity: 0.8;
 }
 
 .button_response .club_about{
-  clear: both;
-  position: absolute;
-  left: 5vw;
-  top: 5vw;
+ display: block;
+    margin: 0 auto;
 }
 
 .button_text {
@@ -439,7 +439,13 @@ a.button_text:active {
 .clubs_middle_section div{
 
 }
-
+.club_project_title {
+text-align: center;
+    border-top: 4px double #000;
+    border-bottom: 4px double #000;
+    margin-left: 2.5em;
+    margin-right: 2.5em;
+}
 .stories_show {
     color: #000;
 /*    border: 3px solid #358287;
@@ -469,6 +475,7 @@ a.button_text:active {
 
 
 .navone {
+  background-color: rgba(95,95,95,0.6);
   box-shadow: 0px 3px 8px #aaa, inset 0px 2px 3px #fff;
   text-align: center;
       box-shadow: 0 6px rgba(80,187,182, 0.2);
@@ -584,7 +591,7 @@ box-shadow: 3px 6px 9px rgba(0,0,0,.5);
 .club_avatar {
   width: 300px;
   height: 300px;
-  margin-left: .5vw;
+
   position: relative;
 }
 
@@ -877,11 +884,7 @@ input[type="file"] {
 .newclub {
   margin: 5vw 20vw 5vw 20vw;
   background-color: rgb(80,187,182);
-<<<<<<< HEAD
-  padding: 1em 11em;
-=======
   padding: 10em 20em 10em 20em;
->>>>>>> afd9cfc9fd890ab3b66ef1c5096a4bab7094acff
   box-shadow: 0px 0px 12px #CB99C9, inset 0px 2px 3px #966FD6;
   text-align: center;
 }
@@ -895,6 +898,7 @@ input[type="file"] {
 }
 .new_club {
   text-align: center;
+      margin-left: 2.5vw;
 }
 
 .newclub a{
@@ -908,8 +912,11 @@ input[type="file"] {
   border:0;
   text-shadow:#C17C3A 0 -1px 0;
   outline: none;
-  padding: 0.5em;
-  margin-bottom: 1.25vw;
+ padding-left: 12.5vw;
+ padding-right: 12.5vw;
+ padding-top: 0.5vw;
+ padding-bottom: 0.5vw;
+  margin-bottom: 3.25vw;
   width:194px;
   height:41px;
   text-decoration: none;

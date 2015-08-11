@@ -47,7 +47,7 @@ $(document).ready(function(){
   });   
 
   $('.club_projects_toggle').on('click', function(){
-    $('.project_list').slideToggle();  
+    $('.project_list, club_project_title').slideToggle();  
   });
 });  
 
@@ -65,17 +65,34 @@ $(document).ready(function(){
 
 $(document).ready(function(){
   console.log('document ready');
+
 // #new_task is the id for the form class it can be fetched in the browser console
-$('#new_commentary').on("ajax:success", function(evt, data) {
+$('#new_commentary').on("ajax:success", function(evt) {
   console.log(arguments);
     // window.location.reload();
-
+    alert("step 1")
     //  #task_name is the id for the input box also found in the browser window
-    $('#commentary_comment').val('');
-    $('.story_comment_bar').append(data);
+   var data = $('#commentary_comment').val();
+    $('.story_inner_container').append(data);
+    alert("Yay!!!")
   }).on('ajax:error', function() {
-    alert('Oops!');
+    console.log('There is an error in the code!');
 
     return false;
   });
 });
+
+// // $('#new_commentary').on('click', function() {
+// //   $.ajax()
+
+// $(document).ready(function() {
+//   $("#new_commentary").on("click", "button", function() {
+//         alert("hi")
+//     $.ajax('#commentary_comment', {
+//       alert("hi")
+//       success: function(response) {
+//         $('.story_comment_bar').html(response).fadeIn();
+//       }
+//     });
+//   });
+// });
