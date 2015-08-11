@@ -17,14 +17,17 @@
 
     <p>
       <%= f.label :title, class: "field_title"%>
+      <br>
       <%= f.text_field :title, class: "field_box" %>
     </p>
     <p>
       <%= f.label :description, class: "field_title" %>
-      <%= f.text_area :description, class: "field_box" %>
+      <br>
+      <%= f.text_field :description, class: "field_box" %>
     </p>
     <p>
       <%= f.label :location, class: "field_title" %>
+      <br>
       <%= f.text_field :location, class: "field_box" %>
     </p>
     <p>
@@ -33,6 +36,7 @@
     </p>
     <p>
       <%= f.label :thumbtag, "Club Id Tags", class: "field_title" %>
+      <br>
       <%= f.text_field :thumbtag, placeholder: "Space tags by commas", class: "field_box"%>
     </p>
   <!--   <p>

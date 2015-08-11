@@ -2,20 +2,18 @@
 <html style = "margin-top: -13px";>
 <head>
   <title>Changetheworld</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+
   <%= csrf_meta_tags %>
   <link href='http://fonts.googleapis.com/css?family=Playfair+Display+SC' rel='stylesheet' type='text/css'>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-
-
-
-
+ <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <link href='http://fonts.googleapis.com/css?family=Domine' rel='stylesheet' type='text/css'>
 </head>
 
-<body>
+
+<body >
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+
     <div id="navbar">
     <div id="navMenuItems">
       <ul>
@@ -32,7 +30,7 @@
           <li><%= link_to 'Profile', profile_path(current_user) unless current_user.nil? %></li>
         <%end%>
       <% if current_user %>
-        <li><p id="login"><%= current_user.username %>  |  <%= link_to "Log out", logout_path, method: "delete" %></p></li>
+        <li><p id="login"><%= current_user.username.titleize %>  |  <%= link_to "Log out", logout_path, method: "delete" %></p></li>
       <% else %>
         <li id="user"><p id="login"><%= link_to "Log In", login_path %>  |  <%= link_to "Sign Up", signup_path %></p></li>
       </ul>

@@ -1,25 +1,28 @@
+<div class= 'signup'>
 <h1> Sign Up </h1>
 
 <%= form_for @user do |f| %>
   <p>
-    <%= f.label :username %>
+    <%= f.label :username %><br>
     <%= f.text_field :username %>
   </p>
   <p>
-    <%= f.label :name %>
+    <%= f.label :name %><br>
     <%= f.text_field :name %>
   </p>
   <p>
-    <%= f.label :email %>
+    <%= f.label :email %><br>
     <%= f.email_field :email %>
   </p>
   <p>
-    <%= f.label :password %>
+    <%= f.label :password %><br>
     <%= f.password_field :password %>
   </p>
   <p>
-    <%= f.label :password_confirmation %>
-    <%= f.password_field :password_confirmation %>
+    <%= f.label :password_confirmation %><br>
+    <%= f.password_field :password_confirmation %><br>
+    <br>
     <%= f.submit %>
   </p>
   <% end %>
+  </div>
