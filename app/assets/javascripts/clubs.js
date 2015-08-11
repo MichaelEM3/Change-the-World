@@ -47,7 +47,7 @@ $(document).ready(function(){
   });   
 
   $('.club_projects_toggle').on('click', function(){
-    $('.project_list, club_project_title').slideToggle();  
+    $('.project_list_container').slideToggle();  
   });
 });  
 
@@ -70,11 +70,11 @@ $(document).ready(function(){
 $('#new_commentary').on("ajax:success", function(evt) {
   console.log(arguments);
     // window.location.reload();
-    alert("step 1")
+    // alert("step 1")
     //  #task_name is the id for the input box also found in the browser window
    var data = $('#commentary_comment').val();
-    $('.story_inner_container').append(data);
-    alert("Yay!!!")
+    $('.story_comments_inner_container').append('<p>' + data + '</p>');
+    // alert("Yay!!!")
   }).on('ajax:error', function() {
     console.log('There is an error in the code!');
 
@@ -82,17 +82,21 @@ $('#new_commentary').on("ajax:success", function(evt) {
   });
 });
 
-// // $('#new_commentary').on('click', function() {
-// //   $.ajax()
+$(document).ready(function(){
+  console.log('document ready');
 
-// $(document).ready(function() {
-//   $("#new_commentary").on("click", "button", function() {
-//         alert("hi")
-//     $.ajax('#commentary_comment', {
-//       alert("hi")
-//       success: function(response) {
-//         $('.story_comment_bar').html(response).fadeIn();
-//       }
-//     });
-//   });
-// });
+// #new_task is the id for the form class it can be fetched in the browser console
+$('#new_story').on("ajax:success", function(evt) {
+  console.log(arguments);
+    // window.location.reload();
+    // alert("step 1")
+    //  #task_name is the id for the input box also found in the browser window
+   var data = $('#story_title, #story.story').val();
+    $('.stories_show').append('<div>' + data + '</div>');
+    // alert("Yay!!!")
+  }).on('ajax:error', function() {
+    console.log('There is an error in the code!');
+
+    return false;
+  });
+});

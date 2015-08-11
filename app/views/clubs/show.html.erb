@@ -59,20 +59,20 @@
         <span>
           <a class="club_projects_toggle club_button">
             <span class="button_text">
-              Toggle Projects
+          ---Projects ---
             </span>
           </a>
         </span>
         <span>
           <a class="club_stories club_button">
             <span class="button_text">
-              Toggle Stories
+         --- Stories ---
             </span>
           </a>
         </span>
         <span>
           <a class="club_users  club_button">
-            <span class="button_text">Toggle Club Members</span>
+            <span class="button_text">--- Club Members ---</span>
           </a>
         </span>
       </div>
@@ -80,23 +80,21 @@
   </div>
 <!--  Beginning of toggled -->
 <br>
-
-<div class="club_project_title">
-      <h1>
-        Projects
-      </h1>
-</div>
-
-<div class="project_list">
-
-<% @club.projects.each do |projects| %>
+<div class="project_list_container">
+  <div class="club_project_title">
+    <h1>
+      Projects
+    </h1>
+  </div>
+  <div class="project_list">
+    <% @club.projects.each do |projects| %>
     <span class="project_black_box">
-<%= link_to projects.name, club_project_path(projects.club, projects), class: "club_project_name" %>: 
-<span class="club_project_description"><%= projects.description %></span>
+      <%= link_to projects.name, club_project_path(projects.club, projects), class: "club_project_name" %>: 
+      <span class="club_project_description"><%= projects.description %></span>
     </span>
-<% end%>
+    <% end%>
+  </div>
 </div>
-
 <!-- Beginning of toggled Story section -->
 
   <div class="stories_show">
@@ -120,6 +118,7 @@
           <h3>Comments:</h3>
         </div>
         <div class="story_comments">
+          <div class="story_comments_inner_container">
           <%= flash[:error] unless flash[:error].blank? %>
           <% story.commentaries.each do |com| %>
           <p><%= com.comment %><br>
@@ -129,6 +128,8 @@
             ago70px
             <br></p>
           <% end %>
+          <br>
+          </div>
 
           <div class="story_comment_bar">
             <%= render 'commentaries/form', locals: {story: story, user_id: current_user.id}  %>

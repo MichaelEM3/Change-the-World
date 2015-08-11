@@ -443,8 +443,9 @@ a.button_text:active {
 text-align: center;
     border-top: 4px double #000;
     border-bottom: 4px double #000;
-    margin-left: 2.5em;
-    margin-right: 2.5em;
+    margin-left: 17vw;
+    margin-right: 17vw;
+        font-size: 1.4vw;
 }
 .stories_show {
     color: #000;
@@ -457,7 +458,7 @@ text-align: center;
 }
 
 .story_title {
-  font-size: 4em;
+  font-size: 1vw;
   height: 5em;
 }
 
@@ -465,8 +466,6 @@ text-align: center;
 
     border-top: 4px double rgb(131,236,184);
     border-bottom: 4px double rgb(131,236,184);
-    padding-top: .5em;
-     padding-bottom: .5em;
       color: #FFF;
       line-height: 3vw;
   }
@@ -558,7 +557,7 @@ box-shadow: 3px 6px 9px rgba(0,0,0,.5);
 }
 
 .story_title h1 {
-  color: rgb(95,95,95);
+      color: rgba(95,95,95,0.8);
      padding-top: .5vw;
           padding-bottom: .5vw;
 
