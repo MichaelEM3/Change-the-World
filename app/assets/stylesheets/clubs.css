@@ -389,7 +389,12 @@ a.button_text:active {
   float: left;
   display: block;
   padding: 10px;
+}
 
+.user_club_show li p {
+  text-align: center;
+  color: #358287;
+  font-size: 1.25vw;
 }
 
 .user_club_show ul {

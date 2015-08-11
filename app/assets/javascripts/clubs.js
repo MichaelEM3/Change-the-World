@@ -47,7 +47,7 @@ $(document).ready(function(){
   });   
 
   $('.club_projects_toggle').on('click', function(){
-    $('.project_list_container').slideToggle();  
+    $('.project_list, club_project_title').slideToggle();  
   });
 });  
 
@@ -100,3 +100,4 @@ $('#new_story').on("ajax:success", function(evt) {
     return false;
   });
 });
+

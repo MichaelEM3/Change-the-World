@@ -27,18 +27,6 @@
 
 
 
-function initialise(){
-
-};
-
-$(document).ready(function(){
-  initialise();
-});
-$(document).ajaxComplete(function () {
-  initialise();ss
-});
-
-
 
 
 
@@ -56,3 +44,5 @@ $(document).ajaxComplete(function () {
       e.stopPropagation();
     });
   };
+
+$(document).on('ready page:load', ready)

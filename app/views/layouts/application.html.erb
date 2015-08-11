@@ -31,7 +31,8 @@
           <% end %>
           <% if current_user %>
             <li><%= link_to 'Profile', profile_path(current_user) unless current_user.nil? %></li>
-          <%end%>
+     
+     <%end%>
           <% if current_user %>
           <li><p id="login"><%= current_user.username %>  |  <%= link_to "Log Out", logout_path, method: "delete" %></p></li>
           <% else %>
