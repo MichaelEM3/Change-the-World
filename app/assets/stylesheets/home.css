@@ -239,6 +239,11 @@ body {
     background-image: url('http://i.imgur.com/6fJjXwk.jpg');
     background-size: 235px 235px;
     background-repeat: no-repeat;
+    -moz-background-size: cover;
+    -webkit-background-size: cover;
+    -o-background-size: cover;
+
+background-size: cover;
 }
 .gallerycircle2 {
     display:inline-block;
@@ -249,6 +254,10 @@ body {
     background-image: url('http://i.imgur.com/CkM9wia.jpg');
     background-size: 260px 260px;
     background-repeat: no-repeat;
+    -moz-background-size: cover;
+    -webkit-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
 .gallerycircle3 {
     display:inline-block;
@@ -259,7 +268,10 @@ body {
     background-image: url('http://i.imgur.com/3ODG9qC.jpg');
     background-size: 235px 235px;
     background-repeat: no-repeat;
-
+    -moz-background-size: cover;
+    -webkit-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
 .gallery-content .class1 {
     font-size:16px;
