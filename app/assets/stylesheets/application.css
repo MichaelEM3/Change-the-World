@@ -180,6 +180,17 @@ body{
   background-color: #000;
 }
 
+#profile_login {
+  margin-right: 1em;
+  font-size : 1vw;
+  color : #fff;
+}
+
+#profile_login:hover {
+  color: #fff;
+  background-color: #000;
+}
+
 #navMenuItems li a, #login{
   margin-right: 1em;
   font-size : 1vw;
