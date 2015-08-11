@@ -281,18 +281,21 @@ background-size: cover;
 /*Meet the Team List*/
 .names {
 }
+
 .nameslist {
   display: inline;
   padding: 95px;
 }
+
 .emails {
 
 }
 
 .emailslist {
   display: inline;
-  padding: 95px;
+  padding: 70px;
 }
+
 .phones {
 
 }
@@ -308,7 +311,7 @@ background-size: cover;
 
 .titleslist {
   display: inline;
-  padding: 95px;
+  padding: 105px;
 }
 
 /*Meet the Team Photos*/
