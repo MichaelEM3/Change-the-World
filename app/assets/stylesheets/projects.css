@@ -43,7 +43,7 @@
 }
 
 .field_box {
-	width: 31vw;
+	width: 26vw;
 	height: 3vw;
 	vertical-align: middle;
 }
@@ -243,4 +243,18 @@ h2 {
 	-moz-box-shadow: 1px 2px 3px rgba(0,0,0,.5);
 	-webkit-box-shadow: 1px 2px 3px rgba(0,0,0,.5);
 	box-shadow: 3px 6px 9px rgba(0,0,0,.5);
+}
+
+.last {
+	margin-right: 4vw;
+}
+
+.button_to a, .first a, .prev a, .page a, .next a, .last a, .pagination .current {
+color: #888;
+text-decoration: none;
+font-size: 1vw;
+}
+
+.next a {
+	float: right;
 }

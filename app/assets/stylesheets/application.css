@@ -119,6 +119,11 @@
   font-size: 12px;
 }
 
+#search-form input[type="text"] {
+  width: 30vw;
+  opacity: 0.7;
+}
+
 
 /* ******************************************************* */
 /*                   Project Create Page                   */
