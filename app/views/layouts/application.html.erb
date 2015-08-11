@@ -22,19 +22,19 @@
   <div id="navbar">
       <div id="navMenuItems">
         <ul>
-      <li><%= link_to 'Home', root_path %></li>
-          <li><%= link_to 'Clubs', clubs_path %></li>
+          <li><%= link_to 'Home', root_path %></li>
+          <li><%= link_to 'View Clubs', clubs_path %></li>
           <% if current_user %>
-            <li><%= link_to 'Create', new_club_path %></li>
+            <li><%= link_to 'Create New Club', new_club_path %></li>
           <% else %>
-            <li><span class="trigger"><p id="club_login">Create a New Club</p></li>
+            <li><span class="trigger"><p id="club_login">Create New Club</p></li>
           <% end %>
           <% if current_user %>
             <li><%= link_to 'Profile', profile_path(current_user) unless current_user.nil? %></li>
           <%end%>
-        <% if current_user %>
-          <li><p id="login"><%= current_user.username %>  |  <%= link_to "Log out", logout_path, method: "delete" %></p></li>
-        <% else %>
+          <% if current_user %>
+          <li><p id="login"><%= current_user.username %>  |  <%= link_to "Log Out", logout_path, method: "delete" %></p></li>
+          <% else %>
           <li id="user"><p id="login"><span class="trigger">Log In | Sign Up</p></li>
         </ul>
 
