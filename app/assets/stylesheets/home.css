@@ -240,10 +240,8 @@ body {
     background-size: 235px 235px;
     background-repeat: no-repeat;
     -moz-background-size: cover;
-
--webkit-background-size: cover;
-
--o-background-size: cover;
+    -webkit-background-size: cover;
+    -o-background-size: cover;
 
 background-size: cover;
 }
@@ -423,5 +421,3 @@ body {
   margin-left: auto;
   margin-right: auto;
 }
-
-
