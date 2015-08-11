@@ -30,12 +30,9 @@
 /*html {
   font-family: 'Playfair Display SC', serif;
   }*/
-<<<<<<< HEAD
+
 
   * {
-=======
-*  {
->>>>>>> 67ff5b9a041f488b164b696ac6c1c8e3bdeed15c
     font-family: 'Domine', serif;
   }
 
@@ -124,7 +121,7 @@
     position: fixed;
 
     background-color: #50bbb6;
-    z-index:9999;
+    z-index:800;
   }
 
   #navbar a {
@@ -223,7 +220,7 @@
 }
 
 label {
-  font-size: 1.5em;
+  font-size: 1.2em;
 }
 
 select#project_club_id, #project_club_id option {
