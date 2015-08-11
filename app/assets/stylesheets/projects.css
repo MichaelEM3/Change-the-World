@@ -18,17 +18,17 @@
 
 .input_container {
 	margin: 5vw 20vw 5vw 20vw;
-		background-color: rgb(80,187,182);
-		padding: 10em 20em 10em 20em;
-		 box-shadow: 0px 0px 12px #CB99C9, inset 0px 2px 3px #966FD6;
+	background-color: rgb(80,187,182);
+	padding: 10em 20em 10em 20em;
+	box-shadow: 0px 0px 12px #CB99C9, inset 0px 2px 3px #966FD6;
 }
 
 .input_container h1 {
 	font-size: 4vw;
 	line-height: 4vw;
-		text-align: center;
-		font-family: 'Playfair Display SC', serif;
-		color: #fff;
+	text-align: center;
+	font-family: 'Playfair Display SC', serif;
+	color: #fff;
 
 }
 
@@ -44,7 +44,7 @@
 }
 
 .field_box {
-	width: 23vw;
+	width: 31vw;
 	height: 3vw;
 	vertical-align: middle;
 }
@@ -71,20 +71,20 @@
 
 #project_club_id:before, #submit_button:before {
 
-  display:block;
-  text-decoration: none;
-  background-image: -webkit-linear-gradient(top, #f7f7f7, #e7e7e7);
-  background-image: -moz-linear-gradient(top, #f7f7f7, #e7e7e7);
-  background-image: -ms-linear-gradient(top, #f7f7f7, #e7e7e7);
-  background-image: -o-linear-gradient(top, #f7f7f7, #e7e7e7);
-  color: #a7a7a7;
-  width: 74px;
-  height: 74px;
-  text-align: center;
-  line-height: 34px;
-  border-radius: 50%;
-  box-shadow: 0px 3px 8px #aaa, inset 0px 2px 3px #fff;
-  border: solid 1px transparent;
+	display:block;
+	text-decoration: none;
+	background-image: -webkit-linear-gradient(top, #f7f7f7, #e7e7e7);
+	background-image: -moz-linear-gradient(top, #f7f7f7, #e7e7e7);
+	background-image: -ms-linear-gradient(top, #f7f7f7, #e7e7e7);
+	background-image: -o-linear-gradient(top, #f7f7f7, #e7e7e7);
+	color: #a7a7a7;
+	width: 74px;
+	height: 74px;
+	text-align: center;
+	line-height: 34px;
+	border-radius: 50%;
+	box-shadow: 0px 3px 8px #aaa, inset 0px 2px 3px #fff;
+	border: solid 1px transparent;
 
 }
 
@@ -126,7 +126,7 @@
 	padding-bottom: .25em;
 	background-color: rgb(237,66,85);
 	position: absolute;
-		text-decoration: none;
+	text-decoration: none;
 
 }
 
@@ -141,12 +141,12 @@
 /**/
 
 .proj {
-      padding: 2vw;
-  text-align: center;
-  background-color: #83ecb8;
+	padding: 2vw;
+	text-align: center;
+	background-color: #83ecb8;
 }
 .proj h1{
-margin-left: auto;
+	margin-left: auto;
 }
 
 /**/
@@ -154,20 +154,20 @@ margin-left: auto;
 /**/
 
 h2 {
-  text-align: center;
+	text-align: center;
 }
 .task {
-  display: inline-block;
-  background-color:  #50bbb6 ;
-  margin:  1vw;
-  word-wrap: break-word;
-  width: 30vw;
-  text-align: center;
-  vertical-align: top;
+	display: inline-block;
+	background-color:  #50bbb6 ;
+	margin:  1vw;
+	word-wrap: break-word;
+	width: 30vw;
+	text-align: center;
+	vertical-align: top;
 }
 
 .page {
-  text-align: center;
+	text-align: center;
 }
 
 /**/
@@ -175,72 +175,72 @@ h2 {
 /**/
 
 #newtsk {
-  text-align: center;
-  background-color: rgb(80,187,182);
-  padding: 1vw;
+	text-align: center;
+	background-color: rgb(80,187,182);
+	padding: 1vw;
 }
 
 
 #task_description {
-  margin: 0px;
-  width: 35vw;
-  height: 6vw;
+	margin: 0px;
+	width: 35vw;
+	height: 6vw;
 }
 
 /**/
 /*Back button*/
-/**/
+/**/d
 
 .bottom_bar_container {
-margin: 0;
-display: block;
+	margin: 0;
+	display: block;
 }
 .bottom_bar_buttons {
-width: 100%;
-background-color: rgb(80,187,182);
-box-shadow: 0px 3px 8px #aaa, inset 0px 2px 3px #fff;
-padding-top: 1.25%;
-padding-bottom: 1.25%;
-display: block;
-color: rgb(138,141,143);
-  text-align: center;
-  vertical-align: middle;
+	width: 100%;
+	background-color: rgb(80,187,182);
+	box-shadow: 0px 3px 8px #aaa, inset 0px 2px 3px #fff;
+	padding-top: 1.25%;
+	padding-bottom: 1.25%;
+	display: block;
+	color: rgb(138,141,143);
+	text-align: center;
+	vertical-align: middle;
 }
 .bottom_bar_container a {
-    text-decoration: none;
-    font-size: 3em;
-    font-family: 'Playfair Display SC', serif;
+	text-decoration: none;
+	font-size: 3em;
+	font-family: 'Playfair Display SC', serif;
 }
 .bottom_bar_buttons:hover {
-  color: rgb(138,141,143);
-  opacity: 0.9;
-   background-color: rgb(80,187,182);
+	color: rgb(138,141,143);
+	opacity: 0.9;
+	background-color: rgb(80,187,182);
 }
 
 .bottom_bar_buttons:active {
 	color: black;
-	  opacity: 0.4;
-	  background-color: rgb(80,187,182);
+	opacity: 0.4;
+	background-color: rgb(80,187,182);
 }
 
 #chat_log {
-	 border-style: solid;
-    width: 80vw;
-    height: 20vw;
-    overflow: scroll;
-    margin-left: 10vw;
-    margin-right: 10vw;
+	border-style: solid;
+	width: 80vw;
+	height: 20vw;
+	overflow: scroll;
+	margin-left: 10vw;
+	margin-right: 10vw;
 }
 
 .project_list {
-  /* border: 3px solid #358287; */
-    opacity: 0.8;
-    padding: 2.5vw 7.5vw 2.5vw 7.5vw;
-    margin-top: 2.5vw;
-    margin-bottom: 2.5vw;
-    margin-right: 5vw;
-    margin-left:5vw;
-    -moz-box-shadow: 1px 2px 3px rgba(0,0,0,.5);
-    -webkit-box-shadow: 1px 2px 3px rgba(0,0,0,.5);
-    box-shadow: 3px 6px 9px rgba(0,0,0,.5);
+	/* border: 3px solid #358287; */
+	opacity: 0.8;
+	padding: 2.5vw 7.5vw 2.5vw 7.5vw;
+	margin-top: 2.5vw;
+	margin-bottom: 2.5vw;
+	margin-right: 5vw;
+	margin-left:5vw;
+	-moz-box-shadow: 1px 2px 3px rgba(0,0,0,.5);
+	-webkit-box-shadow: 1px 2px 3px rgba(0,0,0,.5);
+	box-shadow: 3px 6px 9px rgba(0,0,0,.5);
 }

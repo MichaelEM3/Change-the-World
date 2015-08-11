@@ -5,4 +5,8 @@ development:
 production:
   access_key_id: AKIAJOHWY434RKAJYB6A
   secret_access_key: 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
-  bucket: wyncodeproject-production
+  bucket: wyncodeproject
+test:
+  access_key_id: AKIAJOHWY434RKAJYB6A
+  secret_access_key: 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
+  bucket: wyncodeproject-development
