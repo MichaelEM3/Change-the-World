@@ -1,27 +1,35 @@
 <!--Activity Feed Page -->
 
 <div id="welcome">
+  <% if current_user %>
 	<h2>Welcome, <%=current_user.name%>!</h2>
-	<p>How will you better your community today?</p>
+      <p>How will you better your community today?</p>
+  <% else %>
+    <h2>Welcome,</h2>
+      <p>please login and join a club.</p>
+
+  <% end %>
 </div>
 
 <hr>
 
 <div id="wrapper">
 	<div id="user_clubs">
+          <% if current_user %>
 		<h2><%=current_user.name%>'s Clubs</h2>
 				<% @clubs.each do |c| %>
 					<div class ="club_area">
 						<%= link_to image_tag(c.image(:medium)), club_path(c) %><br>
 						<div class="club_title"><%= c.title %></div>
-					</div>
-				<% end %>
+                        <% end %>
+	   <% end %>
 	</div>
 
+      <% if current_user %>
 	<div id="activities">
 		<h2>While you were away...</h2>
 		<% @activities.each do |activity| %>
-			<% if activity.trackable %>
+			<% if activity.owner == current_user %>
 				<p>
 					<b>
 						<div id="activity_stories"><%= link_to activity.trackable.title, club_path(activity) %></div>
@@ -32,6 +40,7 @@
 				</p>
 			<% end %>
 		<% end %>
+          <% end %>
 	</div>
 
 </div>
@@ -44,13 +53,23 @@
 	<% end %>
 
 	<div class='club_body'>
+          <% if current_user %>
 		<% (@club-@clubs).each do |club| %>
 		<div class="club_area" style="float:none; display:inline-block;">
 			<%= link_to image_tag(club.image(:medium)), club_path(club) %>
 			<div class="club_title"><%= club.title %></div>
 		</div>
 		<% end %>
+          <% else %>
+            <% @club.each do |club| %>
+              <div class="club_area" style="float:none; display:inline-block;">
+                <%= link_to image_tag(club.image(:medium)), club_path(club) %>
+                <div class="club_title"><%= club.title %></div>
+              </div>
+            <% end %>
+          <% end %>
 	</div>
+
 </div>
 
 <div id="New">
