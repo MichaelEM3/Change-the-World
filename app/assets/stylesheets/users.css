@@ -277,7 +277,7 @@
 }
 #updateprofile input[type="submit"]{
   background-color: rgb(237,66,85);
-  color: rgb(80,187,182);
+  color: white;
   font-family:'Helvetica Neue',sans-serif;
   font-size:18px;
   border-radius:20px;
@@ -297,7 +297,7 @@
 }
 #image_text {
   background-color: rgb(237,66,85);
-  color: rgb(80,187,182);
+  color: white;
   font-family:'Helvetica Neue',sans-serif;
   font-size:18px;
   border-radius:20px;
@@ -314,10 +314,10 @@
   margin-right: 11em;
 }
 #updateprofile input[type="submit"]:hover{
-  color: white;
+  color: rgb(80,187,182);
 }
 #image_text:hover{
-  color: white;
+  color: rgb(80,187,182);;
 }
 
 /******************
@@ -334,7 +334,8 @@
 }
 #new_user{
   text-align: center;
-  padding-left: 6em;
+  padding-left: 5em;
+  margin-right: 3em;
 }
 .signup h1{
    font-size: 4vw;
@@ -371,7 +372,7 @@
 }
 .signup input[type="submit"]{
     background-color: rgb(237,66,85);
-  color: rgb(80,187,182);
+  color: white;
   font-family:'Helvetica Neue',sans-serif;
   font-size:18px;
   border-radius:20px;
@@ -388,5 +389,5 @@
   margin-left: 3em;
 }
 .signup input[type="submit"]:hover {
-  color: white;
+  color: rgb(80,187,182);
 }
