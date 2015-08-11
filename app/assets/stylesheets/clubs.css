@@ -26,7 +26,11 @@ display: block;
   -webkit-animation: stats-anim 5s; /* Safari 4+ */
   -moz-animation:    stats-anim 5s; /* Fx 5+ */
   -o-animation:      stats-anim 5s; /* Opera 12+ */
+<<<<<<< HEAD
   animation:         stats-anim 5s; /* IE 10+, Fx 29+ */
+=======
+  animation:         stats-anim 5s; /* IE 10+, Fx 29+ */  
+>>>>>>> d306158fb2e291bbb7f12b99397952c9ba678339
 }
 #dashboard-wrap > li .red-bar {
 background-color: #ef4057;
@@ -163,7 +167,7 @@ float: right;
 }
 
 input {
-  width: 35%;
+  width: 80%;
   padding: 0.5vw 0;
 }
 
@@ -194,22 +198,16 @@ clear: both;
   font-size: 1.5em;
   margin-left: 10%;
   margin-right: 10%;
-
 }
 
-.clubs_information p{
-      margin-left: 36vw;
-      margin-right: 3vw;
-    line-height: 2vw;
+.clubs_information p:nth-child(2){
+
 }
 
 .clubs_title h1 {
   color: #827c89;
   font-size: 5em;
   text-align: center;
-      margin-left: 39vw;
-    line-height: 4vw;
-    margin-right: 8vw;
 
 }
 
@@ -251,7 +249,6 @@ clear: both;
   line-height: 100px;
   box-shadow: 0px 0px 12px #CB99C9, inset 0px 2px 3px #966FD6;
   border: solid 1px transparent;
-  margin-bottom: 2vw;
 }
 
 .club_button .bottom_bar_buttons {
@@ -261,7 +258,7 @@ clear: both;
 .club_button_container li{
   display: inline-block;
   margin-left: 40px;
-  width: 350px;
+  width: 400px;
 }
 
 .club_button:hover {
@@ -272,8 +269,8 @@ clear: both;
 .club_button_container {
   margin-top: 2.5em;
   display: inline-block;
-      margin-left: 10vw;
-    margin-right: 10vw;
+      margin-left: .5vw;
+    margin-right: .5vw;
 }
 
 .club_button_container li {
@@ -687,7 +684,7 @@ background-color: #f46954;
 }
 
 .field_box {
-  width: 26vw;
+  width: 31vw;
   height: 3vw;
   vertical-align: middle;
   margin-bottom: 2.5em;
@@ -786,7 +783,7 @@ background-color: #f46954;
   text-shadow:#C17C3A 0 -1px 0;
   outline: none;
   padding: 0.5em;
-  margin-bottom: 2.25vw;
+  margin-bottom: 1.25vw;
     width:194px;
   height:41px;
   text-decoration: none;
@@ -810,6 +807,7 @@ input[type="file"] {
 .newclub {
   margin: 5vw 20vw 5vw 20vw;
 <<<<<<< HEAD
+<<<<<<< HEAD
     background-color: rgb(80,187,182);
     padding: 10em 20em 7em 20em;
      box-shadow: 0px 0px 12px #CB99C9, inset 0px 2px 3px #966FD6;
@@ -819,6 +817,12 @@ input[type="file"] {
   box-shadow: 0px 0px 12px #CB99C9, inset 0px 2px 3px #966FD6;
   text-align: center;
 >>>>>>> Login
+=======
+  background-color: rgb(80,187,182);
+  padding: 10em 20em 10em 20em;
+  box-shadow: 0px 0px 12px #CB99C9, inset 0px 2px 3px #966FD6;
+  text-align: center;
+>>>>>>> d306158fb2e291bbb7f12b99397952c9ba678339
 }
 .newclub h1 {
   font-size: 4vw;
@@ -828,7 +832,9 @@ input[type="file"] {
   color: #fff;
 
 }
-
+.new_club {
+  text-align: center;
+}
 .newclub a{
   background-color: rgb(237,66,85);
   color: rgb(80,187,182);
@@ -840,10 +846,7 @@ input[type="file"] {
   border:0;
   text-shadow:#C17C3A 0 -1px 0;
   outline: none;
-      padding-left: 4vw;
-    padding-right: 4vw;
-        padding-top: 0.5vw;
-    padding-bottom: 0.5vw;
+  padding: 0.5em;
   margin-bottom: 1.25vw;
   width:194px;
   height:41px;
