@@ -353,7 +353,7 @@
 }
 .sign_up input[type="submit"]{
   background-color: rgb(237,66,85);
-  color: rgb(80,187,182);
+  color: #fff
   font-family:'Helvetica Neue',sans-serif;
   font-size:18px;
   border-radius:20px;
