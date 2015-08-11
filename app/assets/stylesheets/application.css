@@ -104,6 +104,11 @@
   font-size: 1.2em;
 }
 
+body, p, ol, ul, td {
+    font-family: 'Domine', serif, verdana, arial, helvetica, sans-serif;
+    text-align: left;
+}
+
 
   /*******************/
   /* Navigation Bar */
