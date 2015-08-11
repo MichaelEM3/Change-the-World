@@ -10,7 +10,6 @@
   <link href='http://fonts.googleapis.com/css?family=Domine' rel='stylesheet' type='text/css'>
 </head>
 
-<<<<<<< HEAD
 <body>
   <div class="overlay">
     <div class="modal">
@@ -38,30 +37,10 @@
           <% else %>
           <li id="user"><p id="login"><span class="trigger">Log In | Sign Up</p></li>
         </ul>
-=======
-
-<body >
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-
-    <div id="navbar">
-    <div id="navMenuItems">
-      <ul>
-        <li>
-        <%= form_tag(clubs_path, :method => "get", id: "search-form") do %>
-        <%= text_field_tag :search, params[:search], placeholder: "Search Clubs" %></li>
-        <li><%= submit_tag "Search" %><li>
-        <% end %>
->>>>>>> d306158fb2e291bbb7f12b99397952c9ba678339
-
         <% end %>
       </div>
-<<<<<<< HEAD
     </div>
 
-
-=======
-      </div>
->>>>>>> d306158fb2e291bbb7f12b99397952c9ba678339
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
 
