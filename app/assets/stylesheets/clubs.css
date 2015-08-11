@@ -26,7 +26,11 @@ display: block;
   -webkit-animation: stats-anim 5s; /* Safari 4+ */
   -moz-animation:    stats-anim 5s; /* Fx 5+ */
   -o-animation:      stats-anim 5s; /* Opera 12+ */
+<<<<<<< HEAD
+  animation:         stats-anim 5s; /* IE 10+, Fx 29+ */
+=======
   animation:         stats-anim 5s; /* IE 10+, Fx 29+ */  
+>>>>>>> d306158fb2e291bbb7f12b99397952c9ba678339
 }
 #dashboard-wrap > li .red-bar {
 background-color: #ef4057;
@@ -108,8 +112,8 @@ float: right;
 }
 
 .club_area img {
-  height: 275px;
-  width: 275px;
+  height: 225px;
+  width: 225px;
   /*border-radius: 100%;*/
   padding: 3.3vw;
 }
@@ -868,10 +872,23 @@ input[type="file"] {
 /********************/
 .newclub {
   margin: 5vw 20vw 5vw 20vw;
+<<<<<<< HEAD
+<<<<<<< HEAD
+    background-color: rgb(80,187,182);
+    padding: 10em 20em 7em 20em;
+     box-shadow: 0px 0px 12px #CB99C9, inset 0px 2px 3px #966FD6;
+=======
+  background-color: rgb(80,187,182);
+  padding: 1em 11em;
+  box-shadow: 0px 0px 12px #CB99C9, inset 0px 2px 3px #966FD6;
+  text-align: center;
+>>>>>>> Login
+=======
   background-color: rgb(80,187,182);
   padding: 10em 20em 10em 20em;
   box-shadow: 0px 0px 12px #CB99C9, inset 0px 2px 3px #966FD6;
   text-align: center;
+>>>>>>> d306158fb2e291bbb7f12b99397952c9ba678339
 }
 .newclub h1 {
   font-size: 4vw;

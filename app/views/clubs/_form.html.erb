@@ -16,37 +16,29 @@
 <%= form_for @club, html: {multipart: true} do |f| %>
 
     <p>
-      <%= f.label :title, class: "field_title"%>
-      <br>
+      <%= f.label :title, class: "field_title"%><br><br>
       <%= f.text_field :title, class: "field_box" %>
     </p>
     <p>
-      <%= f.label :description, class: "field_title" %>
-      <br>
-      <%= f.text_field :description, class: "field_box" %>
+      <%= f.label :description, class: "field_title" %><br><br>
+      <%= f.text_area :description, class: "field_box" %>
     </p>
     <p>
-      <%= f.label :location, class: "field_title" %>
-      <br>
+      <%= f.label :location, class: "field_title" %><br><br>
       <%= f.text_field :location, class: "field_box" %>
+    </p>
+    <p>
+      <%= f.label :thumbtag, "Club Id Tags", class: "field_title" %><br><br>
+      <%= f.text_field :thumbtag, placeholder: "Space tags by commas", class: "field_box"%>
     </p>
     <p>
       <%= f.label :image, "Attach an Image", class: "image_field_button" %><br>
       <%= f.file_field :image, placeholder: "Click to attach a club image", class: "field_box" %>
     </p>
     <p>
-      <%= f.label :thumbtag, "Club Id Tags", class: "field_title" %>
-      <br>
-      <%= f.text_field :thumbtag, placeholder: "Space tags by commas", class: "field_box"%>
-    </p>
-  <!--   <p>
-     f.label :tag_list <br />
-     f.text_field :tag_list
-    </p> -->
-    <p>
     <span class="submit_button">
       <%= f.submit %>
-      </span>
+    </span>
     </p>
 
 <% end %>

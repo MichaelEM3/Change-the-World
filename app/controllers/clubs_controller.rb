@@ -7,8 +7,8 @@ class ClubsController < ApplicationController
     @users = User.all
     @club = Club.all
     if current_user
-      @clubs = current_user.clubs
-      @activities = PublicActivity::Activity.order("created_at desc")
+      @clubs = current_user.clubs.page(params[:page]).per(4)
+      @activities = PublicActivity::Activity.order("created_at desc").first(5)
     end
 
     if params[:search]

@@ -1,15 +1,44 @@
 <!DOCTYPE html>
-<html style = "margin-top: -13px";>
+<html style = "margin-top: -17px";>
 <head>
   <title>Changetheworld</title>
 
   <%= csrf_meta_tags %>
   <link href='http://fonts.googleapis.com/css?family=Playfair+Display+SC' rel='stylesheet' type='text/css'>
- <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <link href='http://fonts.googleapis.com/css?family=Domine' rel='stylesheet' type='text/css'>
 </head>
 
+<<<<<<< HEAD
+<body>
+  <div class="overlay">
+    <div class="modal">
+      <%= render 'sessions/form' %>
+      <%= render 'users/form' %>
+    </div>
+  </div>
+
+
+  <div id="navbar">
+      <div id="navMenuItems">
+        <ul>
+          <li><%= link_to 'Home', root_path %></li>
+          <li><%= link_to 'View Clubs', clubs_path %></li>
+          <% if current_user %>
+            <li><%= link_to 'Create New Club', new_club_path %></li>
+          <% else %>
+            <li><span class="trigger"><p id="club_login">Create New Club</p></li>
+          <% end %>
+          <% if current_user %>
+            <li><%= link_to 'Profile', profile_path(current_user) unless current_user.nil? %></li>
+          <%end%>
+          <% if current_user %>
+          <li><p id="login"><%= current_user.username %>  |  <%= link_to "Log Out", logout_path, method: "delete" %></p></li>
+          <% else %>
+          <li id="user"><p id="login"><span class="trigger">Log In | Sign Up</p></li>
+        </ul>
+=======
 
 <body >
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
@@ -22,22 +51,17 @@
         <%= text_field_tag :search, params[:search], placeholder: "Search Clubs" %></li>
         <li><%= submit_tag "Search" %><li>
         <% end %>
+>>>>>>> d306158fb2e291bbb7f12b99397952c9ba678339
 
-        <li><%= link_to 'Home', root_path %></li>
-        <li><%= link_to 'Join a Club', clubs_path %></li>
-        <li><%= link_to 'Create a New Club', new_club_path %></li>
-        <% if current_user %>
-          <li><%= link_to 'Profile', profile_path(current_user) unless current_user.nil? %></li>
-        <%end%>
-      <% if current_user %>
-        <li><p id="login"><%= current_user.username.titleize %>  |  <%= link_to "Log out", logout_path, method: "delete" %></p></li>
-      <% else %>
-        <li id="user"><p id="login"><%= link_to "Log In", login_path %>  |  <%= link_to "Sign Up", signup_path %></p></li>
-      </ul>
+        <% end %>
+      </div>
+<<<<<<< HEAD
+    </div>
 
-      <% end %>
+
+=======
       </div>
-      </div>
+>>>>>>> d306158fb2e291bbb7f12b99397952c9ba678339
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
 
