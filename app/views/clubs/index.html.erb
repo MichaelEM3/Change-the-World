@@ -1,58 +1,76 @@
-<!--Activity Feed Page -->
-
-<div id="welcome">
+<!--Moving Bars-->
+<ul id="dashboard-wrap">
+<li>
+  <span class="color-bar green-bar" data-percentage="11.7" style="width: 11.7%;"></span>
+  <span class="color-bar red-bar" data-percentage="88.3" style="width: 88.3%;"></span>
+</li>  
+<br>
+<div id = "welcome">
 	<h2>Welcome, <%=current_user.name%>!</h2>
 	<p>How will you better your community today?</p>
 </div>
-
-<hr>
+<br>
+<li>
+  <span class="color-bar green-bar" data-percentage="50" style="width: 50%;"></span>
+  <span class="color-bar red-bar" data-percentage="50" style="width: 50%;"></span>
+</li> 
+</ul>
 
 <div id="wrapper">
-	<div id="user_clubs">
-		<h2><%=current_user.name%>'s Clubs</h2>
-				<% @clubs.each do |c| %>
-					<div class ="club_area">
-						<%= link_to image_tag(c.image(:medium)), club_path(c) %><br>
-						<div class="club_title"><%= c.title %></div>
-					</div>
-				<% end %>
-	</div>
-
-	<div id="activities">
-		<h2>While you were away...</h2>
-		<% @activities.each do |activity| %>
-			<% if activity.trackable %>
-				<p>
-					<b>
-						<div id="activity_stories"><%= link_to activity.trackable.title, club_path(activity) %></div>
-					</b>
-				</p>
-				<p>
-					<div id="activity_preview">Preview: <%=h truncate(activity.trackable.story, :length => 150) %></div>
-				</p>
-			<% end %>
-		<% end %>
-	</div>
-
+<div id="user_clubs">
+<br>
+<h2><%=current_user.name%>'s Clubs</h2>
+<br>
+<% @clubs.each do |c| %>
+<div class ="club_area">
+<%= link_to image_tag(c.image(:medium)), club_path(c) %><br>
+<div class="club_title"><%= c.title %></div>
+</div>
+<% end %>
 </div>
 
+<div id="activities">
+<div id = "activiybox">
+<br>
+<h2>While you were away...</h2>
+<br>
+<% @activities.each do |activity| %>
+<hr class="line1">
+<% if activity.trackable %>
+<p>
+<b>
+<div id="activity_stories"><%= link_to activity.trackable.title, club_path(activity) %></div>
+</b>
+</p>
+<p>
+<div id="activity_preview">Preview: <%=h truncate(activity.trackable.story, :length => 150) %></div>
+</p>
+<% end %>
+<% end %>
+</div>
+</div>
+</div>
+
+
 <div id="all_clubs">
-	<h2>Join a New Club</h2>
+<hr>
+<h2>Join a New Club</h2>
+<%= form_tag(clubs_path, :method => "get", id: "search-form") do %>
+<%= text_field_tag :search, params[:search], placeholder: "Search for existing clubs by title, description, location, tag, or field..."%>
+<% end %>
 
-	<%= form_tag(clubs_path, :method => "get", id: "search-form") do %>
-		<%= text_field_tag :search, params[:search], placeholder: "Search for existing clubs by title, description, location, tag, or field..."%>
-	<% end %>
-
-	<div class='club_body'>
-		<% (@club-@clubs).each do |club| %>
-		<div class="club_area" style="float:none; display:inline-block;">
-			<%= link_to image_tag(club.image(:medium)), club_path(club) %>
-			<div class="club_title"><%= club.title %></div>
-		</div>
-		<% end %>
-	</div>
+<div class='club_body'>
+<% (@club-@clubs).each do |club| %>
+<div class="club_area" style="float:none; display:inline-block;">
+<%= link_to image_tag(club.image(:medium)), club_path(club) %>
+<div class="club_title"><%= club.title %></div>
+</div>
+<% end %>
+</div>
 </div>
 
 <div id="New">
-</div><%# link_to 'Create a New Club', new_club_path %></div>
-<%# link_to 'Back', '/' %>
+</div><% link_to 'Create a New Club', new_club_path %></div>
+<%link_to 'Back', '/' %>
+
+
