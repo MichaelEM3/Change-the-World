@@ -91,8 +91,13 @@ $('.leave_a_comment').on('click', function(){
 
     $('.overlay').on("click", function() {
       $(this).hide();
-      $('.modal').hide('slow');
+
+    });
+    $('.modal').bind("click", function(e) {
+      e.stopPropagation();
     });
   };
+
+
 
   $(document).on('ready page:load', ready)
