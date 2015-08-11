@@ -367,7 +367,7 @@
   height:41px;
   text-decoration: none;
   text-align: center;
-  margin-left: 6em;
+  margin-left: 0em;
 }
 .signup input[type="submit"]{
     background-color: rgb(237,66,85);
@@ -385,7 +385,7 @@
     width:194px;
   height:41px;
   text-decoration: none;
-      margin-left: 3em;
+  margin-left: 3em;
 }
 .signup input[type="submit"]:hover {
   color: white;
