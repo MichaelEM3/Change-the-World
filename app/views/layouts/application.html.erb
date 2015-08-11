@@ -6,40 +6,41 @@
   <%= csrf_meta_tags %>
   <link href='http://fonts.googleapis.com/css?family=Playfair+Display+SC' rel='stylesheet' type='text/css'>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-
-
-
-
   <link href='http://fonts.googleapis.com/css?family=Domine' rel='stylesheet' type='text/css'>
 </head>
 
-<body >
-    <div id="navbar">
-    <div id="navMenuItems">
-      <ul>
-        <li>
-        <%= form_tag(clubs_path, :method => "get", id: "search-form") do %>
-        <%= text_field_tag :search, params[:search], placeholder: "Search Clubs" %></li>
-        <li><%= submit_tag "Search" %><li>
-        <% end %>
+<body>
+  <div class="overlay">
+    <div class="modal">
+      <%= render 'sessions/form' %>
+      <%= render 'users/form' %>
+    </div>
+  </div>
 
-        <li><%= link_to 'Home', root_path %></li>
-        <li><%= link_to 'Join a Club', clubs_path %></li>
-        <li><%= link_to 'Create a New Club', new_club_path %></li>
+
+  <div id="navbar">
+      <div id="navMenuItems">
+        <ul>
+      <li><%= link_to 'Home', root_path %></li>
+          <li><%= link_to 'Clubs', clubs_path %></li>
+          <% if current_user %>
+            <li><%= link_to 'Create', new_club_path %></li>
+          <% else %>
+            <li><span class="trigger"><p id="club_login">Create a New Club</p></li>
+          <% end %>
+          <% if current_user %>
+            <li><%= link_to 'Profile', profile_path(current_user) unless current_user.nil? %></li>
+          <%end%>
         <% if current_user %>
-          <li><%= link_to 'Profile', profile_path(current_user) unless current_user.nil? %></li>
-        <%end%>
-      <% if current_user %>
-        <li><p id="login"><%= current_user.username.titleize %>  |  <%= link_to "Log out", logout_path, method: "delete" %></p></li>
-      <% else %>
-        <li id="user"><p id="login"><%= link_to "Log In", login_path %>  |  <%= link_to "Sign Up", signup_path %></p></li>
-      </ul>
+          <li><p id="login"><%= current_user.username %>  |  <%= link_to "Log out", logout_path, method: "delete" %></p></li>
+        <% else %>
+          <li id="user"><p id="login"><span class="trigger">Log In | Sign Up</p></li>
+        </ul>
 
-      <% end %>
+        <% end %>
       </div>
-       </div>
+    </div>
 
 
     <p class="notice"><%= notice %></p>

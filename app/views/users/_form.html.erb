@@ -1,40 +1,23 @@
+<% @user = current_user || User.new %>
+<div class="sign_up">
+  <h2>Sign-up</h2>
+  <%= form_tag(signup_path) do %>
 
-<%= form_for @user, html: {multipart: true} do |f| %>
-  <p>
-    <%= f.label :username %><br>
-    <%= f.text_field :username %>
-  </p>
-  <p>
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
-  </p>
-    <p>
-    <%= f.label :gender %><br>
-    <%= f.text_field :gender %>
-  </p>
-    <p>
-    <%= f.label :age %><br>
-    <%= f.number_field :age %>
-  </p>
-    <p>
-    <%= f.label :about %><br>
-    <%= f.text_field :about %>
-  </p>
-  <p>
-    <%= f.label :email %><br>
-    <%= f.email_field :email %>
-  </p>
-  <p>
-    <%= f.label :password %><br>
-    <%= f.password_field :password %>
-  </p>
-  <p>
-    <%= f.label :password_confirmation %><br>
-    <%= f.password_field :password_confirmation %>
-  </p>
-      <%= f.label :avatar, "Attach an Image" , id: "image_text" %><br>
-      <%= f.file_field :avatar %>
-  <p>
-    <%= f.submit %>
-  </p>
+    <%= label_tag :username %><br>
+    <%= text_field_tag :username %><br>
+
+    <%= label_tag :name %><br>
+    <%= text_field_tag :name %><br>
+
+    <%= label_tag :email %><br>
+    <%= email_field_tag :email %><br>
+
+    <%= label_tag :password %><br>
+    <%= password_field_tag :password %><br>
+
+    <%= label_tag :password_confirmation, "Password Confirmation" %><br>
+    <%= password_field_tag :password_confirmation %><br>
+
+    <%= submit_tag "Sign-up", class: "signup-button" %>
   <% end %>
+</div>

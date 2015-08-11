@@ -305,7 +305,7 @@
 /*******************/
 /*Sign up */
 /************/
-./*signup{
+/*.signup{
   margin: 5vw 20vw 5vw 20vw;
     background-color: rgb(80,187,182);
     padding: 10em 20em 10em 20em;
@@ -340,3 +340,36 @@
   color: white;
 }*/
 
+/****************/
+/*User login */
+.sign_up {
+  text-align: center;
+}
+.sign_up input[type="submit"]{
+  background-color: rgb(237,66,85);
+  color: rgb(80,187,182);
+  font-family:'Helvetica Neue',sans-serif;
+  font-size:18px;
+  border-radius:20px;
+  -webkit-border-radius:20px;
+  -moz-border-radius:20px;
+  border:0;
+  text-shadow:#C17C3A 0 -1px 0;
+  outline: none;
+  padding: 0.5em;
+  margin-bottom: 1.25vw;
+    width:194px;
+  height:41px;
+  text-decoration: none;
+  text-align: center;
+}
+.sign_up h2{
+    font-size: 4vw;
+    line-height: 4vw;
+    text-align: center;
+    font-family: 'Playfair Display SC', serif;
+    color: #fff;
+}
+.sign_up input[type="submit"]:hover{
+  color:white;
+}
