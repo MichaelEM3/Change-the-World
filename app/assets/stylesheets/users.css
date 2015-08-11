@@ -205,6 +205,7 @@
   height: 100%;
   position: absolute;
   box-shadow: 10px 10px 5px #888888;
+
 }
 .listing {
   list-style: none;
@@ -220,7 +221,7 @@
   padding-left: 50px;
   margin-left: 750px;
   background-color: #000;
-  margin-top: -50px;
+  margin-top: -53px;
 }
 .sometext {
   color: #fff;
@@ -236,6 +237,7 @@
   height: 100%;
   position: absolute;
   box-shadow: 10px 10px 5px #888888;
+
 }
 .listing1 {
   list-style: none;
@@ -249,10 +251,14 @@
 /***************/
 /*Update Profile*/
 /********************/
-/*#updateprofile {
+#edit_user_1 {
+    text-align: center;
+    padding-left: 6em;
+}
+#updateprofile {
   margin: 5vw 20vw 5vw 20vw;
   background-color: rgb(80,187,182);
-  padding: 10em 20em 10em 20em;
+  padding: 1em 11em;
    box-shadow: 0px 0px 12px #CB99C9, inset 0px 2px 3px #966FD6;
   text-align: center;
 }
@@ -278,6 +284,7 @@
     width:194px;
   height:41px;
   text-decoration: none;
+  margin-left: 4em;
 }
 #image_text {
   background-color: rgb(237,66,85);
@@ -295,6 +302,7 @@
     width:194px;
   height:41px;
   text-decoration: none;
+  margin-right: 4em;
 }
 #updateprofile input[type="submit"]:hover{
   color: white;
@@ -302,15 +310,19 @@
 #image_text:hover{
   color: white;
 }
-/*******************/
-/*Sign up */
+/******************
+/* Sign up */
 /************/
-./*signup{
+.signup{
   margin: 5vw 20vw 5vw 20vw;
     background-color: rgb(80,187,182);
-    padding: 10em 20em 10em 20em;
+    padding: 1em 11em;
      box-shadow: 0px 0px 12px #CB99C9, inset 0px 2px 3px #966FD6;
   text-align: center;
+}
+#new_user{
+  text-align: center;
+  padding-left: 6em;
 }
 .signup h1{
    font-size: 4vw;
@@ -335,8 +347,9 @@
     width:194px;
   height:41px;
   text-decoration: none;
+      margin-left: 3em;
 }
 .signup input[type="submit"]:hover {
   color: white;
-}*/
+}
 
