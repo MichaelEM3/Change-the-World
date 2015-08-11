@@ -1,6 +1,6 @@
 <% @user = current_user || User.new %>
 <div class="sign_up">
-  <h2>Sign-up</h2>
+  <h2>Sign Up</h2>
   <%= form_tag(signup_path) do %>
 
     <%= label_tag :username %><br>
@@ -18,6 +18,6 @@
     <%= label_tag :password_confirmation, "Password Confirmation" %><br>
     <%= password_field_tag :password_confirmation %><br>
 
-    <%= submit_tag "Sign-up", class: "signup-button" %>
+    <%= submit_tag "Sign Up", class: "signup-button" %>
   <% end %>
 </div>

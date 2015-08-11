@@ -803,7 +803,7 @@ input[type="file"] {
 .newclub {
   margin: 5vw 20vw 5vw 20vw;
   background-color: rgb(80,187,182);
-  padding: 10em 20em 10em 20em;
+  padding: 1em 11em;
   box-shadow: 0px 0px 12px #CB99C9, inset 0px 2px 3px #966FD6;
   text-align: center;
 }
