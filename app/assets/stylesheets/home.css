@@ -183,7 +183,7 @@
 }
 .ourstroy {
   white-space: wrap;
-  font-family: Helvetica Neue,Helvetica,Arial,sans-serif;
+  font-family: "Helvetica Neue",sans-serif;
   font-size: 4vw;
   line-height: 2.0;
   color: #fff;
@@ -193,7 +193,7 @@
   /*white-space: wrap;*/
   line-height: 3.0;
   font-size: 1.9vw;
-  font-family: Helvetica Neue,Helvetica,Arial,sans-serif;
+  font-family: "Helvetica Neue", sans-serif;
   color: #fff;
   border: none;
   text-align: left;
