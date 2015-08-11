@@ -1,15 +1,90 @@
+/*whos club font*/
+/**/
+.line1 {
+  margin-left: 3vw;
+}
+/*moving bars at top*/
+#dashboard-wrap {
+  list-style:none;
+  margin:0;
+  padding:0;
+}
+#dashboard-wrap li {
+  display:block;
+  height:15px;
+  margin-bottom:10px;
+}
+#dashboard-wrap > li .green-bar {
+background-color:#83ecb8;
+float: left;
+position: relative;
+z-index:50;
+}
+#dashboard-wrap > li span {
+height: 15px;
+display: block;
+  -webkit-animation: stats-anim 5s; /* Safari 4+ */
+  -moz-animation:    stats-anim 5s; /* Fx 5+ */
+  -o-animation:      stats-anim 5s; /* Opera 12+ */
+  animation:         stats-anim 5s; /* IE 10+, Fx 29+ */
+}
+#dashboard-wrap > li .red-bar {
+background-color: #ef4057;
+float: right;
+}
+@-webkit-keyframes stats-anim {
+  0%   { width:0px; }
+  100% { }
+}
+@-moz-keyframes stats-anim {
+  0%   { width:0px; }
+  100% { }
+}
+@-o-keyframes stats-anim {
+  0%   { width:0px; }
+  100% { }
+}
+@keyframes stats-anim {
+  0%   { width:0px; }
+  100% { }
+}
+/**/
+
 /***************************/
 /* Activity Feed Page */
 /***************************/
+/*
+#activiybox {
+  width: 40.7vw;
+  height: 5vw;
+  background-color: #fbb64a;
+  margin: 0;
+  padding: 0;
+  margin-top:1vw;
+  box-shadow: 1vw 1vw 1vw #888888;
+  margin-left: 2vw;
+}*/
+
+#userclubbox {
+  width: 40.7vw;
+  height: 5vw;
+  background-color: #fbb64a;
+  margin: 0;
+  padding: 0;
+  margin-top:1vw;
+  box-shadow: 1vw 1vw 1vw #888888;
+  margin-left: 2vw;
+}
+
 
 #welcome h2 {
-  text-align: left;
-  font-size: 1.5vw;
+  text-align: center;
+  font-size: 3vw;
 }
 
 #welcome p {
-  text-align: left;
-  font-size: 1.5vw;
+  text-align: center;
+  font-size: 2vw;
 }
 
 #user_clubs {
@@ -18,7 +93,7 @@
 }
 
 #user_clubs h2 {
-  text-align: left;
+  text-align: center;
   font-size: 1.5vw;
 }
 
@@ -33,10 +108,10 @@
 }
 
 .club_area img {
-  height: 275px;
-  width: 275px;
+  height: 225px;
+  width: 225px;
   /*border-radius: 100%;*/
-  padding: 0.5vw;
+  padding: 3.3vw;
 }
 
 .club_title {
@@ -57,7 +132,6 @@
   /*border-style: solid;
   border-width: 1px;*/
   margin-right: 0.5vw;
-
 }
 
 #activities h2 {
@@ -76,10 +150,12 @@
 #activity_stories {
   font-size: 1.5vw;
   padding-top: 40px;
+  margin-left: 3vw;
 }
 
 #activity_preview {
   font-size: 1vw;
+  margin-left: 3vw;
 }
 
 #search-form {
@@ -726,17 +802,17 @@ input[type="file"] {
 /********************/
 .newclub {
   margin: 5vw 20vw 5vw 20vw;
-    background-color: rgb(80,187,182);
-    padding: 10em 20em 10em 20em;
-     box-shadow: 0px 0px 12px #CB99C9, inset 0px 2px 3px #966FD6;
+  background-color: rgb(80,187,182);
+  padding: 10em 20em 10em 20em;
+  box-shadow: 0px 0px 12px #CB99C9, inset 0px 2px 3px #966FD6;
   text-align: center;
 }
 .newclub h1 {
   font-size: 4vw;
   line-height: 4vw;
-    text-align: center;
-    font-family: 'Playfair Display SC', serif;
-    color: #fff;
+  text-align: center;
+  font-family: 'Playfair Display SC', serif;
+  color: #fff;
 
 }
 .new_club {
@@ -755,7 +831,7 @@ input[type="file"] {
   outline: none;
   padding: 0.5em;
   margin-bottom: 1.25vw;
-    width:194px;
+  width:194px;
   height:41px;
   text-decoration: none;
 }
