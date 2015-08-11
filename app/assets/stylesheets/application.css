@@ -114,7 +114,6 @@
 
   #navbar {
     /*padding-bottom: 10em;*/
-    margin: 0;
     padding: 0;
     height: 3.5vw;
     width: 100%;
@@ -139,7 +138,6 @@
 
  #navbar li {
    display: inline-block;
-
    padding: 0em .3em ;
    font-family: sans-serif;
  }

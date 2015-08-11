@@ -456,7 +456,7 @@ a.button_text:active {
 }
 
 .story_title h2, h3 {
-     text-align: center;
+
     border-top: 4px double rgb(131,236,184);
     border-bottom: 4px double rgb(131,236,184);
     padding-top: .5em;
@@ -581,6 +581,13 @@ opacity: 0.8;
 box-shadow: 3px 6px 9px rgba(0,0,0,.5);
 }
 
+.club_avatar {
+  width: 300px;
+  height: 300px;
+  margin-left: .5vw;
+  position: relative;
+}
+
 
 /* ***************************************************************  */
 /* ------------------ end of clubs show page ---------------------- */
@@ -618,7 +625,7 @@ display: block;
 text-align: center;
 vertical-align: middle;
 color: #fff;
-font-size: 2vw;
+font-size: 1vw;
 }
 
 .bottom_bar_container a {

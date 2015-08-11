@@ -26,98 +26,21 @@
 
 
 
-$(document).ready(function(){
-
-  $('.club_users').on('click', function(){
-
-    $('.user_club_show').slideToggle();
-
-  });     
-
-  $('.club_stories').on('click', function(){
-    console.log("This")
-
-    $('.stories_show').slideToggle();
-
-  });    
-
-  $('.club_details').on('page:load', function(){
-
-    $('.about_container').slideToggle();  
-
-  });
-
-  $('.club_nav_toggle').on('click', function(){
-    $('.nav').slideToggle();  
-  });
-
-
-
-     // $('.leave_a_comment').on('click', function(){
-     //      $(this).sibling('story_comments').slideToggle();            
-     //  });
-
-$('.leave_a_comment').on('page:load', function(){
-
-  $(this).next().slideToggle();
-
-});   
-
-      //  $('.leave_a_comment').on('click', function(){
-      //     $('.story_comments').slideToggle();            
-      // });  
-
-      // $('.leave_a_comment').on('click', function(){
-      //     $('.story_comments').slideToggle();            
-      // });  
-
-$('.toggle_live_chat').on('click', function(){
- $('live_chat_container').slideToggle();
-});
-});
-
-
-$(document).ready(function(){
-
-  $('.project_list').slideToggle();  
-  $('.leave_a_comment').next().slideToggle();
-
-  $('.leave_a_comment').on('click', function(evt){
-    $(this).next().slideToggle(evt);
-  });   
-
-  $('.club_projects_toggle').on('click', function(){
-    $('.project_list').slideToggle();  
-  });
-});  
-
-$(document).ready(function(){
-
-  $('.club_nav_toggle').on('click', function(){
-
-    $(this).next().slideToggle();
-
-  });  
-
-});
-
 
 function initialise(){
-    $('.clickableItem').click(function(){
-        /* do code here */
-        return false;
-    });
-};
 
+});
 $(document).ready(function(){
-    initialise();
+  initialise();
 });
 $(document).ajaxComplete(function () {
-    initialise();
+  initialise();
 });
 
 
-  // Signup and login
+
+
+
   function ready() {
     $('.trigger').on("click", function() {
       $('.overlay').show();
@@ -132,7 +55,3 @@ $(document).ajaxComplete(function () {
       e.stopPropagation();
     });
   };
-
-
-
-  $(document).on('ready page:load', ready)
