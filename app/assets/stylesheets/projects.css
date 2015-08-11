@@ -199,17 +199,18 @@ h2 {
 	width: 100%;
 	background-color: rgb(80,187,182);
 	box-shadow: 0px 3px 8px #aaa, inset 0px 2px 3px #fff;
-	padding-top: 1.25%;
-	padding-bottom: 1.25%;
+
 	display: block;
-	color: rgb(138,141,143);
+	color: #fff;
 	text-align: center;
 	vertical-align: middle;
 }
 .bottom_bar_container a {
 	text-decoration: none;
-	font-size: 3em;
+	font-size: 2vw;
 	font-family: 'Playfair Display SC', serif;
+	    padding-top: 1vw;
+    padding-bottom: 1vw;
 }
 .bottom_bar_buttons:hover {
 	color: rgb(138,141,143);

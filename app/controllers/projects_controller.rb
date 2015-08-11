@@ -46,7 +46,7 @@ def calendar
 
   def destroy
     @project.destroy
-    redirect_to club_projects_path(@project.club, @project)
+    redirect_to club_path(params[:club_id])
   end
 
   def set_options

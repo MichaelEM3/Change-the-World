@@ -19,7 +19,7 @@
 // // $(ready);
 // $(document).on('page:load', ready);
 // $('.user_club_show').hide();
-//  $('.stories_show').hide();
+//  $('.stories_show').hide(); 
 //   $('.about_container').hide()
 // });
 
@@ -30,57 +30,92 @@ $(document).ready(function(){
 
   $('.club_users').on('click', function(){
 
-          $('.user_club_show').slideToggle();
+    $('.user_club_show').slideToggle();
 
-      });
+  });     
 
-     $('.club_stories').on('click', function(){
-      console.log("This")
+  $('.club_stories').on('click', function(){
+    console.log("This")
 
-          $('.stories_show').slideToggle();
+    $('.stories_show').slideToggle();
 
-      });
+  });    
 
-      $('.club_details').on('page:load', function(){
+  $('.club_details').on('page:load', function(){
 
-          $('.about_container').slideToggle();
+    $('.about_container').slideToggle();  
 
-      });
+  });
+
+  $('.club_nav_toggle').on('click', function(){
+    $('.nav').slideToggle();  
+  });
 
 
 
      // $('.leave_a_comment').on('click', function(){
-     //      $(this).sibling('story_comments').slideToggle();
+     //      $(this).sibling('story_comments').slideToggle();            
      //  });
 
-       $('.leave_a_comment').on('page:load', function(){
+$('.leave_a_comment').on('page:load', function(){
 
-          $(this).next().slideToggle();
+  $(this).next().slideToggle();
 
-      });
+});   
 
       //  $('.leave_a_comment').on('click', function(){
-      //     $('.story_comments').slideToggle();
-      // });
+      //     $('.story_comments').slideToggle();            
+      // });  
 
       // $('.leave_a_comment').on('click', function(){
-      //     $('.story_comments').slideToggle();
-      // });
+      //     $('.story_comments').slideToggle();            
+      // });  
 
-      $('.toggle_live_chat').on('click', function(){
-      	$('live_chat_container').slideToggle();
-      });
+$('.toggle_live_chat').on('click', function(){
+ $('live_chat_container').slideToggle();
+});
 });
 
 
 $(document).ready(function(){
 
-$('.leave_a_comment').on('click', function(){
+  $('.project_list').slideToggle();  
+  $('.leave_a_comment').next().slideToggle();
 
-          $(this).next().slideToggle();
+  $('.leave_a_comment').on('click', function(evt){
+    $(this).next().slideToggle(evt);
+  });   
 
-      });
+  $('.club_projects_toggle').on('click', function(){
+    $('.project_list').slideToggle();  
   });
+});  
+
+$(document).ready(function(){
+
+  $('.club_nav_toggle').on('click', function(){
+
+    $(this).next().slideToggle();
+
+  });  
+
+});
+
+
+function initialise(){
+    $('.clickableItem').click(function(){
+        /* do code here */
+        return false;
+    });
+};
+
+$(document).ready(function(){
+    initialise();
+});
+$(document).ajaxComplete(function () {
+    initialise();
+});
+
 
   // Signup and login
   function ready() {
