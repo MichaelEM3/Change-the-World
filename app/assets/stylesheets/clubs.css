@@ -919,6 +919,9 @@ background-color: #f46954;
   text-decoration: none;
   margin-left: 3.5em;
 }
+.image_field_button{
+  margin-left: 4em;
+}
 .submit_button input[type="submit"]{
   background-color: rgb(237,66,85);
    color: rgb(80,187,182);
@@ -935,7 +938,7 @@ background-color: #f46954;
      width:194px;
    height:41px;
    text-decoration: none;
-   margin-left: 2.5em;
+   margin-left: 3em;
 }
 
 #submit input:hover, .actions input:hover, .image_field_button:hover, .submit_button input[type="submit"]:hover {
@@ -971,7 +974,7 @@ input[type="file"] {
 }
 .new_club {
   text-align: center;
-  margin-left: 7em;
+  margin-left: 3em;
 }
 
 .newclub a {
@@ -987,7 +990,7 @@ input[type="file"] {
   outline: none;
   padding: 0.5em;
   margin-bottom: 1.25vw;
-  margin-right: 1em;
+  margin-right: 2em;
   width:194px;
   height:41px;
   text-decoration: none;
