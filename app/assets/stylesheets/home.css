@@ -8,8 +8,7 @@
   margin: 0;
 }
 /*Rotating Words*/
-.first1
- {
+.first1 {
   font-size: 25px;
   display: inline;
   float: left;
@@ -61,12 +60,6 @@
   font-size: 40px;
 }
 
-.first1 {
-  font-size: 25px;
-  display: inline;
-  float: left;
-  margin: 0;
-}
 .second2 {
   margin-top: 0;
   padding-left: 350px;
