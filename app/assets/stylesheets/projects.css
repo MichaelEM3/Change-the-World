@@ -154,6 +154,11 @@
 	padding: 2vw;
 	text-align: center;
 	background-color: #83ecb8;
+	width: 76vw;
+	margin: auto;
+}
+.proj p{
+	text-align: center;
 }
 .proj h1{
 	margin-left: auto;
@@ -174,9 +179,25 @@ h2 {
 	width: 30vw;
 	text-align: center;
 	vertical-align: top;
-	padding-bottom: 1vw;
+	padding: 1vw;
 }
-
+.task .button_to input[type='submit']{
+	background-color: rgb(237,66,85);
+	color: white;
+	font-family: 'Helvetica Neue',sans-serif;
+	font-size: 18px;
+	border-radius: 20px;
+	-webkit-border-radius: 20px;
+	-moz-border-radius: 20px;
+	border: 0;
+	text-shadow: #C17C3A 0 -1px 0;
+	outline: none;
+	padding: 0.5em;
+	margin-bottom: 1.25vw;
+	width: 194px;
+	height: 41px;
+	text-decoration: none;
+}
 .page {
 	text-align: center;
 }
@@ -189,8 +210,20 @@ h2 {
 	text-align: center;
 	background-color: rgb(80,187,182);
 	padding: 1vw;
+	width: 76vw;
+	height: 37vw;
+  margin: auto;
 }
-
+#newtsk input[type="submit"]{
+	margin-left: 0em;
+	color: white;
+}
+#newtsk input[type="date"]{
+	width: 36%;
+}
+#newtsk input[type="checkbox"]{
+	margin-left: 34vw;
+}
 
 #task_description {
 	margin: 0px;
@@ -243,6 +276,7 @@ h2 {
 	margin-left: 10vw;
 	margin-right: 10vw;
 }
+
 
 .project_list {
 	/* border: 3px solid #358287; */

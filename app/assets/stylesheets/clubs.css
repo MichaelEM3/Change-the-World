@@ -302,8 +302,11 @@ opacity: 0.8;
   clear: both;
   position: absolute;
   left: 1vw;
-  top: 6vw;
-  width: 60%;
+  top: 4vw;
+  max-width: 455px;
+  max-height: 455px;
+  width: auto;
+  height: auto;
 
 
  /*display: block;
@@ -976,7 +979,9 @@ input[type="file"] {
   text-align: center;
   margin-left: 3em;
 }
+.new_club label{
 
+}
 .newclub a {
   background-color: rgb(237,66,85);
   color: rgb(80,187,182);
