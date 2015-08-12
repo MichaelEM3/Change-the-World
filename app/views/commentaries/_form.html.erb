@@ -1,7 +1,7 @@
 
 <%= form_for([locals[:story], @commentary], :remote => true) do |f| %>
   <div class="field">
-    <%= f.text_area :comment, placeholder: "Member comment...", class: "comment_box"  %>
+    <%= f.text_area :comment, placeholder: "Write a comment...", class: "comment_box"  %>
   </div>
   <div class="field">
     <%=f.hidden_field :story_id, :value => locals[:story].id %>
@@ -10,6 +10,6 @@
     <%=f.hidden_field :user_id, :value => locals[:user_id] %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Post Comment" %>
   </div>
 <% end %>
