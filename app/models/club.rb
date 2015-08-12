@@ -10,7 +10,7 @@ class Club < ActiveRecord::Base
   validates :title, :description, :location, presence: true
   validates :description, length: { minimum: 20}
 
-  has_attached_file :image, styles: { large: "600x600>", medium: "300x300>", thumb: "96x96#"}
+  has_attached_file :image, styles: { large: "600x600*", medium: "300x300*", thumb: "96x96*"}
   validates_attachment_content_type :image, :content_type => /\Aimage\/.*\Z/
 
 	# def tag_list

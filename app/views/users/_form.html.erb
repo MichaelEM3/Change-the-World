@@ -1,8 +1,8 @@
 <% @user = current_user || User.new %>
 <div class="sign_up">
   <h2>Sign Up</h2>
-  <%= form_for @user do |f| %>
 
+  <%= form_for @user do |f| %>
     <%= f.label :username %><br>
     <%= f.text_field :username %><br>
 

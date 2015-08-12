@@ -10,6 +10,7 @@
 </head>
 
 <body>
+ <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <div class="overlay">
     <div class="modal">
       <%= render 'sessions/form' %>
@@ -28,8 +29,16 @@
             <li><%= link_to 'Profile', profile_path(current_user) %></li>
           <% else %>
             <li><span class="trigger"><p id="club_login">Create New Club</p></li>
+<<<<<<< HEAD
             <li><span class="trigger"><p id="profile_login">Profile</p></li>
             <%end%>
+=======
+          <% end %>
+          <% if current_user %>
+            <li><%= link_to 'Profile', profile_path(current_user) unless current_user.nil? %></li>
+
+     <%end%>
+>>>>>>> c58a9527f1d04fd9afde024fb2b79d49ae64a110
           <% if current_user %>
           <li><p id="login"><%= current_user.username %>  |  <%= link_to "Log Out", logout_path, method: "delete" %></p></li>
           <% else %>

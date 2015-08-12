@@ -9,6 +9,7 @@
   margin:0;
   padding:0;
   margin-top: 1.7vw;
+  /*margin-top: 5vw;*/
 }
 #dashboard-wrap li {
   display:block;
@@ -120,6 +121,7 @@ float: right;
 .club_title {
   text-align: center;
   /*font-weight: bold;*/
+
 }
 
 .club_content{
@@ -166,7 +168,7 @@ float: right;
 }
 
 input {
-  width: 35%;
+  width: 100%;
   padding: 0.5vw 0;
 }
 
@@ -208,6 +210,8 @@ margin-left: 40vw;
   font-size: 5em;
   text-align: center;
   margin-left: 40vw;
+      margin-top: 5vw;
+      line-height: 4vw;
 
 }
 
@@ -300,6 +304,11 @@ opacity: 0.8;
   top: 4vw;
   width: 55%;
 
+
+ /*display: block;
+    margin: 0 auto;
+    margin-left: 2vw;
+    margin-top: 1.25vw;*/
 }
 
 .button_text {
@@ -396,7 +405,12 @@ a.button_text:active {
   float: left;
   display: block;
   padding: 10px;
+}
 
+.user_club_show li p {
+  text-align: center;
+  color: #358287;
+  font-size: 1.25vw;
 }
 
 .user_club_show ul {
@@ -446,7 +460,14 @@ a.button_text:active {
 .clubs_middle_section div{
 
 }
-
+.club_project_title {
+text-align: center;
+    border-top: 4px double #000;
+    border-bottom: 4px double #000;
+    margin-left: 17vw;
+    margin-right: 17vw;
+        font-size: 1.4vw;
+}
 .stories_show {
     color: #000;
 /*    border: 3px solid #358287;
@@ -458,16 +479,14 @@ a.button_text:active {
 }
 
 .story_title {
-  font-size: 4em;
+  font-size: 1vw;
   height: 5em;
 }
 
 .story_title h2, h3 {
-     text-align: center;
+
     border-top: 4px double rgb(131,236,184);
     border-bottom: 4px double rgb(131,236,184);
-    padding-top: .5em;
-     padding-bottom: .5em;
       color: #FFF;
       line-height: 3vw;
   }
@@ -476,6 +495,7 @@ a.button_text:active {
 
 
 .navone {
+  background-color: rgba(95,95,95,0.6);
   box-shadow: 0px 3px 8px #aaa, inset 0px 2px 3px #fff;
   text-align: center;
       box-shadow: 0 6px rgba(80,187,182, 0.2);
@@ -558,7 +578,7 @@ box-shadow: 3px 6px 9px rgba(0,0,0,.5);
 }
 
 .story_title h1 {
-  color: rgb(95,95,95);
+      color: rgba(95,95,95,0.8);
      padding-top: .5vw;
           padding-bottom: .5vw;
 
@@ -588,6 +608,13 @@ opacity: 0.8;
 box-shadow: 3px 6px 9px rgba(0,0,0,.5);
 }
 
+.club_avatar {
+  width: 300px;
+  height: 300px;
+  margin-bottom: 2.5vw;
+  position: relative;
+}
+
 
 /* ***************************************************************  */
 /* ------------------ end of clubs show page ---------------------- */
@@ -595,12 +622,12 @@ box-shadow: 3px 6px 9px rgba(0,0,0,.5);
 
 
 .comment_box {
-  width: 395px;
-  background-color: rgb(80,187,182);
+  width: 54vw;
+    height: 5vw;
   opacity: 0.8;
   vertical-align: middle;
   color: #000;
-  padding-top: 2.5em;
+
     padding-bottom: 2em;
     font-size: 1em;
      box-shadow: 0px 3px 8px #aaa, inset 0px 2px 3px #fff;
@@ -625,7 +652,7 @@ display: block;
 text-align: center;
 vertical-align: middle;
 color: #fff;
-font-size: 2vw;
+font-size: 1vw;
 }
 
 .bottom_bar_container a {
@@ -799,6 +826,15 @@ background-color: #f46954;
 
 }
 
+.field2 textarea {
+  padding-right: 57vw;
+}
+
+.field3 textarea {
+  padding-right: 57.55vw;
+}
+
+
 #submit_button input, .back_button a {
   background-color: rgb(237,66,85);
   color:#fff;
@@ -897,6 +933,7 @@ input[type="file"] {
   margin: 5vw 20vw 5vw 20vw;
   background-color: rgb(80,187,182);
   padding: 1em 11em;
+  /*padding: 10em 20em 10em 20em;*/
   box-shadow: 0px 0px 12px #CB99C9, inset 0px 2px 3px #966FD6;
   text-align: center;
 }
@@ -930,7 +967,39 @@ input[type="file"] {
   width:194px;
   height:41px;
   text-decoration: none;
+      /*margin-left: 2.5vw;
+}
+
+.newclub a{
+    background-color: rgb(237,66,85);
+    color: rgb(80,187,182);
+    font-family: 'Helvetica Neue',sans-serif;
+    font-size: 18px;
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    border: 0;
+    text-shadow: #C17C3A 0 -1px 0;
+    outline: none;
+    padding-left: 13vw;
+    padding-right: 12vw;
+    padding-top: 0.5vw;
+    padding-bottom: 0.5vw;
+    margin-bottom: 3.25vw;
+    width: 194px;
+    height: 41px;
+    text-decoration: none;
+    margin-left: 1vw;*/
+/*    margin-left: 2vw;*/
 }
 .newclub a:hover {
   background-color: rgb(237,66,85);
 }
+
+
+#club_description {
+  height: 10vw;
+}
+
+
+/*       clubs index        */

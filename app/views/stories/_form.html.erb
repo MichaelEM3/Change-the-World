@@ -1,4 +1,5 @@
-<%= form_for([@club, @story]) do |f| %>
+ <!-- form_for([@club, @story]), remote: true do |f| -->
+<%= form_for([@club, @story], class: "stories_form") do |f| %>
   <% if @story.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@story.errors.count, "error") %> prohibited this story from being saved:</h2>
@@ -14,15 +15,15 @@
   <div class="field">
     <%=f.hidden_field :club_id, :value => @club.id%><br>
   </div>
-  <div class="field">
+  <div class="field2">
     <%= f.label :title %><br>
     <%= f.text_field :title %>
   </div>
-  <div class="field">
+  <div class="field3">
     <%= f.label :story %><br>
     <%= f.text_area :story %>
   </div>
-  <div class="actions">
-    <%= f.submit %>
+  <div class="actions stories_submit">
+    <%= f.submit 'Submit', :class => 'submit_class_name_here'%>
   </div>
 <% end %>
