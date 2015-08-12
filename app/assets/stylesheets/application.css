@@ -170,9 +170,9 @@ body{
 }
 
 #navMenuItems li{
-  /*margin-left: 12em;*/
-    padding-left: 2vw;
-  margin-left: 15em;
+  margin-left: 12em;
+  /*padding-left: 2vw;*/
+  /*margin-left: 15em;*/
 }
 
 #club_login {
