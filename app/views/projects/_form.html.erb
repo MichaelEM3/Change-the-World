@@ -16,27 +16,32 @@
   <!-- </div> -->
   <div class="field">
     <%= f.label :name, class: "field_title" %><br>
+    <br>
     <%= f.text_field :name, class: "field_box" %>
   </div>
 
   <div class="field">
     <%= f.label :description, class: "field_title" %><br>
+    <br>
     <%= f.text_field :description, class: "field_box" %>
   </div>
 
   <div class="field">
     <%= f.label :location, class: "field_title" %><br>
+    <br>
     <%= f.text_field :location, class: "field_box" %>
   </div>
 
   <div class="field">
     <%= f.label :due_date, class: "field_title" %><br>
+    <br>
     <%= f.date_field :due_date, class: "field_box" %>
   </div>
 
   <div class="field">
     <div class="field_before">
      <%= f.label :club_id, "Associated club", class: "field_title" %><br>
+     <br>
     <%= f.select :club_id, options_for_select(@club_options), class: "field_box", placeholder: "club selector"%>
     </div>
   </div>
