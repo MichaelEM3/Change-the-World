@@ -60,6 +60,7 @@
   margin-left: 50px;
   font-size: 40px;
 }
+
 .first1 {
   font-size: 25px;
   display: inline;
@@ -474,13 +475,3 @@ svg {
   margin-left: auto;
   margin-right: auto;
 }
-
-.visible {
-    float: left;
-    font-weight: 600;
-    overflow: hidden;
-    height: 62px;
-    vertical-align: top;
-    margin-left: 50px;
-    font-size: 40px;
-  }
