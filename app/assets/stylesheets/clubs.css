@@ -383,7 +383,7 @@ a.button_text:active {
 }
 
 .stories_show, .edit_club_page_buttons  {
-    clear: both;
+  clear: both;
   line-height: 2em;
 }
 
@@ -572,7 +572,7 @@ box-shadow: 3px 6px 9px rgba(0,0,0,.5);
   text-align: center;
 }
 #story_story{
-  width: 39em;
+  width: 0em;
     height: 7em;
     font-size: 1.2em;
   margin-left: -6em;
