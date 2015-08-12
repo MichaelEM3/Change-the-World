@@ -41,7 +41,7 @@
     <span class="one">
       <div class="two">
       <!--<span>
-          link_to 'Current Projects', club_projects_path(@club), class: " club_button button_text" if current_user 
+          link_to 'Current Projects', club_projects_path(@club), class: " club_button button_text" if current_user
         </span> -->
         <span>
           <%= link_to 'New Project', new_club_project_path(@club), class: " club_button button_text" if current_user && current_user.user_in_club(@club.id) && current_user.user_admin_in_club?(@club.id) %>
@@ -85,7 +85,7 @@
  <h1>Projects</h1>
 <% @club.projects.each do |projects| %>
     <span class="project_black_box">
-<%= link_to projects.name, club_project_path(projects.club, projects), class: "club_project_name" %>: 
+<%= link_to projects.name, club_project_path(projects.club, projects), class: "club_project_name" %>:
 <span class="club_project_description"><%= projects.description %></span>
     </span>
 <% end%>
@@ -167,8 +167,7 @@
       <% else %>
 
       <li class="club_avatar">
-        <%= link_to image_tag("https://i.vimeocdn.com/portrait/1328552_300x300.jpg"), profile_path(userclub.user_id)
-                   %></li>
+        <%= link_to image_tag("https://i.vimeocdn.com/portrait/1328552_300x300.jpg"), profile_path(userclub.user_id)%></li>
 
       <% end %>
       <% end %>

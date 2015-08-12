@@ -8,6 +8,7 @@
   list-style:none;
   margin:0;
   padding:0;
+  margin-top: 1.7vw;
 }
 #dashboard-wrap li {
   display:block;
@@ -20,6 +21,8 @@ float: left;
 position: relative;
 z-index:50;
 }
+
+
 #dashboard-wrap > li span {
 height: 15px;
 display: block;
@@ -214,6 +217,8 @@ margin-left: 40vw;
 
 .club_about {
   float: left;
+  height: 200px;
+  width: 200px;
 }
 
 .club_about p {
@@ -291,8 +296,10 @@ opacity: 0.8;
 .button_response .club_about{
   clear: both;
   position: absolute;
-  left: 5vw;
-  top: 5vw;
+  left: 3vw;
+  top: 4vw;
+  width: 55%;
+
 }
 
 .button_text {
