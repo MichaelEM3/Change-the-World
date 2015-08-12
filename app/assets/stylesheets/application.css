@@ -17,8 +17,8 @@
 * file per style scope.
 *
 
-*= require_tree .
 *= require_self
+*= require_tree .
 */
 
 
@@ -299,6 +299,7 @@ li[type="circle"] {
 a {
   color: #000;
 }
+
 
 
 /*footer*/

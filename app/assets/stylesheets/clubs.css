@@ -644,14 +644,14 @@ margin-right: 4em;
 }
 .comment_box {
   width: 54vw;
-    height: 5vw;
+  height: 5vw;
   opacity: 0.8;
   vertical-align: middle;
   color: #000;
   background-color: rgb(252, 253, 253);
-    padding-bottom: 2em;
-    font-size: 1em;
-     box-shadow: 0px 3px 8px #aaa, inset 0px 2px 3px #fff;
+  padding-bottom: 2em;
+  font-size: 1em;
+  box-shadow: 0px 3px 8px #aaa, inset 0px 2px 3px #fff;
 }
 
 .actions {
