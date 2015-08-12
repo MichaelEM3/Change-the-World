@@ -12,7 +12,7 @@
 }
 .login_form a, .login_form input[type="submit"]{
   background-color: rgb(237,66,85);
-  color: rgb(80,187,182);
+  color: white;
   font-family:'Helvetica Neue',sans-serif;
   font-size:18px;
   border-radius:20px;
@@ -29,10 +29,10 @@
   text-align: center;
 }
 .login_form a:hover {
-  color:white;
+  color:rgb(80,187,182);;
 }
 .login_form input[type="submit"]:hover{
-  color: white;
+  color: rgb(80,187,182);;
 }
 
 
@@ -57,7 +57,7 @@
 }
 .login a, .login input[type="submit"]{
   background-color: rgb(237,66,85);
-  color: rgb(80,187,182);
+  color: white;
   font-family:'Helvetica Neue',sans-serif;
   font-size:18px;
   border-radius:20px;
@@ -73,8 +73,8 @@
   text-decoration: none;
 }
 .login a:hover {
-  color:white;
+  color:rgb(80,187,182);;
 }
 .login input[type="submit"]:hover{
-  color: white;
+  color: rgb(80,187,182);;
 }

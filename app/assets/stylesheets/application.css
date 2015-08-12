@@ -86,7 +86,7 @@
   padding-left: 1.4%;
 }
 .login_form form input{
-  width: 90%;
+  width: 73%;
   margin-bottom: 3%;
   font-size: 1.2em;
   padding-left: 1%;
@@ -104,7 +104,10 @@
   font-size: 1.2em;
 }
 
-
+body, p, ol, ul, td {
+    font-family: 'Domine', serif, verdana, arial, helvetica, sans-serif;
+    text-align: left;
+}
 
 
   /*******************/
@@ -114,9 +117,8 @@
 
   #navbar {
     /*padding-bottom: 10em;*/
-    margin: 0;
     padding: 0;
-    height: 3.5vw;
+    height: 4vw;
     width: 100%;
     position: fixed;
     top: 0;
@@ -139,7 +141,6 @@
 
  #navbar li {
    display: inline-block;
-
    padding: 0em .3em ;
    font-family: sans-serif;
  }
@@ -154,20 +155,24 @@
   font-family: sans-serif;
 }
 
-#body{
-  margin-top: 0px;
+body{
+  margin: 0px;
   padding-top: 50px;
 }
 
 
 #navMenuItems{
   position: absolute;
-  top: -.25em;
-  left: -11%;
+  padding-top: 0.5em;
+  top: -.20em;
+  left: -6%;
   margin: 0 auto;
 }
+
 #navMenuItems li{
-  margin-left: 15em;
+  margin-left: 12em;
+  /*padding-left: 2vw;*/
+  /*margin-left: 15em;*/
 }
 
 #club_login {
@@ -177,6 +182,17 @@
 }
 
 #club_login:hover {
+  color: #fff;
+  background-color: #000;
+}
+
+#profile_login {
+  margin-right: 1em;
+  font-size : 1vw;
+  color : #fff;
+}
+
+#profile_login:hover {
   color: #fff;
   background-color: #000;
 }
@@ -236,7 +252,7 @@ select#project_club_id, #project_club_id option {
 }
 
 input {
-  font-size: 1vw;
+  font-size: 1.2vw;
 }
 
 /* ******************************************************* */
@@ -255,7 +271,7 @@ input {
 #chat input[type="submit"] {
   background-color: rgba(80,187,182, 0.8);
  color: rgb(80,187,182);
- font-family: 'Helvetica Neue',sans-serif;
+ font-family: 'Helvetica Neue', sans-serif;
  font-size: 1vw;
  border: 0;
  text-shadow: #C17C3A 0 -1px 0;
