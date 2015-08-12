@@ -37,6 +37,10 @@
 
 
 /*Login*/
+.login input{
+  width: 87%;
+  padding: 0.5vw 0;
+}
 .login {
   margin: 5vw 20vw 5vw 20vw;
     background-color: rgb(80,187,182);

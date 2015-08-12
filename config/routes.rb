@@ -40,7 +40,7 @@ Rails.application.routes.draw do
   post '/login' => 'sessions#create'
   get '/logout' => 'sessions#destroy'
   get '/signup' => 'users#new'
-  post '/users' => 'users#create'
+  post '/signup' => 'users#create'
   get '/session' => 'sessions#show'
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'
