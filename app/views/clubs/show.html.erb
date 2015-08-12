@@ -96,7 +96,8 @@
 
   <div class="stories_show">
 
-    <br>
+  <br>
+  <div class="story_outer_container">
     <%@stories.each_with_index do |story, index| %>
     <div class="story_inner_container">
       <div class="story_title story_subtitle">
@@ -123,8 +124,8 @@
             <br></p>
           <% end %>
           <br>
-          </div>
-
+    </div>
+  </div>
           <div class="story_comment_bar">
             <%= render 'commentaries/form', locals: {story: story, user_id: current_user.id}  %>
           </div>
@@ -169,8 +170,8 @@
       <% else %>
 
       <li class="club_avatar">
-        <%= link_to image_tag("https://i.vimeocdn.com/portrait/1328552_300x300.jpg"), profile_path(userclub.user_id)
-                   %><p><%= userclub.user.username %></p></li>
+        <%= link_to image_tag("https://i.vimeocdn.com/portrait/1328552_300x300.jpg"), profile_path(userclub.user_id)%>
+        <p><%= userclub.user.username %></p></li>
 
 
       <% end %>

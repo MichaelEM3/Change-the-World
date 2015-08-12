@@ -67,13 +67,14 @@ $(document).ready(function(){
   console.log('document ready');
 
 // #new_task is the id for the form class it can be fetched in the browser console
-$('#new_commentary').on("ajax:success", function(evt) {
+$('body').on("ajax:success", '.new_commentary', function(evt) {
   console.log(arguments);
     // window.location.reload();
     // alert("step 1")
     //  #task_name is the id for the input box also found in the browser window
-   var data = $('#commentary_comment').val();
-    $('.story_comments_inner_container').append('<p>' + data + '</p>');
+   var data =  $(this).find('.comment_box').val();
+    $(this).prepend('<p>' + data + '</p>');
+    console.log(data)
     // alert("Yay!!!")
   }).on('ajax:error', function() {
     console.log('There is an error in the code!');
@@ -82,22 +83,28 @@ $('#new_commentary').on("ajax:success", function(evt) {
   });
 });
 
-$(document).ready(function(){
-  console.log('document ready');
+// $(document).ready(function(){
+//   console.log('document ready');
 
-// #new_task is the id for the form class it can be fetched in the browser console
-$('#new_story').on("ajax:success", function(evt) {
-  console.log(arguments);
-    // window.location.reload();
-    // alert("step 1")
-    //  #task_name is the id for the input box also found in the browser window
-   var data = $('#story_title, #story.story').val();
-    $('.stories_show').append('<div>' + data + '</div>');
-    // alert("Yay!!!")
-  }).on('ajax:error', function() {
-    console.log('There is an error in the code!');
+// // #new_task is the id for the form class it can be fetched in the browser console
+// $('body').on("ajax:success", '.new_story', function(evt) {
+//   console.log(arguments);
+//     // window.location.reload();
+//     // alert("step 1")
+//     //  #task_name is the id for the input box also found in the browser window
+//    var data =  $('.story_inner_container').val();
+//     $(this).prepend('<div>' + data + '</div>');
+//     console.log(data)
+//     // alert("Yay!!!")
+//   }).on('ajax:error', function() {
+//     console.log('There is an error in the code!');
 
-    return false;
-  });
-});
+//     return false;
+//   });
+// });
+
+
+
+
+
 

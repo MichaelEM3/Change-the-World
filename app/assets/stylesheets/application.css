@@ -160,11 +160,14 @@
 
 #navMenuItems{
   position: absolute;
-  top: -.25em;
-  left: -11%;
+  padding-top: 0.5em;
+  top: -.20em;
+  left: -6%;
   margin: 0 auto;
 }
+
 #navMenuItems li{
+    padding-left: 2vw;
   margin-left: 15em;
 }
 
