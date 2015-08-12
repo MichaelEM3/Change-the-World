@@ -300,9 +300,9 @@ opacity: 0.8;
 .button_response .club_about{
   clear: both;
   position: absolute;
-  left: 3vw;
-  top: 4vw;
-  width: 55%;
+  left: 1vw;
+  top: 3vw;
+  width: 60%;
 
 
  /*display: block;
@@ -531,7 +531,9 @@ text-align: center;
  text-decoration: none;
  color: rgb(237,66,85);
 }
-
+.club_project_name:hover{
+  text-decoration: underline;
+}
 /*  beginning of clubs project */
 
 .club_project_container{
@@ -539,6 +541,7 @@ text-align: center;
 }
 
 /* end of clubs project */
+
 
 
 .leave_a_comment h3:hover {
@@ -565,6 +568,18 @@ box-shadow: 3px 6px 9px rgba(0,0,0,.5);
   margin-right: 25em;
   font-family: Georgia,serif;
   margin-bottom: -10px;
+  text-align: center;
+}
+#story_story{
+  width: 39em;
+    height: 7em;
+    font-size: 1.2em;
+}
+#story_title{
+  width: 40em;
+}
+.stories_submit input[type='submit']{
+    margin-left: 0em;
 }
 
 .creatorfeed_title {
@@ -575,6 +590,7 @@ box-shadow: 3px 6px 9px rgba(0,0,0,.5);
       font-family: Georgia,serif;
     font-size: 27px;
     line-height: 24px;
+        height: 3em;
 }
 
 .story_title h1 {
@@ -620,14 +636,19 @@ box-shadow: 3px 6px 9px rgba(0,0,0,.5);
 /* ------------------ end of clubs show page ---------------------- */
 /* ***************************************************************  */
 
-
+#new_commentary{
+text-align: center;
+}
+#new_commentary input[type='submit']{
+margin-right: 4em;
+}
 .comment_box {
   width: 54vw;
     height: 5vw;
   opacity: 0.8;
   vertical-align: middle;
   color: #000;
-
+  background-color: rgb(252, 253, 253);
     padding-bottom: 2em;
     font-size: 1em;
      box-shadow: 0px 3px 8px #aaa, inset 0px 2px 3px #fff;
