@@ -170,7 +170,7 @@ body{
 }
 
 #navMenuItems li{
-  margin-left: 12em;
+  margin-left: 10em;
   /*padding-left: 2vw;*/
   /*margin-left: 15em;*/
 }
@@ -299,7 +299,6 @@ li[type="circle"] {
 a {
   color: #000;
 }
-
 
 
 /*footer*/

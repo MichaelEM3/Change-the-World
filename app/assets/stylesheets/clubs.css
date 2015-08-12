@@ -210,8 +210,9 @@ margin-left: 40vw;
   font-size: 5em;
   text-align: center;
   margin-left: 40vw;
-      margin-top: 5vw;
-      line-height: 4vw;
+      margin-top: 2vw;
+      line-height: 7vw;
+  margin-bottom:-4vw
 
 }
 
@@ -301,7 +302,7 @@ opacity: 0.8;
   clear: both;
   position: absolute;
   left: 1vw;
-  top: 3vw;
+  top: 6vw;
   width: 60%;
 
 
@@ -574,9 +575,11 @@ box-shadow: 3px 6px 9px rgba(0,0,0,.5);
   width: 39em;
     height: 7em;
     font-size: 1.2em;
+  margin-left: -6em;
 }
 #story_title{
-  width: 40em;
+  width: 47em;
+  margin-left: -7em;
 }
 .stories_submit input[type='submit']{
     margin-left: 0em;
