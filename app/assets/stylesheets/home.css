@@ -189,7 +189,7 @@
   color: #fff;
 }
 .about {
-  padding-left: 0.4vw;
+  padding: 0 2em;
   /*white-space: wrap;*/
   line-height: 3.0;
   font-size: 1.9vw;
