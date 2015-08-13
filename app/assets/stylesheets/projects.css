@@ -174,7 +174,7 @@ h2 {
 .task {
 	display: inline-block;
 	background-color:  #50bbb6 ;
-	margin:  1vw;
+	margin:  0.5vw;
 	word-wrap: break-word;
 	width: 30vw;
 	text-align: center;
