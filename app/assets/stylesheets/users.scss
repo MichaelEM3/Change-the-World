@@ -261,7 +261,7 @@
 
 .edit_user {
     text-align: center;
-    padding-left: 12em;
+    padding-left: 7em;
 }
 
 #updateprofile {
@@ -293,10 +293,11 @@
     width:194px;
   height:41px;
   text-decoration: none;
+  margin-left: 1em;
 }
 
 #updateprofile input{
-  width: 50%;
+  width: 68%;
 }
 //
 // #updateprofile input[type="submit"] {
@@ -320,11 +321,10 @@
     width:194px;
   height:41px;
   text-decoration: none;
-  margin-right: 11em;
+  margin-right: 8em;
 }
 #updateprofile input[type="submit"]:hover{
   color: rgb(80,187,182);
-  width: 100%;
 }
 #image_text:hover{
   color: rgb(80,187,182);;
