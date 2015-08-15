@@ -50,7 +50,7 @@
 <% end %>
     </div>
 
-<div> 
+<div>
 <% if current_user && current_user.user_in_club(@project.club.id)%>
 <div class="live_chat_container">
   <h2>Live Chat:<h2>
@@ -85,6 +85,7 @@
         $('#chat_text').val(' ');
         event.preventDefault();
       });
+      
   </script>
   </div>
 <% end %>
