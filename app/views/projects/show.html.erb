@@ -67,6 +67,7 @@
       var PUBNUB_demo = PUBNUB.init({
           publish_key: 'pub-c-442c28cb-bab8-4ac5-b5ac-d8cc6cba2e8f',
           subscribe_key: 'sub-c-f38868fa-3e19-11e5-bcbe-0619f8945a4f'
+          ssl: true
       });
 
       PUBNUB_demo.subscribe({
@@ -85,7 +86,7 @@
         $('#chat_text').val(' ');
         event.preventDefault();
       });
-      
+
   </script>
   </div>
 <% end %>
