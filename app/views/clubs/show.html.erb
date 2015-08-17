@@ -71,6 +71,7 @@
           </a>
         </span>
         <span>
+
           <a class="club_users  club_button">
             <span class="button_text">--- Club Members ---</span>
           </a>
@@ -158,19 +159,20 @@
   <div class="user_club_show">
 <!-- <h2>Current Members:</h2> -->
     <ul>
-      <% @club.user_clubs.each do |userclub| %>
+      <% @club.users.uniq.each do |user| %>
 
-      <% if userclub.user.avatar? %>
-
+      <% if user.avatar? %>
       <li class="club_avatar">
-        <%= link_to image_tag(userclub.user.avatar(:medium)), profile_path(userclub.user_id) %><p><%= userclub.user.username %></p></li>
+        <%= link_to image_tag(user.avatar(:medium)), profile_path(user) %>
+        <p><%= user.username %></p>
+      </li>
 
 
       <% else %>
 
       <li class="club_avatar">
-        <%= link_to image_tag("https://i.vimeocdn.com/portrait/1328552_300x300.jpg"), profile_path(userclub.user_id)%>
-        <p><%= userclub.user.username %></p></li>
+        <%= link_to image_tag("https://i.vimeocdn.com/portrait/1328552_300x300.jpg"), profile_path(user)%>
+        <p><%= user.username %></p></li>
 
       <% end %>
       <% end %>
