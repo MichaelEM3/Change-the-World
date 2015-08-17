@@ -275,7 +275,8 @@
 }
 .titleslist1 {
   display: inline;
-  padding: 6vw;
+  padding: 4.4vw;
+  font-size: 4vh;
 }
 .titles {
 }
@@ -300,7 +301,7 @@
 }
 .nameslist1 {
   display: inline;
-  padding: 5.7vw;
+  padding: 3.7vw;
 }
 .names {
 }
@@ -325,7 +326,7 @@
 }
 .emailslist1 {
   display: inline;
-  padding: 3.7vw;
+  padding: 0.7vw;
 }
 .emails {
 }
@@ -350,7 +351,7 @@
 }
 .phoneslist1 {
   display: inline;
-  padding: 5.0vw;
+  padding: 3.0vw;
 }
 .phones {
 }
@@ -370,11 +371,6 @@
   display: inline;
   padding: 12.5vw;
 }
-.ph
-/*backround1 {
-  display: inline;
-  padding: 11.7vw;
-}*/
 
 /*Meet the Team Photos*/
 .cover {
