@@ -301,10 +301,10 @@ opacity: 0.8;
 .button_response .club_about{
   clear: both;
   position: absolute;
-  left: 1vw;
+  left: 2.5vw;
   top: 4vw;
   max-width: 455px;
-  max-height: 389px;
+  max-height: 300px;
   width: auto;
   height: auto;
 
