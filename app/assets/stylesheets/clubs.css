@@ -131,6 +131,11 @@ float: right;
 .club_img {
   /*display: inline-block;*/
 }
+#pagination{
+  text-align: center;
+  clear: both;
+  padding: 1em;
+}
 #activities {
   float: right;
   width: 52%;
