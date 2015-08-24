@@ -131,6 +131,11 @@ float: right;
 .club_img {
   /*display: inline-block;*/
 }
+#pagination{
+  text-align: center;
+  clear: both;
+  padding: 1em;
+}
 #activities {
   float: right;
   width: 52%;
@@ -575,7 +580,7 @@ box-shadow: 3px 6px 9px rgba(0,0,0,.5);
   text-align: center;
 }
 #story_story{
-  width: 38em;
+  width: 42em;
     height: 7em;
     font-size: 1.2em;
   margin-left: -6em;
@@ -596,7 +601,7 @@ box-shadow: 3px 6px 9px rgba(0,0,0,.5);
       font-family: Georgia,serif;
     font-size: 27px;
     line-height: 24px;
-        height: 3em;
+        height: 1em;
 }
 
 .story_title h1 {
