@@ -993,7 +993,7 @@ input[type="file"] {
   outline: none;
   padding: 0.5em;
   margin-bottom: 1.25vw;
-  margin-right: 1em;
+  margin-right: 0em;
   width:194px;
   height:41px;
   text-decoration: none;
