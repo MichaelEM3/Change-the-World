@@ -18,8 +18,13 @@
       </span>
 
       <span class="clubs_information">
+ 
         <p><%= @club.description %></p>
-
+     <ul>
+  <% @club.badges.each do |badge| %>
+    <p><%= badge.name %></p>
+  <% end %>
+</ul>
         <p><%= @club.location %></p>
         <br>
       </span>

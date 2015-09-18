@@ -1,4 +1,6 @@
 class Club < ActiveRecord::Base
+  has_merit
+
 
   has_many :user_clubs, dependent: :destroy
   has_many :users, through: :user_clubs

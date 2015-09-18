@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150809060734) do
+ActiveRecord::Schema.define(version: 20150908004635) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -33,6 +33,17 @@ ActiveRecord::Schema.define(version: 20150809060734) do
   add_index "activities", ["recipient_id", "recipient_type"], name: "index_activities_on_recipient_id_and_recipient_type", using: :btree
   add_index "activities", ["trackable_id", "trackable_type"], name: "index_activities_on_trackable_id_and_trackable_type", using: :btree
 
+  create_table "badges_sashes", force: :cascade do |t|
+    t.integer  "badge_id"
+    t.integer  "sash_id"
+    t.boolean  "notified_user", default: false
+    t.datetime "created_at"
+  end
+
+  add_index "badges_sashes", ["badge_id", "sash_id"], name: "index_badges_sashes_on_badge_id_and_sash_id", using: :btree
+  add_index "badges_sashes", ["badge_id"], name: "index_badges_sashes_on_badge_id", using: :btree
+  add_index "badges_sashes", ["sash_id"], name: "index_badges_sashes_on_sash_id", using: :btree
+
   create_table "clubs", force: :cascade do |t|
     t.string   "title"
     t.text     "description"
@@ -41,9 +52,11 @@ ActiveRecord::Schema.define(version: 20150809060734) do
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
-    t.datetime "created_at",         null: false
-    t.datetime "updated_at",         null: false
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
     t.string   "thumbtag"
+    t.integer  "sash_id"
+    t.integer  "level",              default: 0
   end
 
   create_table "commentaries", force: :cascade do |t|
@@ -57,6 +70,39 @@ ActiveRecord::Schema.define(version: 20150809060734) do
   add_index "commentaries", ["story_id"], name: "index_commentaries_on_story_id", using: :btree
   add_index "commentaries", ["user_id"], name: "index_commentaries_on_user_id", using: :btree
 
+  create_table "merit_actions", force: :cascade do |t|
+    t.integer  "user_id"
+    t.string   "action_method"
+    t.integer  "action_value"
+    t.boolean  "had_errors",    default: false
+    t.string   "target_model"
+    t.integer  "target_id"
+    t.text     "target_data"
+    t.boolean  "processed",     default: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "merit_activity_logs", force: :cascade do |t|
+    t.integer  "action_id"
+    t.string   "related_change_type"
+    t.integer  "related_change_id"
+    t.string   "description"
+    t.datetime "created_at"
+  end
+
+  create_table "merit_score_points", force: :cascade do |t|
+    t.integer  "score_id"
+    t.integer  "num_points", default: 0
+    t.string   "log"
+    t.datetime "created_at"
+  end
+
+  create_table "merit_scores", force: :cascade do |t|
+    t.integer "sash_id"
+    t.string  "category", default: "default"
+  end
+
   create_table "projects", force: :cascade do |t|
     t.integer  "club_id"
     t.string   "name"
@@ -68,6 +114,11 @@ ActiveRecord::Schema.define(version: 20150809060734) do
   end
 
   add_index "projects", ["club_id"], name: "index_projects_on_club_id", using: :btree
+
+  create_table "sashes", force: :cascade do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "stories", force: :cascade do |t|
     t.integer  "club_id"
@@ -84,8 +135,10 @@ ActiveRecord::Schema.define(version: 20150809060734) do
     t.text     "description"
     t.boolean  "completed"
     t.date     "due_date"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
+    t.integer  "sash_id"
+    t.integer  "level",       default: 0
   end
 
   add_index "tasks", ["project_id"], name: "index_tasks_on_project_id", using: :btree
@@ -93,10 +146,12 @@ ActiveRecord::Schema.define(version: 20150809060734) do
   create_table "user_clubs", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "club_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
     t.string   "role"
     t.integer  "task_id"
+    t.integer  "sash_id"
+    t.integer  "level",      default: 0
   end
 
   add_index "user_clubs", ["club_id"], name: "index_user_clubs_on_club_id", using: :btree
@@ -108,8 +163,8 @@ ActiveRecord::Schema.define(version: 20150809060734) do
     t.string   "name"
     t.string   "email"
     t.string   "password_digest"
-    t.datetime "created_at",          null: false
-    t.datetime "updated_at",          null: false
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
     t.string   "avatar_file_name"
     t.string   "avatar_content_type"
     t.integer  "avatar_file_size"
@@ -117,6 +172,8 @@ ActiveRecord::Schema.define(version: 20150809060734) do
     t.integer  "age"
     t.text     "about"
     t.string   "gender"
+    t.integer  "sash_id"
+    t.integer  "level",               default: 0
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

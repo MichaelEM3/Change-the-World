@@ -16,6 +16,7 @@ class CommentariesController < ApplicationController
   def create
     @commentary = Commentary.new(commentary_params)
     if @commentary.save
+
       redirect_to :back
     else
       redirect_to :back, notice: "Please don't submit a blank comment."

@@ -1,73 +1,37 @@
-<div class="backround1">
 
-  <div id="kinetic-container">
-  <span id="s-1"></span>
-  <span id="s-2"></span>
-  <span id="s-3"></span>
-  <span id="s-4"></span>
-  <span id="s-5"></span>
-  <span id="s-6"></span>
-  <span id="s-7"></span>
-  <span id="s-8"></span>
-  <span id="s-9"></span>
-  <span id="s-10"></span>
-  <div class="container1">
-  <div class="title-bar">
-  </div>
-  <div class="header-container1">
-  <div class="header-bg"></div>
-  <div class="profile-info">
-    <br><br><br>
-  <div class="avatar">
-      <%= image_tag @user.avatar(:medium) %>
-  </div>
-  <div class="profile-name">
-      <%= @user.name %>
-      <br>
-      <br>
-      <br>
-      <%= @user.username %>
-      <br>
-      <br>
-      <br>
-      <%= link_to 'Update Profile', edit_user_path(:id) %>
-  </div>
-  <div class="profile-more-info">
-  <div class="profile-page">
-  </div>
-  </div>
-  <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-  <br>
-  <div class = "sometext2">
-      <h2 class = "sometext1">Clubs Joined</h2>
-  </div>
 
-  <div class="box11">
-      <ul class="column2">
-        <% @clubs.each do |club| %>
-        <br>
-        <li class = "listing">
-          <%= link_to club.title, club_path(club) %>
-        </li>
-         <% end %>
-    </ul>
-  </div>
+<br><br><br>
+<br><br><br>
 
-  <div class = "sometext3">
-      <h2 class = "sometext">Projects Joined</h2>
-  </div>
-  <div class="box22">
-      <ul class="column3">
-        <% @projects.each do |project| %>
-        <br>
-        <li class = "listing1">
-          <%= link_to project.name, club_project_path(project.club, project) %>
-        </li>
-          <% end %>
-        </ul>
-   </div>
- </div>
-</div>
-</div>
-</div>
-</div>
+
+<%= @user.name %>
+
+<ul>
+  <% @user.badges.each do |badge| %>
+  <li><%= badge.name %></li><br>
+  <% end %>
+</ul>
+
+<%= @user.username %><br>
+
+<%= link_to 'Update Profile', edit_user_path(:id) %><br>
+
+
+Clubs Joined<br>
+
+<% @clubs.each do |club| %>
+<li class = "listing">
+  <%= link_to club.title, club_path(club) %>
+</li>
+<% end %><br>
+
+Projects Joined <br> 
+
+<% @projects.each do |project| %>
+<br>
+<li class = "listing1">
+  <%= link_to project.name, club_project_path(project.club, project) %>
+</li>
+<% end %><br>
+
+<%= image_tag @user.avatar(:medium) %>

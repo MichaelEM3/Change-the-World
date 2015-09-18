@@ -10,7 +10,7 @@ class ApplicationController < ActionController::Base
       @current_user ||= User.find(session[:user_id]) if session[:user_id]
     end
 
-    hide_action :current_user
+    # hide_action :current_user
 
     private
 
