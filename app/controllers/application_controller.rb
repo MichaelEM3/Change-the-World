@@ -23,4 +23,7 @@ class ApplicationController < ActionController::Base
       redirect_to root_path unless current_user.user_admin_in_club?(params[:id])
     end
 
+    def badges_images
+      
+    end
 end

@@ -21,7 +21,7 @@ module Merit
     include Merit::BadgeRulesMethods
 
     def initialize
-    grant_on ['users#create', 'users#update'], badge: 'Welcome', temporary: true, to: :itself
+    grant_on ['users#create', 'users#update'], badge: 'Welcome', image: "image2.jpg", temporary: true, to: :itself
 
     grant_on ['clubs#create', 'clubs#update'], badge: 'new_club', to: :itself
 

@@ -9,6 +9,7 @@
 <ul>
   <% @user.badges.each do |badge| %>
   <li><%= badge.name %></li><br>
+  <li><%= image_tag (badge.custom_fields), :alt => badge.description %></li><br>
   <% end %>
 </ul>
 

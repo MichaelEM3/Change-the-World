@@ -6,7 +6,7 @@ class SessionsController < ApplicationController
 
   def show
     @club = Club.all
-    @tag = Tag.all
+    # @tag = Tag.all
   end
 
   def create

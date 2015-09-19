@@ -18,16 +18,20 @@ Merit.setup do |config|
   # is "current_#{user_model_name.downcase}".
   # config.current_user_method = 'current_user'
 end
+
 badge_id = 0
 [{
   id: (badge_id = 1),
-  name: 'Welcome'
+  name: 'Welcome',
+  custom_fields: "image2.jpg"
 }, {
   id: (badge_id = 2),
-  name: 'new_club'
+  name: 'new_club',
+  image: "assets/images/image2.jpg"
 }, {
   id: (badge_id = 3),
-  name: 'commenter'
+  name: 'commenter',
+  image: "/images/image2.jpg"
 }, {
   id: (badge_id = 4),
   name: 'relevant_commenter'
@@ -38,6 +42,14 @@ badge_id = 0
 }].each do |badge|
   Merit::Badge.create! badge
 end
+
+#   Merit::Badge.create!(
+#   id: (badge_id = 6),
+#   name: "Yearling",
+#   description: "Active member for a year",
+#   custom_fields: { image: '/images/image2.jpg'}
+# )
+
 
 # Create application badges (uses https://github.com/norman/ambry)
 # badge_id = 0
