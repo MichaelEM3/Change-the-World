@@ -15,3 +15,8 @@
 /log/*
 !/log/.keep
 /tmp
+
+# Ignore application configuration
+/config/locales/aws.yml
+/config/secret.yml
+/config/s3.yml
